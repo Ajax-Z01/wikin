@@ -11,7 +11,7 @@
                 <li><a href="#hero">Utama</a></li>
                 <li><a href="#about">Tentang</a></li>
                 <li><a href="#services">Fitur</a></li>
-                <li><a href="blog.html">Pemas</a></li>
+                <li><a href="#pemas">Pemas</a></li>
                 <li><a href="#contact">Kontak</a></li>
             </ul>
         </nav><!-- .navbar -->

@@ -1,4 +1,4 @@
-@extends('dashboard.main')
+@extends('dashboard.layout.dashboard')
 @section('main')
 <div class="row">
 
