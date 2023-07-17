@@ -45,7 +45,7 @@
     <!-- End Header -->
 
     <!-- ======= Sidebar ======= -->
-    @include('dashboard.sidebar')
+    @include('dashboard.sidebar.sidebar')
     <!-- End Sidebar-->
 
     <!-- Main Content -->
