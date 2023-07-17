@@ -18,9 +18,11 @@ body {
   background: #ffffff;
   color: #444444;
 }
-
+.color-signup{
+  background: #1a1057;
+}
 a {
-  color: #4154f1;
+  color: rgba(220, 248, 254, 0.8);
   text-decoration: none;
 }
 
