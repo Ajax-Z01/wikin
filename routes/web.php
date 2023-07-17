@@ -16,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('landingpage.main');
 });
+Route::get('/admin', function () {
+    return view('dashboard.main');
+});

@@ -5,7 +5,7 @@
                 <h2>Selamat Datang di<span> Wikin</span></h2>
                 <p>Platform interaktif penunjang komunitas nuklir di Indonesia</p>
                 <div class="d-flex justify-content-center justify-content-lg-start">
-                    <a href="#about" class="btn-get-started">Get Started</a>
+                    <a href="/admin" class="btn-get-started">Get Started</a>
                     <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
                 </div>
             </div>
