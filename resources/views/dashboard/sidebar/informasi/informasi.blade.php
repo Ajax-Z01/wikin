@@ -52,65 +52,44 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>Dashboard</h1>
+            <h1>Informasi</h1>
             <nav>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active">Dashboard</li>
+                    <li class="breadcrumb-item">More Info</li>
+                    <li class="breadcrumb-item active">Informasi</li>
                 </ol>
             </nav>
         </div><!-- End Page Title -->
 
         <section class="section">
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-6">
 
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Pesan Masuk</span></h5>
-                            <table class="table table-borderless datatable">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">No</th>
-                                        <th scope="col">Nama</th>
-                                        <th scope="col">Deskripsi</th>
-                                        <th scope="col">Status</th>
-                                        <th scope="col">Balas</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row"><a href="#">1</a></th>
-                                        <td>Arfan</td>
-                                        <td><a href="#" class="text-primary">Lorem Ipsum</a></td>
-                                        <td><span class="badge bg-success">Approved</span></td>
-                                        <td><button type="button" class="btn btn-info"><i class="bi bi-cursor"></i></button></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row"><a href="#">2</a></th>
-                                        <td>Fanny</td>
-                                        <td><a href="#" class="text-primary">Lorem Ipsum</a></td>
-                                        <td><span class="badge bg-warning">Pending</span></td>
-                                        <td><button type="button" class="btn btn-info"><i class="bi bi-cursor"></i></i></button></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row"><a href="#">3</a></th>
-                                        <td>Vania</td>
-                                        <td><a href="#" class="text-primary">Lorem Ipsum</a></td>
-                                        <td><span class="badge bg-success">Approved</span></td>
-                                        <td><button type="button" class="btn btn-info"><i class="bi bi-cursor"></i></button></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-
+                            <h5 class="card-title">Informasi Terbaru</h5>
+                            <p>Ini Adalah Informasi Terbaru dari Kami.</p>
                         </div>
                     </div>
+
                 </div>
 
-            </div>
+                <div class="col-lg-6">
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Informasi Terbaru</h5>
+                            <p>Ini Adalah Informasi Terbaru dari Kami.</p>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </section>
-    </main><!-- End #main -->
+
+    </main>
+    <!-- End #main -->
     <!-- End Main Content -->
 
 
