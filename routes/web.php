@@ -25,6 +25,10 @@ Route::get('/detailPemas', function () {
     return view('landingpage.detailPemas.detailPemas');
 })->name('detailPemas');
 
+Route::get('/detailPemas/detailContent', function () {
+    return view('landingpage.detailPemas.detailContent');
+})->name('detailContent');
+
 Route::get('kenukliran', function () {
     return view('dashboard.sidebar.keluhan.kenukliran');
 })->name('kenukliran');
@@ -61,9 +65,6 @@ Route::get('profile', function () {
     return view('dashboard.user.profile');
 })->name('profile');
 
-Route::get('detailPemas', function () {
-    return view('landingpage.detailPemas.detailPemas');
-})->name('detailPemas');
 
 
 
