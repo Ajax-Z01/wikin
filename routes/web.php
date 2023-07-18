@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('landingpage.main');
-})->name('landing');
+})->name('home');
 
 Route::get('dashboard', function () {
     return view('dashboard.layout.dashboard');
@@ -53,12 +53,13 @@ Route::get('informasi', function () {
     return view('dashboard.sidebar.informasi.informasi');
 })->name('informasi');
 
-
 Route::get('profile', function () {
     return view('dashboard.user.profile');
 })->name('profile');
 
-
+Route::get('detailPemas', function () {
+    return view('landingpage.detailPemas.detailPemas');
+})->name('detailPemas');
 
 
 
