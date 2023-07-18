@@ -14,12 +14,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('landingpage.main');
+    return view('landingpage.content');
 })->name('home');
 
 Route::get('dashboard', function () {
-    return view('dashboard.layout.dashboard');
+    return view('dashboard.index');
 })->name('dashboard');
+
+Route::get('/detailPemas', function () {
+    return view('landingpage.detailPemas.detailPemas');
+})->name('detailPemas');
 
 Route::get('kenukliran', function () {
     return view('dashboard.sidebar.keluhan.kenukliran');
