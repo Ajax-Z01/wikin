@@ -104,7 +104,7 @@
                                 </div>
 
                                 <div class="row mb-3">
-                                    <label for="inputNumber" class="col-sm-5 col-form-label">Jumbotron</label>
+                                    <label for="inputNumber" class="col-sm-5 col-form-label">Gambar Halaman </label>
                                     <div class="col-sm-10">
                                         <input class="form-control" type="file" id="formFile">
                                     </div>
