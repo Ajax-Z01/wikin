@@ -225,7 +225,7 @@
 
                 </div><!-- End recent posts list -->
 
-                <div class="text-center mt-4"><button type="button" class="btn btn-outline-secondary">Selengkapnya</button></div>
+                <div class="text-center mt-4"><button type="button" class="btn btn-outline-secondary"><a href="{{ route('detailPemas') }}"></a>Selengkapnya</button></div>
             </div>
         </section><!-- End Recent Blog Posts Section -->
 
