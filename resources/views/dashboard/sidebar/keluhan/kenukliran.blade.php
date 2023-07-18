@@ -52,11 +52,11 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>Dashboard</h1>
+            <h1>Formulir Keluhan</h1>
             <nav>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active">Dashboard</li>
+                    <li class="breadcrumb-item active">Keluhan Kenukliran</li>
                 </ol>
             </nav>
         </div><!-- End Page Title -->
@@ -190,6 +190,65 @@
                             </table>
 
                         </div>
+                    </div>
+                </div>
+
+            </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Formulir Keluhan Kenukliran</h5>
+
+                            <!-- General Form Elements -->
+                            <form>
+                                <div class="row mb-3">
+                                    <label for="inputText" class="col-sm-3 col-form-label">Nama</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="inputText" class="col-sm-3 col-form-label">NIK</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="inputEmail" class="col-sm-3 col-form-label">Email</label>
+                                    <div class="col-sm-8">
+                                        <input type="email" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="inputText" class="col-sm-3 col-form-label">Asal Daerah</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="inputText" class="col-sm-3 col-form-label">Deskripsi<br>*Note : Apa yang dirasakan</label>
+                                    <div class="col-sm-8">
+                                        <textarea class="form-control" style="height: 100px"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3 justify-content-center">
+                                    <div class=" col-sm-4">
+                                    </div>
+                                    <div class=" col-sm-4">
+                                        <button type="submit" class="btn btn-primary">Submit Form</button>
+                                    </div>
+                                    <div class=" col-sm-4">
+                                    </div>
+                                </div>
+                        </div>
+
+                        </form><!-- End General Form Elements -->
+
                     </div>
                 </div>
 
