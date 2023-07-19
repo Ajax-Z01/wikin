@@ -174,6 +174,47 @@
                 </div>
 
             </div>
+            <div class="container text-center">
+                <h5 class="card-title">Daftar Komunitas</h5>
+                <div class="row">
+                    <div class="col">
+                        <div class="card">
+                            <img src="{{ asset('/img/card.jpg') }}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Bunga</h5>
+                                <p class="card-text">Komunitas Energi <br>Kontak :087474 xxxx xxx</p>
+                            </div>
+                        </div><!-- End Card with an image on top -->
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="{{ asset('/img/card.jpg') }}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Bunga</h5>
+                                <p class="card-text">Komunitas Pangan <br>Kontak :087474 xxxx xxx</p>
+                            </div>
+                        </div><!-- End Card with an image on top -->
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="{{ asset('/img/card.jpg') }}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Bunga</h5>
+                                <p class="card-text">Komunitas Pangan <br>Kontak :087474 xxxx xxx</p>
+                            </div>
+                        </div><!-- End Card with an image on top -->
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="{{ asset('/img/card.jpg') }}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Bunga</h5>
+                                <p class="card-text">Komunitas Pangan <br>Kontak :087474 xxxx xxx</p>
+                            </div>
+                        </div><!-- End Card with an image on top -->
+                    </div>
+                </div>
+            </div>
             </div>
         </section>
 
