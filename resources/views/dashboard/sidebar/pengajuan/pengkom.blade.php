@@ -174,6 +174,57 @@
                 </div>
 
             </div>
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Formulir Pengajuan Komunitas</h5>
+
+                        <!-- General Form Elements -->
+                        <form>
+                            <div class="row mb-3">
+                                <label for="inputText" class="col-sm-3 col-form-label">Nama</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="inputText" class="col-sm-3 col-form-label">Nama Komunitas</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="inputEmail" class="col-sm-3 col-form-label">Email</label>
+                                <div class="col-sm-8">
+                                    <input type="email" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="inputText" class="col-sm-3 col-form-label">Deskripsi</label>
+                                <div class="col-sm-8">
+                                    <textarea class="form-control" style="height: 100px"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="inputNumber" class="col-sm-3 col-form-label">Logo Upload</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" type="file" id="formFile">
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-sm-8">
+                                    <button type="submit" class="btn btn-primary">Submit Form</button>
+                                </div>
+                            </div>
+
+                        </form><!-- End General Form Elements -->
+
+                    </div>
+                </div>
+            </div>
             <div class="container text-center">
                 <h5 class="card-title">Daftar Komunitas</h5>
                 <div class="row">

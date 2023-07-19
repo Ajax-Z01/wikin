@@ -22,6 +22,7 @@
                                     <tr>
                                         <th scope="col">No</th>
                                         <th scope="col">Nama</th>
+                                        <th scope="col">No. Hp</th>
                                         <th scope="col">Lokasi</th>
                                         <th scope="col">Deskripsi</th>
                                         <th scope="col">Balas</th>
@@ -31,6 +32,7 @@
                                     <tr>
                                         <th scope="row"><a href="#">1</a></th>
                                         <td>Arfan</td>
+                                        <td>08xxxxxxx</td>
                                         <td>Yogyakarta</td>
                                         <td><a href="#" class="text-primary">Lorem Ipsum</a></td>
                                         <td><button type="button" class="btn btn-info" data-bs-toggle="modal"
@@ -75,6 +77,7 @@
                                     <tr>
                                         <th scope="row"><a href="#">2</a></th>
                                         <td>Fanny</td>
+                                        <td>08xxxxxxx</td>
                                         <td>Yogyakarta</td>
                                         <td><a href="#" class="text-primary">Lorem Ipsum</a></td>
                                         <td><button type="button" class="btn btn-info" data-bs-toggle="modal"
@@ -119,6 +122,7 @@
                                     <tr>
                                         <th scope="row"><a href="#">3</a></th>
                                         <td>Vania</td>
+                                        <td>08xxxxxxx</td>
                                         <td>Yogyakarta</td>
                                         <td><a href="#" class="text-primary">Lorem Ipsum</a></td>
                                         <td><button type="button" class="btn btn-info" data-bs-toggle="modal"
@@ -406,7 +410,8 @@
                                 <h5 class="card-title">Formulir Pengajuan Pengabdian Masyarakat</h5>
                                 <!-- General Form Elements -->
                                 <form>
-                                    <div class="row mb-3" role="form text-left" action="{{ route('pengmas.store') }}" method="post" enctype="multipart/form-data">
+                                    <div class="row mb-3" role="form text-left" action="{{ route('pengmas.store') }}"
+                                        method="post" enctype="multipart/form-data">
                                         @method('POST')
                                         @csrf
                                         <label for="inputText" class="col-sm-3 col-form-label">Nama</label>
