@@ -30,7 +30,7 @@ Route::middleware(['IsUser'])->group(function () {
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('detailPemas', [DashboardController::class, 'detailPemas'])->name('detailPemas');
     Route::get('detailContent', [DashboardController::class, 'detailContent'])->name('detailContent');
-    Route::get('keluhan', [DashboardController::class, 'keluhan'])->name('keluhan');
+    Route::get('kenukliran', [DashboardController::class, 'kenukliran'])->name('kenukliran');
     Route::get('komunitas', [DashboardController::class, 'komunitas'])->name('komunitas');
     Route::get('landing', [DashboardController::class, 'landing'])->name('landing');
     Route::get('userdate', [DashboardController::class, 'userdate'])->name('userdate');

@@ -89,14 +89,14 @@
             <li class="nav-item dropdown pe-3">
 
                 <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-                    <img src="{{ asset('img/naruto.jpg') }}" alt="Profile" class="rounded-circle">
-                    <span class="d-none text-light d-md-block dropdown-toggle ps-2">Arfanny</span>
+                    <img src="{{ Auth::user()->profile_image }}" alt="Profile" class="rounded-circle">
+                    <span class="d-none text-light d-md-block dropdown-toggle ps-2">{{ Auth::user()->username }}</span>
                 </a><!-- End Profile Iamge Icon -->
 
                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
                     <li class="dropdown-header">
-                        <h6>Arfanny Yusuf H</h6>
-                        <span>Admin Wikin</span>
+                        <h6>{{ Auth::user()->name }}</h6>
+                        <span>{{ Auth::user()->type }} Wikin</span>
                     </li>
                     <li>
                         <hr class="dropdown-divider">
