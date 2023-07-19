@@ -60,4 +60,9 @@ class DashboardController extends Controller
     {
         return view('dashboard.sidebar.informasi.informasi');
     }
+
+    public function profile()
+    {
+        return view('dashboard.sidebar.profile.profile');
+    }
 }
