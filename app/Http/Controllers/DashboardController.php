@@ -63,6 +63,6 @@ class DashboardController extends Controller
 
     public function profile()
     {
-        return view('dashboard.sidebar.profile.profile');
+        return view('dashboard.user.profile');
     }
 }
