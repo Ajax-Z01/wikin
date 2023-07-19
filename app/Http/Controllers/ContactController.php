@@ -16,7 +16,22 @@ class ContactController extends Controller
      */
     public function index()
     {
-        //
+        $messagePerPage = 10;
+        $totalMessages = Contact::count();
+        $totalPages = ceil($totalMessages / $messagePerPage);
+        $currentPage = request()->page ?? 1;
+
+        $query = Contact::query()->latest();
+
+        // Filter berdasarkan pencarian judul
+        if (request()->has('search')) {
+            $search = request()->input('search');
+            $query->where('name', 'LIKE', "%$search%")->orWhere('email', 'LIKE', "%$search%")->orWhere('subject', 'LIKE', "%$search%");
+        }
+
+        $message = $query->skip(($currentPage - 1) * $messagePerPage)->take($messagePerPage)->get();
+
+        return view('kontak', compact('message', 'totalPages', 'currentPage'));
     }
 
     /**
@@ -56,7 +71,7 @@ class ContactController extends Controller
         $notification->content = 'Pesan baru telah dikirim.';
         $notification->save();
 
-        return redirect()->route('contact.create')->with('success', 'Pesan berhasil dikirim.');
+        return redirect()->route('kontak')->with('success', 'Pesan berhasil dikirim.');
     }
 
     /**

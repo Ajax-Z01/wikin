@@ -16,7 +16,22 @@ class FormKeluhController extends Controller
      */
     public function index()
     {
-        //
+        $formsPerPage = 10;
+        $totalForms = FormKeluh::count();
+        $totalPages = ceil($totalForms / $formsPerPage);
+        $currentPage = request()->page ?? 1;
+
+        $query = FormKeluh::query()->latest();
+
+        // Filter berdasarkan pencarian judul
+        if (request()->has('search')) {
+            $search = request()->input('search');
+            $query->where('name', 'LIKE', "%$search%")->orWhere('email', 'LIKE', "%$search%")->orWhere('subject', 'LIKE', "%$search%");
+        }
+
+        $formkeluh = $query->skip(($currentPage - 1) * $formsPerPage)->take($formsPerPage)->get();
+
+        return view('formkeluh', compact('formkeluh', 'totalPages', 'currentPage'));
     }
 
     /**

@@ -16,7 +16,22 @@ class FormKomunController extends Controller
      */
     public function index()
     {
-        //
+        $formsPerPage = 10;
+        $totalForms = FormKomun::count();
+        $totalPages = ceil($totalForms / $formsPerPage);
+        $currentPage = request()->page ?? 1;
+
+        $query = FormKomun::query()->latest();
+
+        // Filter berdasarkan pencarian judul
+        if (request()->has('search')) {
+            $search = request()->input('search');
+            $query->where('name', 'LIKE', "%$search%")->orWhere('email', 'LIKE', "%$search%")->orWhere('subject', 'LIKE', "%$search%");
+        }
+
+        $formkomun = $query->skip(($currentPage - 1) * $formsPerPage)->take($formsPerPage)->get();
+
+        return view('formkomun', compact('formkomun', 'totalPages', 'currentPage'));
     }
 
     /**
