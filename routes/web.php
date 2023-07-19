@@ -26,22 +26,18 @@ Route::controller(AuthController::class)->group(function () {
     Route::post('register', 'registerPost')->name('register.post');
 });
 
-Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
-Route::get('detailPemas', [DashboardController::class, 'detailPemas'])->name('detailPemas');
-Route::get('detailContent', [DashboardController::class, 'detailContent'])->name('detailContent');
-Route::get('kenukliran', [DashboardController::class, 'kenukliran'])->name('kenukliran');
-Route::get('komunitas', [DashboardController::class, 'komunitas'])->name('komunitas');
-Route::get('landing', [DashboardController::class, 'landing'])->name('landing');
-Route::get('userdate', [DashboardController::class, 'userdate'])->name('userdate');
-
-Route::get('pengkom', [DashboardController::class, 'pengkom'])->name('pengkom');
-Route::post('pengkom/store', [DashboardController::class, 'store'])->name('pengkom.store');
-
-Route::get('pengmas', [DashboardController::class, 'pengmas'])->name('pengmas');
-Route::post('pengmas/store', [DashboardController::class, 'store'])->name('pengmas.store');
-
-Route::get('kontak', [DashboardController::class, 'kontak'])->name('kontak');
-Route::post('kontak/store', [DashboardController::class, 'store'])->name('kontak.store');
-
-Route::get('informasi', [DashboardController::class, 'informasi'])->name('informasi');
-Route::get('profile', [DashboardController::class, 'profile'])->name('profile');
+Route::middleware(['IsUser'])->group(function () {
+    Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('detailPemas', [DashboardController::class, 'detailPemas'])->name('detailPemas');
+    Route::get('detailContent', [DashboardController::class, 'detailContent'])->name('detailContent');
+    Route::get('kenukliran', [DashboardController::class, 'kenukliran'])->name('kenukliran');
+    Route::get('komunitas', [DashboardController::class, 'komunitas'])->name('komunitas');
+    Route::get('landing', [DashboardController::class, 'landing'])->name('landing');
+    Route::get('userdate', [DashboardController::class, 'userdate'])->name('userdate');
+    Route::get('pengkom', [DashboardController::class, 'pengkom'])->name('pengkom');
+    Route::get('pengmas', [DashboardController::class, 'pengmas'])->name('pengmas');
+    Route::post('pengmas/store', [DashboardController::class, 'store'])->name('pengmas.store');
+    Route::get('kontak', [DashboardController::class, 'kontak'])->name('kontak');
+    Route::get('informasi', [DashboardController::class, 'informasi'])->name('informasi');
+    Route::get('profile', [DashboardController::class, 'profile'])->name('profile');
+});

@@ -22,51 +22,6 @@
                         <div class="card-body">
                             <h5 class="card-title">Data User</span></h5>
                             <div class="d-grid gap-1 d-md-flex justify-content-md-end">
-                                <td><button type="button" class="bg-danger btn btn-info position-relative"
-                                        data-bs-toggle="modal" data-bs-target="#dataUser">
-                                        <i class="text-light bi bi-plus-square">
-                                        </i></button>
-                                    <div class="modal fade" id="dataUser" tabindex="-1"
-                                        aria-labelledby="pengabdianMasLabel" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="pengabdianMasLabel">Pengabdian Masyarakat
-                                                    </h5>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                        aria-label="Close"></button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <form>
-                                                        @csrf
-                                                        <div class="mb-3">
-                                                            <label for="recipient-name" class="col-form-label">Nama
-                                                                Lengkap</label>
-                                                            <input type="text" class="form-control" id="recipient-name">
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <label for="username" class="col-form-label">Username</label>
-                                                            <input type="text" class="form-control" id="username">
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <label for="email" class="col-form-label">Email</label>
-                                                            <input type="text" class="form-control" id="email">
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <label for="password" class="col-form-label">Password</label>
-                                                            <input type="password" class="form-control" id="password">
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary"
-                                                        data-bs-dismiss="modal">Close</button>
-                                                    <button type="button" class="btn btn-primary">Daftar</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </td>
                             </div>
                             <table class="table table-borderless datatable">
 
@@ -111,8 +66,8 @@
                                                             <button type="button" class="btn btn-secondary"
                                                                 data-bs-dismiss="modal">Close</button>
                                                             <button class="btn btn-danger"
-                                                                data-bs-target="#exampleModalToggle2"
-                                                                data-bs-toggle="modal" data-bs-dismiss="modal">Hapus
+                                                                data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"
+                                                                data-bs-dismiss="modal">Hapus
                                                                 Akun</button>
                                                         </div>
                                                     </div>
@@ -136,8 +91,8 @@
                                                         <div class="modal-header">
                                                             <h5 class="modal-title" id="exampleModalToggleLabel">Detail
                                                                 Akun</h5>
-                                                            <button type="button" class="btn-close"
-                                                                data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                                aria-label="Close"></button>
                                                         </div>
                                                         <div class="modal-body">
                                                             Nama : Harimau
@@ -152,8 +107,8 @@
                                                             <button type="button" class="btn btn-secondary"
                                                                 data-bs-dismiss="modal">Close</button>
                                                             <button class="btn btn-danger"
-                                                                data-bs-target="#exampleModalToggle2"
-                                                                data-bs-toggle="modal" data-bs-dismiss="modal">Hapus
+                                                                data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"
+                                                                data-bs-dismiss="modal">Hapus
                                                                 Akun</button>
                                                         </div>
                                                     </div>

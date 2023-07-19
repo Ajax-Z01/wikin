@@ -21,9 +21,9 @@ class DashboardController extends Controller
         return view('landingpage.detailPemas.detailContent');
     }
 
-    public function kenukliran()
+    public function keluhan()
     {
-        return view('dashboard.sidebar.keluhan.kenukliran');
+        return view('dashboard.sidebar.keluhan.keluhan');
     }
 
     public function komunitas()
