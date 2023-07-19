@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\LandingController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,65 +16,28 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('landingpage.content');
-})->name('home');
+Route::get('/', [LandingController::class, 'index'])->name('home');
 
-Route::get('dashboard', function () {
-    return view('dashboard.index');
-})->name('dashboard');
+Route::controller(AuthController::class)->group(function () {
+    Route::get('login', 'login')->name('login');
+    Route::post('login', 'loginPost')->name('login.post');
+    Route::get('logout', 'logout')->name('logout');
+    Route::get('register', 'register')->name('register');
+    Route::post('register', 'registerPost')->name('register.post');
+});
 
-Route::get('/detailPemas', function () {
-    return view('landingpage.detailPemas.detailPemas');
-})->name('detailPemas');
-
-Route::get('/detailPemas/detailContent', function () {
-    return view('landingpage.detailPemas.detailContent');
-})->name('detailContent');
-
-Route::get('kenukliran', function () {
-    return view('dashboard.sidebar.keluhan.kenukliran');
-})->name('kenukliran');
-
-Route::get('komunitas', function () {
-    return view('dashboard.sidebar.menukelola.komunitas');
-})->name('komunitas');
-
-Route::get('landing', function () {
-    return view('dashboard.sidebar.menukelola.landing');
-})->name('landing');
-
-Route::get('userdate', function () {
-    return view('dashboard.sidebar.menukelola.userdate');
-})->name('userdate');
-
-Route::get('pengkom', function () {
-    return view('dashboard.sidebar.pengajuan.pengkom');
-})->name('pengkom');
-
-Route::get('pengmas', function () {
-    return view('dashboard.sidebar.pengajuan.pengmas');
-})->name('pengmas');
-
-Route::get('kontak', function () {
-    return view('dashboard.sidebar.kontak.kontak');
-})->name('kontak');
-
-Route::get('informasi', function () {
-    return view('dashboard.sidebar.informasi.informasi');
-})->name('informasi');
-
-Route::get('profile', function () {
-    return view('dashboard.user.profile');
-})->name('profile');
-
-
-
-
-Route::get('login', function () {
-    return view('auth.login');
-})->name('login');
-
-Route::get('register', function () {
-    return view('auth.register');
-})->name('register');
+Route::middleware(['IsUser'])->group(function () {
+    Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('detailPemas', [DashboardController::class, 'detailPemas'])->name('detailPemas');
+    Route::get('detailContent', [DashboardController::class, 'detailContent'])->name('detailContent');
+    Route::get('kenukliran', [DashboardController::class, 'kenukliran'])->name('kenukliran');
+    Route::get('komunitas', [DashboardController::class, 'komunitas'])->name('komunitas');
+    Route::get('landing', [DashboardController::class, 'landing'])->name('landing');
+    Route::get('userdate', [DashboardController::class, 'userdate'])->name('userdate');
+    Route::get('pengkom', [DashboardController::class, 'pengkom'])->name('pengkom');
+    Route::get('pengmas', [DashboardController::class, 'pengmas'])->name('pengmas');
+    Route::post('pengmas/store', [DashboardController::class, 'store'])->name('pengmas.store');
+    Route::get('kontak', [DashboardController::class, 'kontak'])->name('kontak');
+    Route::get('informasi', [DashboardController::class, 'informasi'])->name('informasi');
+    Route::get('profile', [DashboardController::class, 'profile'])->name('profile');
+});
