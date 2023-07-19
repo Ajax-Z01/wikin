@@ -83,6 +83,17 @@
     <!-- Template Main JS File -->
     <script src="{{ asset('/js/mainUser.js') }}"></script>
 
+    <script src="{{ asset('vendor/tinymce/tinymce.min.js') }}" referrerpolicy="origin"></script>
+
+    {{-- tinymce --}}
+    <script>
+        tinymce.init({
+            selector: '#contentpemas', // Replace this CSS selector to match the placeholder element for TinyMCE
+            plugins: 'code table lists',
+            toolbar: 'undo redo | blocks | bold italic | alignleft aligncenter alignright | indent outdent | bullist numlist | code | table'
+        });
+    </script>
+
 </body>
 
 </html>
