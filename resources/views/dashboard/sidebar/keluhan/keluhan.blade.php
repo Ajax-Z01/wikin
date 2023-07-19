@@ -180,36 +180,37 @@
 
                             <!-- General Form Elements -->
                             <form>
+                                @csrf
                                 <div class="row mb-3">
-                                    <label for="inputText" class="col-sm-3 col-form-label">Nama</label>
+                                    <label for="name" class="col-sm-3 col-form-label">Nama</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control">
+                                        <input type="name" id="name" class="form-control">
                                     </div>
                                 </div>
                                 <div class="row mb-3">
-                                    <label for="inputText" class="col-sm-3 col-form-label">NIK</label>
+                                    <label for="nik" class="col-sm-3 col-form-label">NIK</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" id="nik">
                                     </div>
                                 </div>
                                 <div class="row mb-3">
-                                    <label for="inputEmail" class="col-sm-3 col-form-label">Email</label>
+                                    <label for="email" class="col-sm-3 col-form-label">Email</label>
                                     <div class="col-sm-8">
-                                        <input type="email" class="form-control">
+                                        <input type="email" class="form-control" id="email">
                                     </div>
                                 </div>
                                 <div class="row mb-3">
-                                    <label for="inputText" class="col-sm-3 col-form-label">Asal Daerah</label>
+                                    <label for="location" class="col-sm-3 col-form-label">Asal Daerah</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" id="location">
                                     </div>
                                 </div>
 
                                 <div class="row mb-3">
-                                    <label for="inputText" class="col-sm-3 col-form-label">Deskripsi<br>*Note : Apa yang
+                                    <label for="description" class="col-sm-3 col-form-label">Deskripsi<br>*Note : Apa yang
                                         dirasakan</label>
                                     <div class="col-sm-8">
-                                        <textarea class="form-control" style="height: 100px"></textarea>
+                                        <textarea class="form-control" style="height: 100px" id="description"></textarea>
                                     </div>
                                 </div>
 

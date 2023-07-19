@@ -19,8 +19,10 @@
 
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Informasi Terbaru</h5>
+                            <h5 class="card-title">Informasi Komunitas</h5>
                             <p>Ini Adalah Informasi Terbaru dari Kami.</p>
+                            <h5><b>Judul Pesan</b></h5>
+                            <p>Isi pesan</p>
                         </div>
                     </div>
 
@@ -30,8 +32,22 @@
 
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Informasi Terbaru</h5>
+                            <h5 class="card-title">Informasi Konsultasi</h5>
                             <p>Ini Adalah Informasi Terbaru dari Kami.</p>
+                            <h5><b>Judul Pesan</b></h5>
+                            <p>Isi pesan</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-6">
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Informasi Pengabdian Masyarakat</h5>
+                            <p>Ini Adalah Informasi Terbaru dari Kami.</p>
+                            <h5><b>Judul Pesan</b></h5>
+                            <p>Isi pesan</p>
                         </div>
                     </div>
 

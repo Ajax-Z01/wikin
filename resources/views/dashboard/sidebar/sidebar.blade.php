@@ -55,7 +55,7 @@
             </a>
             <ul id="keluhan-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
                 <li>
-                    <a href="{{ route('kenukliran') }}" class="text-light">
+                    <a href="{{ route('keluhan') }}" class="text-light">
                         <i class="bi text-light bi-circle"></i><span>Keluhan Kenukliran</span>
                     </a>
                 </li>

@@ -414,13 +414,13 @@
                                         method="post" enctype="multipart/form-data">
                                         @method('POST')
                                         @csrf
-                                        <label for="inputText" class="col-sm-3 col-form-label">Nama</label>
+                                        <label for="name" class="col-sm-3 col-form-label">Nama</label>
                                         <div class="col-sm-8">
                                             <input name="name" id="name" type="text" class="form-control">
                                         </div>
                                     </div>
                                     <div class="row mb-3">
-                                        <label for="inputText" class="col-sm-3 col-form-label">NIK</label>
+                                        <label for="nik" class="col-sm-3 col-form-label">NIK</label>
                                         <div class="col-sm-8">
                                             <input name="nik" id="nik" type="text" class="form-control">
                                         </div>
@@ -429,17 +429,19 @@
                                         <label for="inputEmail" class="col-sm-3 col-form-label">Nama Pengabdian
                                             Masyarakat</label>
                                         <div class="col-sm-8">
-                                            <input name="email" id="email" type="email" class="form-control">
+                                            <input name="name_pemas" id="name_pemas" type="email"
+                                                class="form-control">
                                         </div>
                                     </div>
                                     <div class="row mb-3">
-                                        <label for="inputText" class="col-sm-3 col-form-label">Asal Daerah</label>
+                                        <label for="location" class="col-sm-3 col-form-label">Asal Daerah</label>
                                         <div class="col-sm-8">
                                             <input name="location" id="location" type="text" class="form-control">
                                         </div>
                                     </div>
                                     <div class="row mb-3">
-                                        <label for="inputText" class="col-sm-3 col-form-label">Deskripsi Kegiatan</label>
+                                        <label for="description" class="col-sm-3 col-form-label">Deskripsi
+                                            Kegiatan</label>
                                         <div class="col-sm-8">
                                             <textarea name="description" id="description" class="form-control" style="height: 100px"></textarea>
                                         </div>
