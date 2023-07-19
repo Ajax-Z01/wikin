@@ -67,9 +67,6 @@
                         </ul>
                         <div class="tab-content pt-2">
                             <div class="tab-pane fade show active profile-overview" id="profile-overview">
-                                <h5 class="card-title">About</h5>
-                                <p class="small fst-italic">Mahasiswa Poltek Nuklir sekarang menjadi admin wikin
-                                    2023</p>
                                 <h5 class="card-title">Profile Details</h5>
                                 <div class="row">
                                     <div class="col-lg-3 col-md-4 label ">Full Name</div>
@@ -101,21 +98,17 @@
 
                             </div>
 
-                            <div class="tab-pane fade profile-edit pt-3" id="profile_edit">
-
+                            <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
                                 <!-- Profile Edit Form -->
                                 <form>
                                     <div class="row mb-3">
-                                        <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile
+                                        <label for="profile_image" class="col-md-4 col-lg-3 col-form-label">Profile
                                             Image</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <img src="{{ asset('/img/naruto.jpg') }}" alt="Profile">
-                                            <div class="pt-2">
-                                                <input class="form-control" type="file" id="imgpemas">
-                                                </>
-                                                <a href="#" class="btn btn-danger btn-sm mt-3"
-                                                    title="Remove my profile image"><i class="bi bi-trash"></i></a>
-                                            </div>
+                                        <div class="pt-2">
+                                            <input class="form-control" type="file" id="profile_image">
+                                            </>
+                                            <a href="#" class="btn btn-danger btn-sm mt-3"
+                                                title="Remove my profile image"><i class="bi bi-trash"></i></a>
                                         </div>
                                     </div>
                                     <div class="row mb-3">
@@ -204,7 +197,7 @@
                             <div class="tab-pane fade pt-3" id="profile-change-password">
                                 <!-- Change Password Form -->
                                 <form>
-
+                                    @csrf
                                     <div class="row mb-3">
                                         <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Current
                                             Password</label>
