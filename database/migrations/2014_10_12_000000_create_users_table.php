@@ -15,11 +15,20 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
+            $table->string('username');
             $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
+            $table->string('email');
             $table->string('password');
-            $table->rememberToken();
+            $table->string('profile_image')->default('/img/default-profile.webp');
+            $table->string('company')->nullable();
+            $table->string('job')->nullable();
+            $table->string('address')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('twitter_profile')->nullable();
+            $table->string('facebook_profile')->nullable();
+            $table->string('instagram_profile')->nullable();
+            $table->string('linkedin_profile')->nullable();
+            $table->enum('type', ['admin', 'user'])->default('user');
             $table->timestamps();
         });
     }

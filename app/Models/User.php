@@ -18,9 +18,20 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
+        'username',
         'name',
         'email',
         'password',
+        'profile_image',
+        'company',
+        'job',
+        'address',
+        'phone',
+        'twitter_profile',
+        'facebook_profile',
+        'instagram_profile',
+        'linkedin_profile',
+        'type',
     ];
 
     /**
@@ -41,4 +52,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function notifications()
+    {
+        return $this->morphMany(Notification::class, 'notifiable');
+    }
 }
