@@ -205,9 +205,9 @@
                                                         <textarea class="form-control" id="message-text"></textarea>
                                                     </div>
                                                     <div class="mb-3">
-                                                        <label for="message-text" class="col-form-label">Isi
+                                                        <label for="contentpemas" class="col-form-label">Isi
                                                             Kegiatan</label>
-                                                        <textarea class="form-control" id="message-text"></textarea>
+                                                        <textarea class="form-control" id="contentpemas" name="contentpemas"></textarea>
                                                     </div>
                                                     <div class="row mb-3">
                                                         <label for="inputNumber" class="col-sm-5 col-form-label">Gambar
