@@ -210,10 +210,10 @@
                                                         <textarea class="form-control" id="contentpemas" name="contentpemas"></textarea>
                                                     </div>
                                                     <div class="row mb-3">
-                                                        <label for="inputNumber" class="col-sm-5 col-form-label">Gambar
+                                                        <label for="imgpemas" class="col-sm-5 col-form-label">Gambar
                                                             Kegiatan </label>
                                                         <div class="col-sm-10">
-                                                            <input class="form-control" type="file" id="imgFile">
+                                                            <input class="form-control" type="file" id="imgpemas">
                                                         </div>
                                                     </div>
                                                 </form>
