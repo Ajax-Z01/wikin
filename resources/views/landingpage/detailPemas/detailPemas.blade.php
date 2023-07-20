@@ -1,11 +1,8 @@
 @include('landingpage.header')
 
 @include('landingpage.navbar')
-
-
 <!-- Content -->
 <main id="main">
-
     <!-- ======= Breadcrumbs ======= -->
     <div class="breadcrumbs">
         <div class="page-header d-flex align-items-center" style="background-image: url('');">
@@ -33,22 +30,16 @@
     <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
         <div class="container" data-aos="fade-up">
-
             <div class="row gy-4 posts-list">
-
                 <div class="col-xl-4 col-md-6">
                     <article>
-
                         <div class="post-img">
                             <img src="assets/img/blog/blog-1.jpg" alt="" class="img-fluid">
                         </div>
-
                         <p class="post-category">Politics</p>
-
                         <h2 class="title">
                             <a href="blog-details.html">Dolorum optio tempore voluptas dignissimos</a>
                         </h2>
-
                         <div class="d-flex align-items-center">
                             <img src="assets/img/blog/blog-author.jpg" alt=""
                                 class="img-fluid post-author-img flex-shrink-0">
@@ -59,23 +50,17 @@
                                 </p>
                             </div>
                         </div>
-
                     </article>
                 </div><!-- End post list item -->
-
                 <div class="col-xl-4 col-md-6">
                     <article>
-
                         <div class="post-img">
                             <img src="assets/img/blog/blog-2.jpg" alt="" class="img-fluid">
                         </div>
-
                         <p class="post-category">Sports</p>
-
                         <h2 class="title">
                             <a href="blog-details.html">Nisi magni odit consequatur autem nulla dolorem</a>
                         </h2>
-
                         <div class="d-flex align-items-center">
                             <img src="assets/img/blog/blog-author-2.jpg" alt=""
                                 class="img-fluid post-author-img flex-shrink-0">
@@ -86,24 +71,18 @@
                                 </p>
                             </div>
                         </div>
-
                     </article>
                 </div><!-- End post list item -->
-
                 <div class="col-xl-4 col-md-6">
                     <article>
-
                         <div class="post-img">
                             <img src="assets/img/blog/blog-3.jpg" alt="" class="img-fluid">
                         </div>
-
                         <p class="post-category">Entertainment</p>
-
                         <h2 class="title">
                             <a href="blog-details.html">Possimus soluta ut id suscipit ea ut in quo quia et
                                 soluta</a>
                         </h2>
-
                         <div class="d-flex align-items-center">
                             <img src="assets/img/blog/blog-author-3.jpg" alt=""
                                 class="img-fluid post-author-img flex-shrink-0">
@@ -114,23 +93,17 @@
                                 </p>
                             </div>
                         </div>
-
                     </article>
                 </div><!-- End post list item -->
-
                 <div class="col-xl-4 col-md-6">
                     <article>
-
                         <div class="post-img">
                             <img src="assets/img/blog/blog-4.jpg" alt="" class="img-fluid">
                         </div>
-
                         <p class="post-category">Sports</p>
-
                         <h2 class="title">
                             <a href="blog-details.html">Non rem rerum nam cum quo minus olor distincti</a>
                         </h2>
-
                         <div class="d-flex align-items-center">
                             <img src="assets/img/blog/blog-author-4.jpg" alt=""
                                 class="img-fluid post-author-img flex-shrink-0">
@@ -141,24 +114,18 @@
                                 </p>
                             </div>
                         </div>
-
                     </article>
                 </div><!-- End post list item -->
-
                 <div class="col-xl-4 col-md-6">
                     <article>
-
                         <div class="post-img">
                             <img src="assets/img/blog/blog-5.jpg" alt="" class="img-fluid">
                         </div>
-
                         <p class="post-category">Politics</p>
-
                         <h2 class="title">
                             <a href="blog-details.html">Accusamus quaerat aliquam qui debitis facilis
                                 consequatur</a>
                         </h2>
-
                         <div class="d-flex align-items-center">
                             <img src="assets/img/blog/blog-author-5.jpg" alt=""
                                 class="img-fluid post-author-img flex-shrink-0">
@@ -169,23 +136,17 @@
                                 </p>
                             </div>
                         </div>
-
                     </article>
                 </div><!-- End post list item -->
-
                 <div class="col-xl-4 col-md-6">
                     <article>
-
                         <div class="post-img">
                             <img src="assets/img/blog/blog-6.jpg" alt="" class="img-fluid">
                         </div>
-
                         <p class="post-category">Entertainment</p>
-
                         <h2 class="title">
                             <a href="blog-details.html">Distinctio provident quibusdam numquam aperiam aut</a>
                         </h2>
-
                         <div class="d-flex align-items-center">
                             <img src="assets/img/blog/blog-author-6.jpg" alt=""
                                 class="img-fluid post-author-img flex-shrink-0">
@@ -196,12 +157,9 @@
                                 </p>
                             </div>
                         </div>
-
                     </article>
                 </div><!-- End post list item -->
-
             </div><!-- End blog posts list -->
-
             <div class="blog-pagination">
                 <ul class="justify-content-center">
                     <li><a href="#">1</a></li>
@@ -209,18 +167,14 @@
                     <li><a href="#">3</a></li>
                 </ul>
             </div><!-- End blog pagination -->
-
         </div>
     </section><!-- End Blog Section -->
-
 </main><!-- End #main -->
 <!-- end Content -->
-
 
 @include('landingpage.footer')
 
 <!-- End Footer -->
-
 <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
         class="bi bi-arrow-up-short"></i></a>
 

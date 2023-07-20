@@ -25,7 +25,7 @@ Route::get('/', [LandingController::class, 'index'])->name('home');
 Route::controller(AuthController::class)->group(function () {
     Route::get('login', 'login')->name('login');
     Route::post('login', 'loginPost')->name('login.post');
-    Route::get('logout', 'logout')->name('logout');
+    Route::post('logout', 'logout')->name('logout');
     Route::get('register', 'register')->name('register');
     Route::post('register', 'registerPost')->name('register.post');
 });

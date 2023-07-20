@@ -190,7 +190,8 @@
 
                 </div><!-- End recent posts list -->
 
-                <div class="text-center mt-4"><button type="button" class="btn btn-outline-secondary">Selengkapnya</button>
+                <div class="text-center mt-4"><a href="{{ route('detailPemas') }}"><button type="button"
+                            class="btn btn-outline-secondary">Selengkapnya</button></a>
                 </div>
             </div>
         </section><!-- End Recent Blog Posts Section -->

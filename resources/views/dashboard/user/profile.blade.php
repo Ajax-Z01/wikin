@@ -70,7 +70,7 @@
                                 <h5 class="card-title">Profile Details</h5>
                                 <div class="row">
                                     <div class="col-lg-3 col-md-4 label ">Full Name</div>
-                                    <div class="col-lg-9 col-md-8">Arfanny Yusuf Habibie</div>
+                                    <div class="col-lg-9 col-md-8">{{ Auth::user()->name }}</div>
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-3 col-md-4 label">Company</div>
@@ -93,7 +93,7 @@
 
                                 <div class="row">
                                     <div class="col-lg-3 col-md-4 label">Email</div>
-                                    <div class="col-lg-9 col-md-8">fanny_poltek.com</div>
+                                    <div class="col-lg-9 col-md-8">{{ Auth::user()->email }}</div>
                                 </div>
 
                             </div>

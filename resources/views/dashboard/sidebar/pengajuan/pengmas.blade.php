@@ -30,51 +30,55 @@
                                 </thead>
                                 <tbody>
                                     @foreach ($formpemas as $pemas)
-                                    <tr>
-                                        <th scope="row"><a href="#">1</a></th>
-                                        <td>{{ htmlentities($pemas->name) }}</td>
-                                        <td>{{ htmlentities($pemas->name_pemas) }}</td>
-                                        <td>{{ htmlentities($pemas->location) }}</td>
-                                        <td><a href="#" class="text-primary">{{ htmlentities($pemas->description) }}</a></td>
-                                        <td><button type="button" class="btn btn-info" data-bs-toggle="modal"
-                                                data-bs-target="#exampleModal">
-                                                <i class="bi bi-cursor">
-                                                </i></button>
-                                            <div class="modal fade" id="exampleModal" tabindex="-1"
-                                                aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <h5 class="modal-title" id="exampleModalLabel">New message</h5>
-                                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                                aria-label="Close"></button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            <form>
-                                                                <div class="mb-3">
-                                                                    <label for="recipient-name"
-                                                                        class="col-form-label">Penerima:</label>
-                                                                    <input type="text" class="form-control"
-                                                                        id="recipient-name">
-                                                                </div>
-                                                                <div class="mb-3">
-                                                                    <label for="message-text" class="col-form-label">Pesan
-                                                                        Balasan:</label>
-                                                                    <textarea class="form-control" id="message-text"></textarea>
-                                                                </div>
-                                                            </form>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary"
-                                                                data-bs-dismiss="modal">Close</button>
-                                                            <button type="button" class="btn btn-primary">Send
-                                                                message</button>
+                                        <tr>
+                                            <th scope="row"><a href="#">1</a></th>
+                                            <td>{{ htmlentities($pemas->name) }}</td>
+                                            <td>{{ htmlentities($pemas->name_pemas) }}</td>
+                                            <td>{{ htmlentities($pemas->location) }}</td>
+                                            <td><a href="#"
+                                                    class="text-primary">{{ htmlentities($pemas->description) }}</a></td>
+                                            <td><button type="button" class="btn btn-info" data-bs-toggle="modal"
+                                                    data-bs-target="#exampleModal">
+                                                    <i class="bi bi-cursor">
+                                                    </i></button>
+                                                <div class="modal fade" id="exampleModal" tabindex="-1"
+                                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLabel">New message
+                                                                </h5>
+                                                                <button type="button" class="btn-close"
+                                                                    data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                {{-- Form Modal Pengmas --}}
+                                                                <form>
+                                                                    <div class="mb-3">
+                                                                        <label for="recipient-name"
+                                                                            class="col-form-label">Penerima:</label>
+                                                                        <input type="text" class="form-control"
+                                                                            id="recipient-name">
+                                                                    </div>
+                                                                    <div class="mb-3">
+                                                                        <label for="message-text"
+                                                                            class="col-form-label">Pesan
+                                                                            Balasan:</label>
+                                                                        <textarea class="form-control" id="message-text"></textarea>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-bs-dismiss="modal">Close</button>
+                                                                <button type="button" class="btn btn-primary">Send
+                                                                    message</button>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                            </td>
+                                        </tr>
                                     @endforeach
                                 </tbody>
                             </table>
@@ -91,8 +95,8 @@
                                     data-bs-toggle="modal" data-bs-target="#pengmas">
                                     <i class="text-light bi bi-plus-square">
                                     </i></button>
-                                <div class="modal fade" id="pengmas" tabindex="-1"
-                                    aria-labelledby="pengabdianMasLabel" aria-hidden="true">
+                                <div class="modal fade" id="pengmas" tabindex="-1" aria-labelledby="pengabdianMasLabel"
+                                    aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
@@ -212,7 +216,6 @@
                                     <td><button type="button" class="btn btn-info" data-bs-toggle="modal"
                                             data-bs-target="#pengabdianMas">
                                             <i class="bi bi-info-circle">
-
                                             </i></button>
                                         <div class="modal fade" id="pengabdianMas" tabindex="-1"
                                             aria-labelledby="pengabdianMasLabel" aria-hidden="true">
@@ -265,7 +268,6 @@
                                     <td><button type="button" class="btn btn-info" data-bs-toggle="modal"
                                             data-bs-target="#pengabdianMas">
                                             <i class="bi bi-info-circle">
-
                                             </i></button>
                                         <div class="modal fade" id="pengabdianMas" tabindex="-1"
                                             aria-labelledby="pengabdianMasLabel" aria-hidden="true">
@@ -318,67 +320,72 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
-                                @if(session('success'))
-                                <div class="" role="alert">
-                                    <strong class="font-bold">Success!</strong>
-                                    <span class="block sm:inline">{{ session('success') }}</span>
-                                </div>
+                                @if (session('success'))
+                                    <div class="alert alert-success" role="alert">
+                                        <strong class="font-bold">Success!</strong>
+                                        <span class="block sm:inline">{{ session('success') }}</span>
+                                    </div>
                                 @elseif(session('unsuccess'))
-                                    <div class="" role="alert">
+                                    <div class="alert alert-danger" role="alert">
                                         <strong class="font-bold">Unsuccess!</strong>
                                         <span class="block sm:inline">{{ session('unsuccess') }}</span>
                                     </div>
                                 @endif
                                 <h5 class="card-title">Formulir Pengajuan Pengabdian Masyarakat</h5>
                                 <!-- General Form Elements -->
-                                <form role="form text-left" action="{{ route('pengmas.store') }}" method="post" enctype="multipart/form-data">
+                                <form role="form text-left" action="{{ route('pengmas.store') }}" method="post"
+                                    enctype="multipart/form-data">
                                     @method('POST')
                                     @csrf
                                     <div class="row mb-3">
                                         <label for="name" class="col-sm-3 col-form-label">Nama</label>
                                         <div class="col-sm-8">
-                                            <input name="name" id="name" type="text" class="form-control">
+                                            <input name="name" id="name" type="text"
+                                                class="form-control @error('name') is-invalid @enderror ">
+                                            @error('name')
+                                                <span class="invalid-feedback">{{ htmlentities($message) }}</span>
+                                            @enderror
                                         </div>
-                                        @error('name')
-                                            <span class="text-red">{{ htmlentities($message) }}</span>
-                                        @enderror
                                     </div>
                                     <div class="row mb-3">
                                         <label for="nik" class="col-sm-3 col-form-label">NIK</label>
                                         <div class="col-sm-8">
-                                            <input name="nik" id="nik" type="text" class="form-control">
+                                            <input name="nik" id="nik" type="text"
+                                                class="form-control @error('nik') is-invalid @enderror">
+                                            @error('nik')
+                                                <span class="invalid-feedback">{{ htmlentities($message) }}</span>
+                                            @enderror
                                         </div>
-                                        @error('nik')
-                                            <span class="text-red">{{ htmlentities($message) }}</span>
-                                        @enderror
                                     </div>
                                     <div class="row mb-3">
                                         <label for="inputEmail" class="col-sm-3 col-form-label">Nama Pengabdian
                                             Masyarakat</label>
                                         <div class="col-sm-8">
                                             <input name="name_pemas" id="name_pemas" type="text"
-                                                class="form-control">
+                                                class="form-control @error('name_pemas') is-invalid @enderror">
+                                            @error('name_pemas')
+                                                <span class="invalid-feedback">{{ htmlentities($message) }}</span>
+                                            @enderror
                                         </div>
-                                        @error('name_pemas')
-                                            <span class="text-red">{{ htmlentities($message) }}</span>
-                                        @enderror
                                     </div>
                                     <div class="row mb-3">
                                         <label for="location" class="col-sm-3 col-form-label">Asal Daerah</label>
                                         <div class="col-sm-8">
-                                            <input name="location" id="location" type="text" class="form-control">
+                                            <input name="location" id="location" type="text"
+                                                class="form-control @error('location') is-invalid @enderror">
+                                            @error('location')
+                                                <span class="invalid-feedback">{{ htmlentities($message) }}</span>
+                                            @enderror
                                         </div>
-                                        @error('location')
-                                            <span class="text-red">{{ htmlentities($message) }}</span>
-                                        @enderror
                                     </div>
                                     <div class="row mb-3">
                                         <label for="description" class="col-sm-3 col-form-label">Deskripsi
                                             Kegiatan</label>
                                         <div class="col-sm-8">
-                                            <textarea name="description" id="description" class="form-control" style="height: 100px"></textarea>
+                                            <textarea name="description" id="description" class="form-control @error('description') is-invalid @enderror"
+                                                style="height: 100px"></textarea>
                                             @error('description')
-                                            <span class="text-red">{{ htmlentities($message) }}</span>
+                                                <span class="invalid-feedback">{{ htmlentities($message) }}</span>
                                             @enderror
                                         </div>
                                     </div>
@@ -391,12 +398,12 @@
                                         <div class=" col-sm-4">
                                         </div>
                                     </div>
-                                </div>
+                            </div>
                             </form><!-- End General Form Elements -->
                         </div>
                     </div>
                 </div>
-            </div><!-- End List Komunitas  -->
+            </div><!-- End List Pengabdian Masyarakay  -->
             </div>
         </section>
     </main><!-- End #main -->

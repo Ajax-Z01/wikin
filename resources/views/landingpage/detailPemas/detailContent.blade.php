@@ -1,7 +1,6 @@
 @include('landingpage.header')
 
 <main id="main">
-
     <!-- ======= Breadcrumbs ======= -->
     <div class="breadcrumbs">
         <div class="page-header d-flex align-items-center" style="background-image: url('');">
@@ -19,30 +18,23 @@
         <nav>
             <div class="container">
                 <ol>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="{{ route('home') }}">Home</a></li>
                     <li>Blog Details</li>
                 </ol>
             </div>
         </nav>
     </div><!-- End Breadcrumbs -->
-
     <!-- ======= Blog Details Section ======= -->
     <section id="blog" class="blog">
         <div class="container" data-aos="fade-up">
-
             <div class="row g-5">
-
                 <div class="col-lg-12">
-
                     <article class="blog-details">
-
                         <div class="post-img justify-content-center">
                             <img src="{{ asset('/img/blog/blog-1.jpg') }}" alt="" class="img-fluid rounded">
                         </div>
-
                         <h2 class="title">Dolorum optio tempore voluptas dignissimos cumque fuga qui quibusdam quia
                         </h2>
-
                         <div class="content">
                             <p>
                                 Similique neque nam consequuntur ad non maxime aliquam quas. Quibusdam animi
@@ -51,14 +43,11 @@
                                 cum et quod quos aut ut et sit sunt. Voluptate porro consequatur assumenda perferendis
                                 dolore.
                             </p>
-
                             <p>
                                 Sit repellat hic cupiditate hic ut nemo. Quis nihil sunt non reiciendis. Sequi in
                                 accusamus harum vel aspernatur. Excepturi numquam nihil cumque odio. Et voluptate
                                 cupiditate.
                             </p>
-
-
                             <p>
                                 Sed quo laboriosam qui architecto. Occaecati repellendus omnis dicta inventore tempore
                                 provident voluptas mollitia aliquid. Id repellendus quia. Asperiores nihil magni dicta
@@ -98,32 +87,19 @@
                                 Alias quia non aliquid. Eos et ea velit. Voluptatem maxime enim omnis ipsa voluptas
                                 incidunt. Nulla sit eaque mollitia nisi asperiores est veniam.
                             </p>
-
                         </div><!-- End post content -->
-
-
                     </article><!-- End blog post -->
-
-
                 </div>
-
             </div>
-
         </div>
     </section><!-- End Blog Details Section -->
-
 </main><!-- End #main -->
-
 <!-- ======= Footer ======= -->
 @include('landingpage.footer')
-
 <!-- End Footer -->
-
 <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
         class="bi bi-arrow-up-short"></i></a>
-
 <div id="preloader"></div>
-
 <!-- Vendor JS Files -->
 <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <script src="{{ asset('vendor/aos/aos.js') }}"></script>
@@ -132,10 +108,8 @@
 <script src="{{ asset('vendor/swiper/swiper-bundle.min.js') }}"></script>
 <script src="{{ asset('vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
 <script src="{{ asset('vendor/php-email-form/validate.js') }}"></script>
-
 <!-- Template Main JS File -->
 <script src="{{ asset('/js/main.js') }}"></script>
-
 </body>
 
 </html>
