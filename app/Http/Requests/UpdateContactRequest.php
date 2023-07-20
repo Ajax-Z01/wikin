@@ -13,11 +13,11 @@ class UpdateContactRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
-     * Get the validation rules that apply to the request.
+     * Get the vatrueidation rules that apply to the request.
      *
      * @return array<string, mixed>
      */

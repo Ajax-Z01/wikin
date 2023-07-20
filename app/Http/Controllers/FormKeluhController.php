@@ -31,7 +31,7 @@ class FormKeluhController extends Controller
 
         $formkeluh = $query->skip(($currentPage - 1) * $formsPerPage)->take($formsPerPage)->get();
 
-        return view('formkeluh', compact('formkeluh', 'totalPages', 'currentPage'));
+        return view('dashboard.sidebar.keluhan.keluhan', compact('formkeluh', 'totalPages', 'currentPage'));
     }
 
     /**
@@ -61,11 +61,11 @@ class FormKeluhController extends Controller
         ]);
 
         $formkeluh = new FormKeluh();
-        $formkeluh->name = $request->name;
-        $formkeluh->nik = $request->nik;
-        $formkeluh->email = $request->email;
-        $formkeluh->location = $request->location;
-        $formkeluh->description = $request->description;
+        $formkeluh->name = $request->input('name');
+        $formkeluh->nik = $request->input('nik');
+        $formkeluh->email = $request->input('email');
+        $formkeluh->location = $request->input('location');
+        $formkeluh->description = $request->input('description');
         $formkeluh->save();
 
         $notification = new Notification();
@@ -73,7 +73,7 @@ class FormKeluhController extends Controller
         $notification->content = 'Pengajuan Formulir Keluhan baru telah dibuat.';
         $notification->save();
 
-        return redirect()->route('formkeluh.create')->with('success', 'Formulir Keluhan berhasil diajukan.');
+        return redirect()->route('keluhan')->with('success', 'Formulir Keluhan berhasil diajukan.');
     }
 
     /**

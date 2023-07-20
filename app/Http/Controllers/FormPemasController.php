@@ -26,12 +26,12 @@ class FormPemasController extends Controller
         // Filter berdasarkan pencarian judul
         if (request()->has('search')) {
             $search = request()->input('search');
-            $query->where('name', 'LIKE', "%$search%")->orWhere('email', 'LIKE', "%$search%")->orWhere('subject', 'LIKE', "%$search%");
+            $query->where('name', 'LIKE', "%$search%")->orWhere('name_pemas', 'LIKE', "%$search%")->orWhere('email', 'LIKE', "%$search%");
         }
 
         $formpemas = $query->skip(($currentPage - 1) * $formsPerPage)->take($formsPerPage)->get();
 
-        return view('formpemas', compact('formpemas', 'totalPages', 'currentPage'));
+        return view('dashboard.sidebar.pengajuan.pengmas', compact('formpemas', 'totalPages', 'currentPage'));
     }
 
     /**
@@ -55,18 +55,16 @@ class FormPemasController extends Controller
         $request->validate([
             'name' => 'required',
             'nik' => 'required',
-            'email' => 'required',
+            'name_pemas' => 'required',
             'location' => 'required',
-            'phone' => 'required',
             'description' => 'required',
         ]);
 
         $formpemas = new FormPemas();
         $formpemas->name = $request->name;
         $formpemas->nik = $request->nik;
-        $formpemas->email = $request->email;
+        $formpemas->name_pemas = $request->name_pemas;
         $formpemas->location = $request->location;
-        $formpemas->phone = $request->phone;
         $formpemas->description = $request->description;
         $formpemas->save();
 

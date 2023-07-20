@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\FormKomun;
+use Illuminate\Support\Str;
 use App\Models\Notification;
 use App\Http\Requests\StoreFormKomunRequest;
 use App\Http\Requests\UpdateFormKomunRequest;
@@ -31,7 +32,7 @@ class FormKomunController extends Controller
 
         $formkomun = $query->skip(($currentPage - 1) * $formsPerPage)->take($formsPerPage)->get();
 
-        return view('formkomun', compact('formkomun', 'totalPages', 'currentPage'));
+        return view('dashboard.sidebar.pengajuan.pengkom', compact('formkomun', 'totalPages', 'currentPage'));
     }
 
     /**
@@ -54,20 +55,24 @@ class FormKomunController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'company_name' => 'required',
+            'comunity_name' => 'required',
             'email' => 'required',
-            'location' => 'required',
             'description' => 'required',
             'logo_image' => 'required',
         ]);
 
         $formkomun = new FormKomun();
-        $formkomun->name = $request->name;
-        $formkomun->company_name = $request->company_name;
-        $formkomun->email = $request->email;
-        $formkomun->location = $request->location;
-        $formkomun->description = $request->description;
-        $formkomun->logo_image = $request->logo_image;
+        $formkomun->name = $request->input('name');
+        $formkomun->comunity_name = $request->input('comunity_name');
+        $formkomun->email = $request->input('email');
+        $formkomun->description = $request->input('description');
+
+        if ($request->hasFile('logo_image')) {
+            $name = Str::slug($request->title) . '.' . $request->logo_image->extension();
+            $request->logo_image->move(public_path('uploads'), $name);
+            $formkomun->logo_image = '/uploads/' . $name;
+        }
+
         $formkomun->save();
 
         $notification = new Notification();
@@ -75,7 +80,7 @@ class FormKomunController extends Controller
         $notification->content = 'Pengajuan Formulir Komunitas baru telah dibuat.';
         $notification->save();
 
-        return redirect()->route('formkomun.create')->with('success', 'Formulir Pengajuan Komunitas berhasil diajukan.');
+        return redirect()->route('pengkom')->with('success', 'Formulir Pengajuan Komunitas berhasil diajukan.');
     }
 
     /**

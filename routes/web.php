@@ -2,8 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FormKeluhController;
+use App\Http\Controllers\FormKomunController;
+use App\Http\Controllers\FormPemasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,13 +34,21 @@ Route::middleware(['IsUser'])->group(function () {
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('detailPemas', [DashboardController::class, 'detailPemas'])->name('detailPemas');
     Route::get('detailContent', [DashboardController::class, 'detailContent'])->name('detailContent');
-    Route::get('keluhan', [DashboardController::class, 'keluhan'])->name('keluhan');
-    Route::get('komunitas', [DashboardController::class, 'komunitas'])->name('komunitas');
     Route::get('landing', [DashboardController::class, 'landing'])->name('landing');
-    Route::get('userdate', [DashboardController::class, 'userdate'])->name('userdate');
-    Route::get('pengkom', [DashboardController::class, 'pengkom'])->name('pengkom');
-    Route::get('pengmas', [DashboardController::class, 'pengmas'])->name('pengmas');
-    Route::post('pengmas/store', [DashboardController::class, 'store'])->name('pengmas.store');
+
+    Route::get('keluhan', [FormKeluhController::class, 'index'])->name('keluhan');
+    Route::post('keluhan/store', [FormKeluhController::class, 'store'])->name('keluhan.store');
+
+    Route::get('komunitas', [DashboardController::class, 'komunitas'])->name('komunitas');
+
+    Route::get('userdate', [UserController::class, 'index'])->name('userdate');
+
+    Route::get('pengkom', [FormKomunController::class, 'index'])->name('pengkom');
+    Route::post('pengkom/store', [FormKomunController::class, 'store'])->name('pengkom.store');
+
+    Route::get('pengmas', [FormPemasController::class, 'index'])->name('pengmas');
+    Route::post('pengmas/store', [FormPemasController::class, 'store'])->name('pengmas.store');
+
     Route::get('kontak', [DashboardController::class, 'kontak'])->name('kontak');
     Route::get('informasi', [DashboardController::class, 'informasi'])->name('informasi');
     Route::get('profile', [DashboardController::class, 'profile'])->name('profile');
