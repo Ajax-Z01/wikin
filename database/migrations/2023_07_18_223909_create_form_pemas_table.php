@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('nik');
             $table->string('name_pemas');
             $table->string('location');
-            $table->string('phone');
             $table->text('description');
             $table->timestamps();
         });

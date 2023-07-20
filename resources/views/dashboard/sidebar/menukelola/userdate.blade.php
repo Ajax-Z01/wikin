@@ -34,10 +34,11 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach ($users as $user)
                                     <tr>
-                                        <th scope="row"><a href="#">1</a></th>
-                                        <td>Singa</td>
-                                        <td><a href="#" class="text-primary">Lorem Ipsum</a></td>
+                                        <th scope="row"><a href="#">{{  $loop->iteration }}</a></th>
+                                        <td>{{ htmlentities($user->username) }}</td>
+                                        <td><a href="#" class="text-primary">{{ htmlentities($user->email) }}</a></td>
                                         <td><button type="button" class="btn btn-info" data-bs-toggle="modal"
                                                 data-bs-target="#exampleModal">
                                                 <i class="bi bi-info-circle">
@@ -54,13 +55,13 @@
                                                                 aria-label="Close"></button>
                                                         </div>
                                                         <div class="modal-body">
-                                                            Nama : Singa
+                                                            Nama : {{ htmlentities($user->name) }}
                                                         </div>
                                                         <div class="modal-body">
-                                                            Username : Arfanny aja
+                                                            Username : {{ htmlentities($user->username) }}
                                                         </div>
                                                         <div class="modal-body">
-                                                            Email : example@gmail.com
+                                                            Email : {{ htmlentities($user->email) }}
                                                         </div>
                                                         <div class="modal-footer">
                                                             <button type="button" class="btn btn-secondary"
@@ -75,88 +76,7 @@
                                             </div>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <th scope="row"><a href="#">2</a></th>
-                                        <td>Harimau</td>
-                                        <td><a href="#" class="text-primary">Lorem Ipsum</a></td>
-                                        <td><button type="button" class="btn btn-info" data-bs-toggle="modal"
-                                                data-bs-target="#exampleModal">
-                                                <i class="bi bi-info-circle">
-
-                                                </i></button>
-                                            <div class="modal fade" id="exampleModal" tabindex="-1"
-                                                aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <h5 class="modal-title" id="exampleModalToggleLabel">Detail
-                                                                Akun</h5>
-                                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                                aria-label="Close"></button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            Nama : Harimau
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            Username : Arfanny aja
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            Email : example@gmail.com
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary"
-                                                                data-bs-dismiss="modal">Close</button>
-                                                            <button class="btn btn-danger"
-                                                                data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"
-                                                                data-bs-dismiss="modal">Hapus
-                                                                Akun</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row"><a href="#">3</a></th>
-                                        <td>Gajah</td>
-                                        <td><a href="#" class="text-primary">Lorem Ipsum</a></td>
-                                        <td><button type="button" class="btn btn-info" data-bs-toggle="modal"
-                                                data-bs-target="#exampleModal">
-                                                <i class="bi bi-info-circle">
-
-                                                </i></button>
-                                            <div class="modal fade" id="exampleModal" tabindex="-1"
-                                                aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <h5 class="modal-title" id="exampleModalToggleLabel">Detail
-                                                                Akun</h5>
-                                                            <button type="button" class="btn-close"
-                                                                data-bs-dismiss="modal" aria-label="Close"></button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            Nama : Gajah
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            Username : Arfanny aja
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            Email : example@gmail.com
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary"
-                                                                data-bs-dismiss="modal">Close</button>
-                                                            <button class="btn btn-danger"
-                                                                data-bs-target="#exampleModalToggle2"
-                                                                data-bs-toggle="modal" data-bs-dismiss="modal">Hapus
-                                                                Akun</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
 

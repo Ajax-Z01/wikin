@@ -21,11 +21,6 @@ class DashboardController extends Controller
         return view('landingpage.detailPemas.detailContent');
     }
 
-    public function keluhan()
-    {
-        return view('dashboard.sidebar.keluhan.keluhan');
-    }
-
     public function komunitas()
     {
         return view('dashboard.sidebar.menukelola.komunitas');
@@ -36,21 +31,6 @@ class DashboardController extends Controller
         return view('dashboard.sidebar.menukelola.landing');
     }
 
-    public function userdate()
-    {
-        return view('dashboard.sidebar.menukelola.userdate');
-    }
-
-    public function pengkom()
-    {
-        return view('dashboard.sidebar.pengajuan.pengkom');
-    }
-
-    public function pengmas()
-    {
-        return view('dashboard.sidebar.pengajuan.pengmas');
-    }
-
     public function kontak()
     {
         return view('dashboard.sidebar.kontak.kontak');
@@ -59,5 +39,10 @@ class DashboardController extends Controller
     public function informasi()
     {
         return view('dashboard.sidebar.informasi.informasi');
+    }
+
+    public function profile()
+    {
+        return view('dashboard.user.profile');
     }
 }
