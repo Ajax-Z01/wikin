@@ -116,8 +116,16 @@ class FormPemasController extends Controller
      * @param  \App\Models\FormPemas  $formPemas
      * @return \Illuminate\Http\Response
      */
-    public function destroy(FormPemas $formPemas)
+    public function destroy($id)
     {
-        //
+        $formpemas = FormPemas::find($id);
+        $formpemas->delete();
+
+        $notification = new Notification();
+        $notification->model()->associate($formpemas); // Menghubungkan dengan model FormPemas
+        $notification->content = 'Formulir Pengabdian Masyarakat telah dihapus.';
+        $notification->save();
+
+        return redirect()->route('posts')->withSuccess('Formulir Pengabdian Masyarakat berhasil dihapus.');
     }
 }

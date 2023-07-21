@@ -116,8 +116,16 @@ class FormKeluhController extends Controller
      * @param  \App\Models\FormKeluh  $formKeluh
      * @return \Illuminate\Http\Response
      */
-    public function destroy(FormKeluh $formKeluh)
+    public function destroy($id)
     {
-        //
+        $formkeluh = FormKeluh::find($id);
+        $formkeluh->delete();
+
+        $notification = new Notification();
+        $notification->model()->associate($formkeluh); // Menghubungkan dengan model FormKeluh
+        $notification->content = 'Formulir Keluhan telah dihapus.';
+        $notification->save();
+
+        return redirect()->route('keluhan')->withSuccess('Formulir Keluhan berhasil dihapus.');
     }
 }

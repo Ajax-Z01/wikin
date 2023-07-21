@@ -66,10 +66,16 @@
                                                         <div class="modal-footer">
                                                             <button type="button" class="btn btn-secondary"
                                                                 data-bs-dismiss="modal">Close</button>
-                                                            <button class="btn btn-danger"
+                                                            <a href="{{ route('userdate.delete', ['id' => $user->id]) }}" onclick="event.preventDefault(); if (confirm('Are you sure you want to delete this user?')) document.getElementById('delete-form-{{ htmlentities($user->id) }}').submit();">
+                                                                <button class="btn btn-danger"
                                                                 data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"
                                                                 data-bs-dismiss="modal">Hapus
                                                                 Akun</button>
+                                                                <form id="delete-form-{{ htmlentities($user->id) }}" action="{{ route('userdate.delete', ['id' => $user->id]) }}" method="POST" style="display: none;">
+                                                                    @csrf
+                                                                    @method('DELETE')
+                                                                </form>
+                                                            </a>
                                                         </div>
                                                     </div>
                                                 </div>

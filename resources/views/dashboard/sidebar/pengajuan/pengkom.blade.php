@@ -102,113 +102,82 @@
 
                         <!-- General Form Elements -->
                         <form role="form text-left" action="{{ route('pengkom.store') }}" method="post"
-                            enctype="multipart/form-data>
+                        enctype="multipart/form-data">
                             @method('POST')
                             @csrf
-                            <div class="row
-                            mb-3">
-                            <label for="name" class="col-sm-3 col-form-label">Nama</label>
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control @error('name') is-invalid @enderror "
-                                    id="name" name="name">
-                                @error('name')
-                                    <span class="invalid-feedback">{{ htmlentities($message) }}</span>
-                                @enderror
+                            <div class="row mb-3">
+                                <label for="name" class="col-sm-3 col-form-label">Nama</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name">
+                                    @error('name')
+                                        <span class="invalid-feedback">{{ htmlentities($message) }}</span>
+                                    @enderror
+                                </div>
                             </div>
+                            <div class="row mb-3">
+                                <label for="comunity_name" class="col-sm-3 col-form-label">Nama Komunitas</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control @error('comunity_name') is-invalid @enderror"
+                                        id="comunity_name" name="comunity_name">
+                                    @error('comunity_name')
+                                        <span class="invalid-feedback">{{ htmlentities($message) }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="email" class="col-sm-3 col-form-label">Email</label>
+                                <div class="col-sm-8">
+                                    <input type="email" class="form-control @error('email') is-invalid @enderror" id="email"
+                                        name="email">
+                                    @error('email')
+                                        <span class="invalid-feedback">{{ htmlentities($message) }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="description" class="col-sm-3 col-form-label">Deskripsi</label>
+                                <div class="col-sm-8">
+                                    <textarea class="form-control @error('description') is-invalid @enderror" style="height: 100px" id="description"
+                                        name="description"></textarea>
+                                    @error('description')
+                                        <span class="invalid-feedback">{{ htmlentities($message) }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="logo_image" class="col-sm-3 col-form-label">Logo Upload</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control @error('logo_image') is-invalid @enderror" type="file"
+                                        id="logo_image" name="logo_image">
+                                    @error('logo_image')
+                                        <span class="invalid-feedback">{{ htmlentities($message) }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-sm-8">
+                                    <button type="submit" class="btn btn-primary">Submit Form</button>
+                                </div>
+                            </div>
+                        </form><!-- End General Form Elements -->
                     </div>
-                    <div class="row mb-3">
-                        <label for="comunity_name" class="col-sm-3 col-form-label">Nama Komunitas</label>
-                        <div class="col-sm-8">
-                            <input type="text" class="form-control @error('comunity_name') is-invalid @enderror"
-                                id="comunity_name" name="comunity_name">
-                            @error('comunity_name')
-                                <span class="invalid-feedback">{{ htmlentities($message) }}</span>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <label for="email" class="col-sm-3 col-form-label">Email</label>
-                        <div class="col-sm-8">
-                            <input type="email" class="form-control @error('email') is-invalid @enderror" id="email"
-                                name="email">
-                            @error('email')
-                                <span class="invalid-feedback">{{ htmlentities($message) }}</span>
-                            @enderror
-                        </div>
-                    </div>
-
-                    <div class="row mb-3">
-                        <label for="description" class="col-sm-3 col-form-label">Deskripsi</label>
-                        <div class="col-sm-8">
-                            <textarea class="form-control @error('description') is-invalid @enderror" style="height: 100px" id="description"
-                                name="description"></textarea>
-                            @error('description')
-                                <span class="invalid-feedback">{{ htmlentities($message) }}</span>
-                            @enderror
-                        </div>
-                    </div>
-
-                    <div class="row mb-3">
-                        <label for="logo_image" class="col-sm-3 col-form-label">Logo Upload</label>
-                        <div class="col-sm-8">
-                            <input class="form-control @error('logo_image') is-invalid @enderror" type="file"
-                                id="logo_image" name="logo_image">
-                            @error('logo_image')
-                                <span class="invalid-feedback">{{ htmlentities($message) }}</span>
-                            @enderror
-                        </div>
-                    </div>
-
-                    <div class="row mb-3">
-                        <div class="col-sm-8">
-                            <button type="submit" class="btn btn-primary">Submit Form</button>
-                        </div>
-                    </div>
-
-                    </form><!-- End General Form Elements -->
-
                 </div>
             </div>
             </div>
             <div class="container text-center">
                 <h5 class="card-title">Daftar Komunitas</h5>
                 <div class="row">
+                    @foreach ($formkomun as $komun)
                     <div class="col">
                         <div class="card">
                             <img src="{{ asset('/img/card.jpg') }}" class="card-img-top" alt="...">
                             <div class="card-body">
-                                <h5 class="card-title">Bunga</h5>
-                                <p class="card-text">Komunitas Energi <br>Kontak :asdf@gmail</p>
+                                <h5 class="card-title">{{ htmlentities($komun->name) }}</h5>
+                                <p class="card-text">{{ htmlentities($komun->comunity_name) }}<br>Kontak: {{ htmlentities($komun->email) }}</p>
                             </div>
                         </div><!-- End Card with an image on top -->
                     </div>
-                    <div class="col">
-                        <div class="card">
-                            <img src="{{ asset('/img/card.jpg') }}" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Bunga</h5>
-                                <p class="card-text">Komunitas Pangan <br>Kontak :asdf@gmail</p>
-                            </div>
-                        </div><!-- End Card with an image on top -->
-                    </div>
-                    <div class="col">
-                        <div class="card">
-                            <img src="{{ asset('/img/card.jpg') }}" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Bunga</h5>
-                                <p class="card-text">Komunitas Pangan <br>Kontak :asdf@gmail</p>
-                            </div>
-                        </div><!-- End Card with an image on top -->
-                    </div>
-                    <div class="col">
-                        <div class="card">
-                            <img src="{{ asset('/img/card.jpg') }}" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Bunga</h5>
-                                <p class="card-text">Komunitas Pangan <br>Kontak :asdf@gmail</p>
-                            </div>
-                        </div><!-- End Card with an image on top -->
-                    </div>
+                    @endforeach
                 </div>
             </div>
             </div>
