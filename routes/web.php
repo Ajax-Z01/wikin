@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\DashboardController;
@@ -34,7 +35,9 @@ Route::middleware(['IsUser'])->group(function () {
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('detailPemas', [DashboardController::class, 'detailPemas'])->name('detailPemas');
     Route::get('detailContent', [DashboardController::class, 'detailContent'])->name('detailContent');
+
     Route::get('landing', [DashboardController::class, 'landing'])->name('landing');
+    Route::post('landing/store', [LandingController::class, 'store'])->name('landing.store');
 
     Route::get('keluhan', [FormKeluhController::class, 'index'])->name('keluhan');
     Route::post('keluhan/store', [FormKeluhController::class, 'store'])->name('keluhan.store');
@@ -42,6 +45,7 @@ Route::middleware(['IsUser'])->group(function () {
     Route::get('komunitas', [DashboardController::class, 'komunitas'])->name('komunitas');
 
     Route::get('userdate', [UserController::class, 'index'])->name('userdate');
+    Route::delete('userdate/{id}/delete', [UserController::class, 'destroy'])->whereNumber('id')->name('userdate.delete');
 
     Route::get('pengkom', [FormKomunController::class, 'index'])->name('pengkom');
     Route::post('pengkom/store', [FormKomunController::class, 'store'])->name('pengkom.store');
@@ -50,6 +54,9 @@ Route::middleware(['IsUser'])->group(function () {
     Route::post('pengmas/store', [FormPemasController::class, 'store'])->name('pengmas.store');
 
     Route::get('kontak', [DashboardController::class, 'kontak'])->name('kontak');
+    Route::post('kontak/store', [ContactController::class, 'store'])->name('kontak.store');
+
     Route::get('informasi', [DashboardController::class, 'informasi'])->name('informasi');
+
     Route::get('profile', [DashboardController::class, 'profile'])->name('profile');
 });

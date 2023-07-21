@@ -2,20 +2,17 @@
 
 @section('content')
     <main id="main" class="main">
-
         <div class="pagetitle">
             <h1>Dashboard</h1>
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
                     <li class="breadcrumb-item active">Dashboard</li>
                 </ol>
             </nav>
         </div><!-- End Page Title -->
-
         <section class="section dashboard">
             <div class="row">
-
                 <!-- Left side columns -->
                 <div class="col-lg-8">
                     <div class="row">
@@ -30,7 +27,6 @@
                                 </div>
                             </div>
                         </div><!-- End Customers Card -->
-
                         <!-- User -->
                         <div class="col-xxl-4 col-md-6">
                             <div class="card info-card sales-card">
@@ -42,7 +38,8 @@
                                             <i class="bi bi-person"></i>
                                         </div>
                                         <div class="ps-3">
-                                            <h6>300</h6>
+                                            <h6>{{ htmlentities($totalUsers) }}</h6>
+                                            <span class="text-success small pt-1 fw-bold">+ {{ htmlentities($newUsersCount) }}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -59,7 +56,8 @@
                                             <i class="bi bi-journal-check"></i>
                                         </div>
                                         <div class="ps-3">
-                                            <h6>20</h6>
+                                            <h6>{{ htmlentities($totalPemas) }}</h6>
+                                            <span class="text-success small pt-1 fw-bold">+ {{ htmlentities($newPemasCount) }}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -76,7 +74,8 @@
                                             <i class="bi bi-diagram-3"></i>
                                         </div>
                                         <div class="ps-3">
-                                            <h6>25</h6>
+                                            <h6>{{ htmlentities($totalKomun) }}</h6>
+                                            <span class="text-success small pt-1 fw-bold">+ {{ htmlentities($newKomunCount) }}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -93,7 +92,8 @@
                                             <i class="bi bi-envelope-open"></i>
                                         </div>
                                         <div class="ps-3">
-                                            <h6>50</h6>
+                                            <h6>{{ htmlentities($totalKeluh) }}</h6>
+                                            <span class="text-success small pt-1 fw-bold">+ {{ htmlentities($newKeluhCount) }}</span>
                                         </div>
                                     </div>
                                 </div>

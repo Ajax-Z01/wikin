@@ -68,7 +68,7 @@ class FormKomunController extends Controller
         $formkomun->description = $request->input('description');
 
         if ($request->hasFile('logo_image')) {
-            $name = Str::slug($request->title) . '.' . $request->logo_image->extension();
+            $name = Str::slug($request->name) . '.' . $request->logo_image->extension();
             $request->logo_image->move(public_path('uploads'), $name);
             $formkomun->logo_image = '/uploads/' . $name;
         }
@@ -123,8 +123,17 @@ class FormKomunController extends Controller
      * @param  \App\Models\FormKomun  $formKomun
      * @return \Illuminate\Http\Response
      */
-    public function destroy(FormKomun $formKomun)
+    public function destroy($id)
     {
-        //
+        $formkomun = FormKomun::find($id);
+        unlink(public_path($formkomun->logo_image)); // Menghapus gambar dari folder public/uploads
+        $formkomun->delete();
+
+        $notification = new Notification();
+        $notification->model()->associate($formkomun); // Menghubungkan dengan model FormKomun
+        $notification->content = 'Formulir Komunitas baru telah dihapus.';
+        $notification->save();
+
+        return redirect()->route('pengkom')->withSuccess('Formulir Komunitas berhasil dihapus.');
     }
 }

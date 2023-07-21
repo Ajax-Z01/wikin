@@ -106,80 +106,72 @@
                             <h5 class="card-title">Formulir Keluhan Kenukliran</h5>
 
                             <!-- General Form Elements -->
-                            <form role="form text-left" action="{{ route('keluhan.store') }}" method="post"
-                                enctype="multipart/form-data>
+                            <form role="form text-left" action="{{ route('pengkom.store') }}" method="post" enctype="multipart/form-data">
                                 @method('POST')
                                 @csrf
-                                <div class="row
-                                mb-3">
-                                <label for="name" class="col-sm-3 col-form-label">Nama</label>
-                                <div class="col-sm-8">
-                                    <input type="name" name="name" id="name"
-                                        class="form-control @error('name') is-invalid @enderror">
-                                    @error('name')
-                                        <span class="invalid-feedback">{{ htmlentities($message) }}</span>
-                                    @enderror
+                                <div class="row mb-3">
+                                    <label for="name" class="col-sm-3 col-form-label">Nama</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name">
+                                        @error('name')
+                                            <span class="invalid-feedback">{{ htmlentities($message) }}</span>
+                                        @enderror
+                                    </div>
                                 </div>
+                                <div class="row mb-3">
+                                    <label for="nik" class="col-sm-3 col-form-label">NIK</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control @error('nik') is-invalid @enderror" name="nik"
+                                            id="nik">
+                                        @error('nik')
+                                            <span class="invalid-feedback">{{ htmlentities($message) }}</span>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="email" class="col-sm-3 col-form-label">Email</label>
+                                    <div class="col-sm-8">
+                                        <input type="email" class="form-control @error('email') is-invalid @enderror"
+                                            name="email" id="email">
+                                        @error('email')
+                                            <span class="invalid-feedback">{{ htmlentities($message) }}</span>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="location" class="col-sm-3 col-form-label">Asal Daerah</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control @error('location') is-invalid @enderror"
+                                            name="location" id="location">
+                                        @error('location')
+                                            <span class="invalid-feedback">{{ htmlentities($message) }}</span>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="description" class="col-sm-3 col-form-label">Deskripsi<br>*Note : Apa yang dirasakan</label>
+                                    <div class="col-sm-8">
+                                        <textarea class="form-control @error('description') is-invalid @enderror" style="height: 100px" name="description"
+                                            id="description"></textarea>
+                                        @error('description')
+                                            <span class="invalid-feedback">{{ htmlentities($message) }}</span>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="row mb-3 justify-content-center">
+                                    <div class=" col-sm-4">
+                                    </div>
+                                    <div class=" col-sm-4">
+                                        <button type="submit" class="btn btn-primary">Submit Form</button>
+                                    </div>
+                                    <div class=" col-sm-4">
+                                    </div>
+                                </div>
+                            </form><!-- End General Form Elements -->
                         </div>
-                        <div class="row mb-3">
-                            <label for="nik" class="col-sm-3 col-form-label">NIK</label>
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control @error('nik') is-invalid @enderror" name="nik"
-                                    id="nik">
-                                @error('nik')
-                                    <span class="invalid-feedback">{{ htmlentities($message) }}</span>
-                                @enderror
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <label for="email" class="col-sm-3 col-form-label">Email</label>
-                            <div class="col-sm-8">
-                                <input type="email" class="form-control @error('email') is-invalid @enderror"
-                                    name="email" id="email">
-                                @error('email')
-                                    <span class="invalid-feedback">{{ htmlentities($message) }}</span>
-                                @enderror
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <label for="location" class="col-sm-3 col-form-label">Asal Daerah</label>
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control @error('location') is-invalid @enderror"
-                                    name="location" id="location">
-                                @error('location')
-                                    <span class="invalid-feedback">{{ htmlentities($message) }}</span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="description" class="col-sm-3 col-form-label">Deskripsi<br>*Note : Apa yang
-                                dirasakan</label>
-                            <div class="col-sm-8">
-                                <textarea class="form-control @error('description') is-invalid @enderror" style="height: 100px" name="description"
-                                    id="description"></textarea>
-                                @error('description')
-                                    <span class="invalid-feedback">{{ htmlentities($message) }}</span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3 justify-content-center">
-                            <div class=" col-sm-4">
-                            </div>
-                            <div class=" col-sm-4">
-                                <button type="submit" class="btn btn-primary">Submit Form</button>
-                            </div>
-                            <div class=" col-sm-4">
-                            </div>
-                        </div>
-                        </form><!-- End General Form Elements -->
                     </div>
-
-
                 </div>
             </div>
-
             </div>
             </div>
         </section>
