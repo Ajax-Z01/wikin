@@ -398,8 +398,8 @@
                                         <div class=" col-sm-4">
                                         </div>
                                     </div>
+                                </form><!-- End General Form Elements -->
                             </div>
-                            </form><!-- End General Form Elements -->
                         </div>
                     </div>
                 </div>

@@ -45,37 +45,7 @@ class UserController extends Controller
 
     public function update(Request $request, $id)
     {
-        // $rules = [
-        //     'type' => 'required',
-        //     'status' => 'required'
-        // ];
-
-        // $messages = [
-        //     'type.required' => 'The type field is required.',
-        //     'status.required' => 'The status field is required.'
-        // ];
-
-        // $validator = Validator::make($request->all(), $rules, $messages);
-
-        // if ($validator->fails()) {
-        //     return redirect()->back()->withErrors($validator)->withInput();
-        // }
-
-        // $user = User::find($id);
-        // $user->type = $request->type;
-        // $user->status = $request->status;
-        // if ($user->status == 'approved') {
-        //     // Kirim email notifikasi bahwa akun telah diapprove
-        //     Mail::to($user->email)->send(new AccountApproved());
-        // }
-        // $user->save();
-
-        // $notification = new Notification();
-        // $notification->model()->associate($user); // Menghubungkan dengan model Post
-        // $notification->content = 'has been updated.';
-        // $notification->save();
-
-        // return redirect()->route('users')->withSuccess('User updated successfully.');
+        //
     }
 
 

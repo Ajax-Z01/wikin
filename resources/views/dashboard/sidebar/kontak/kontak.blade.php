@@ -48,22 +48,33 @@
                 </div>
                 <div class="col-xl-6">
                     <div class="card p-4">
-                        <form action="forms/contact.php" method="post" class="php-email-form">
+                        @if (session('success'))
+                        <div class="alert alert-success" role="alert">
+                            <strong class="font-bold">Success!</strong>
+                            <span class="block sm:inline">{{ session('success') }}</span>
+                        </div>
+                        @elseif(session('unsuccess'))
+                            <div class="alert alert-danger" role="alert">
+                                <strong class="font-bold">Unsuccess!</strong>
+                                <span class="block sm:inline">{{ session('unsuccess') }}</span>
+                            </div>
+                        @endif
+                        <form role="form text-left" action="{{ route('kontak.store') }}" method="post"
+                        enctype="multipart/form-data">
+                        @method('POST')
+                        @csrf
                             <div class="row gy-4">
                                 <div class="col-md-6">
-                                    <input type="text" name="name" class="form-control" placeholder="Your Name"
-                                        required>
+                                    <input type="text" name="name" id="name" class="form-control" placeholder="Your Name" required>
                                 </div>
                                 <div class="col-md-6 ">
-                                    <input type="email" class="form-control" name="email" placeholder="Your Email"
-                                        required>
+                                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
                                 </div>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" name="subject" placeholder="Subject"
-                                        required>
+                                    <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
                                 </div>
                                 <div class="col-md-12">
-                                    <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
+                                    <textarea class="form-control" name="message" id="message" rows="6" placeholder="Message" required></textarea>
                                 </div>
                                 <div class="col-md-12 text-center">
                                     <div class="loading">Loading</div>
