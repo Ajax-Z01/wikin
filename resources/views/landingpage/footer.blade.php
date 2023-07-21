@@ -15,7 +15,7 @@
         </div>
 
         <div class="copyright">
-            &copy; Copyright <strong><span>Impact</span></strong>. All Rights Reserved
+            &copy; Copyright <strong><span>Wikin Dev</span></strong>. All Rights Reserved
         </div>
         <div class="credits">
             <!-- All the links in the footer should remain intact. -->

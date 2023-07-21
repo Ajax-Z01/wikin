@@ -6,7 +6,7 @@
         <div class="page-header d-flex align-items-center" style="background-image: url('');">
             <div class="container position-relative">
                 <div class="row d-flex justify-content-center">
-                    <div class="col-lg-6 text-center">
+                    <div class="col-lg-8 text-center">
                         <h2>Pengabdian Masyarakat</h2>
                         <p>Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas
                             consequatur ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione
@@ -19,6 +19,7 @@
             <div class="container">
                 <ol>
                     <li><a href="{{ route('home') }}">Home</a></li>
+                    <li><a href="{{ route('detailPemas') }}">Blog</a></li>
                     <li>Blog Details</li>
                 </ol>
             </div>
@@ -27,8 +28,8 @@
     <!-- ======= Blog Details Section ======= -->
     <section id="blog" class="blog">
         <div class="container" data-aos="fade-up">
-            <div class="row g-5">
-                <div class="col-lg-12">
+            <div class="row">
+                <div class="col-lg-8 justify-content-center">
                     <article class="blog-details">
                         <div class="post-img justify-content-center">
                             <img src="{{ asset('/img/blog/blog-1.jpg') }}" alt="" class="img-fluid rounded">
