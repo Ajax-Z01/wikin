@@ -14,8 +14,8 @@
 
         <section class="section">
             <div class="row">
+                @if (Auth::user()->type == 'admin')
                 <div class="col-lg-12">
-
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Pesan Masuk</span></h5>
@@ -84,12 +84,8 @@
                         </div>
                     </div>
                 </div>
-
-            </div>
-            </div>
-            <div class="row">
+                @elseif (Auth::user()->type == 'user')
                 <div class="col-lg-12">
-
                     <div class="card">
                         <div class="card-body">
                             @if (session('success'))
@@ -171,8 +167,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            </div>
+                @endif
             </div>
         </section>
     </main><!-- End #main -->

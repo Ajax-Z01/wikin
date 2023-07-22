@@ -29,6 +29,7 @@ return new class extends Migration
             $table->string('instagram_profile')->nullable();
             $table->string('linkedin_profile')->nullable();
             $table->enum('type', ['admin', 'user'])->default('user');
+            $table->enum('status', ['active', 'inactive'])->default('active');
             $table->timestamps();
         });
     }

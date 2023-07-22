@@ -26,16 +26,6 @@ class DashboardController extends Controller
         return view('dashboard.index', compact('totalUsers', 'totalPemas', 'totalKeluh', 'totalKomun', 'newUsersCount', 'newPemasCount', 'newKeluhCount', 'newKomunCount'));
     }
 
-    public function detailPemas()
-    {
-        return view('landingpage.detailPemas.detailPemas');
-    }
-
-    public function detailContent()
-    {
-        return view('landingpage.detailPemas.detailContent');
-    }
-
     public function komunitas()
     {
         return view('dashboard.sidebar.menukelola.komunitas');

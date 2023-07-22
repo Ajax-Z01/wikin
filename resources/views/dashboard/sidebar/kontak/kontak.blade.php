@@ -59,7 +59,7 @@
                                 <span class="block sm:inline">{{ session('unsuccess') }}</span>
                             </div>
                         @endif
-                        <form role="form text-left" action="{{ route('kontak.store') }}" method="post"
+                        <form class="php-email-form" role="form text-left" action="{{ route('kontak.store') }}" method="post"
                         enctype="multipart/form-data">
                         @method('POST')
                         @csrf
