@@ -1,10 +1,13 @@
 <?php
 
+use App\Models\Pengmas;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\ContactController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\KomunController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\LandingController;
+use App\Http\Controllers\PengmasController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FormKeluhController;
 use App\Http\Controllers\FormKomunController;
@@ -42,16 +45,18 @@ Route::middleware(['IsUser'])->group(function () {
     Route::get('keluhan', [FormKeluhController::class, 'index'])->name('keluhan');
     Route::post('keluhan/store', [FormKeluhController::class, 'store'])->name('keluhan.store');
 
-    Route::get('komunitas', [DashboardController::class, 'komunitas'])->name('komunitas');
+    Route::get('komunitas', [KomunController::class, 'komunitas'])->name('komunitas');
+    Route::post('komunitas/store', [KomunController::class, 'store'])->name('komunitas.store');
 
     Route::get('userdate', [UserController::class, 'index'])->name('userdate');
     Route::delete('userdate/{id}/delete', [UserController::class, 'destroy'])->whereNumber('id')->name('userdate.delete');
 
-    Route::get('pengkom', [FormKomunController::class, 'index'])->name('pengkom');
+    Route::get('pengkom', [KomunController::class, 'index'])->name('pengkom');
     Route::post('pengkom/store', [FormKomunController::class, 'store'])->name('pengkom.store');
 
     Route::get('pengmas', [FormPemasController::class, 'index'])->name('pengmas');
-    Route::post('pengmas/store', [FormPemasController::class, 'store'])->name('pengmas.store');
+    Route::post('pengmas/store', [PengmasController::class, 'store'])->name('pengmas.store');
+    Route::post('pemas/store', [FormPemasController::class, 'store'])->name('pemas.store');
 
     Route::get('kontak', [DashboardController::class, 'kontak'])->name('kontak');
     Route::post('kontak/store', [ContactController::class, 'store'])->name('kontak.store');
@@ -59,4 +64,8 @@ Route::middleware(['IsUser'])->group(function () {
     Route::get('informasi', [DashboardController::class, 'informasi'])->name('informasi');
 
     Route::get('profile', [DashboardController::class, 'profile'])->name('profile');
+});
+
+Route::middleware(['IsAdmin'])->group(function () {
+    Route::get('komun', [FormKomunController::class, 'index'])->name('komun');
 });

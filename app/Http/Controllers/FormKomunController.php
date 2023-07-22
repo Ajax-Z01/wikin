@@ -32,7 +32,7 @@ class FormKomunController extends Controller
 
         $formkomun = $query->skip(($currentPage - 1) * $formsPerPage)->take($formsPerPage)->get();
 
-        return view('dashboard.sidebar.pengajuan.pengkom', compact('formkomun', 'totalPages', 'currentPage'));
+        return view('dashboard.sidebar.pengajuan.pengkom-admin', compact('formkomun', 'totalPages', 'currentPage'));
     }
 
     /**
@@ -58,7 +58,7 @@ class FormKomunController extends Controller
             'comunity_name' => 'required',
             'email' => 'required',
             'description' => 'required',
-            'logo_image' => 'required',
+            'logo_image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
         $formkomun = new FormKomun();

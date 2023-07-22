@@ -31,7 +31,7 @@
                                 <tbody>
                                     @foreach ($formpemas as $pemas)
                                         <tr>
-                                            <th scope="row"><a href="#">1</a></th>
+                                            <th scope="row"><a href="#">{{ $loop->iteration }}</a></th>
                                             <td>{{ htmlentities($pemas->name) }}</td>
                                             <td>{{ htmlentities($pemas->name_pemas) }}</td>
                                             <td>{{ htmlentities($pemas->location) }}</td>
@@ -105,38 +105,55 @@
                                                     aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
-                                                <form>
+                                                <form role="form text-left" action="{{ route('pengmas.store') }}" method="post" enctype="multipart/form-data">
+                                                    @method('POST')
+                                                    @csrf
                                                     <div class="mb-3">
-                                                        <label for="recipient-name" class="col-form-label">Nama
+                                                        <label for="name" class="col-form-label">Nama
                                                             Kegiatan</label>
-                                                        <input type="text" class="form-control" id="recipient-name">
+                                                        <input type="text" class="form-control" name="name" id="name">
+                                                        @error('name')
+                                                            <span class="invalid-feedback">{{ htmlentities($message) }}</span>
+                                                        @enderror
                                                     </div>
                                                     <div class="mb-3">
-                                                        <label for="recipient-name" class="col-form-label">Lokasi</label>
-                                                        <input type="text" class="form-control" id="recipient-name">
+                                                        <label for="location" class="col-form-label">Lokasi</label>
+                                                        <input type="text" class="form-control" name="location" id="location">
+                                                        @error('location')
+                                                            <span class="invalid-feedback">{{ htmlentities($message) }}</span>
+                                                        @enderror
                                                     </div>
                                                     <div class="mb-3">
-                                                        <label for="message-text" class="col-form-label">Deskripsi</label>
-                                                        <textarea class="form-control" id="message-text"></textarea>
+                                                        <label for="description" class="col-form-label">Deskripsi</label>
+                                                        <textarea class="form-control" name="description" id="description"></textarea>
+                                                        @error('description')
+                                                            <span class="invalid-feedback">{{ htmlentities($message) }}</span>
+                                                        @enderror
                                                     </div>
                                                     <div class="mb-3">
                                                         <label for="contentpemas" class="col-form-label">Isi
                                                             Kegiatan</label>
-                                                        <textarea class="form-control" id="contentpemas" name="contentpemas"></textarea>
+                                                        <textarea class="form-control" id="contentpemas" name="content"></textarea>
+                                                        @error('content')
+                                                            <span class="invalid-feedback">{{ htmlentities($message) }}</span>
+                                                        @enderror
                                                     </div>
                                                     <div class="row mb-3">
-                                                        <label for="imgpemas" class="col-sm-5 col-form-label">Gambar
-                                                            Kegiatan </label>
                                                         <div class="col-sm-10">
-                                                            <input class="form-control" type="file" id="imgpemas">
+                                                            <label for="image" class="col-sm-5 col-form-label">Gambar
+                                                            Kegiatan </label>
+                                                            <input class="form-control" type="file" name="image" id="image" accept="image/*">
+                                                            @error('image')
+                                                                <span class="invalid-feedback">{{ htmlentities($message) }}</span>
+                                                            @enderror
                                                         </div>
                                                     </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary"
+                                                        data-bs-dismiss="modal">Close</button>
+                                                        <button type="submit" class="btn btn-primary">Send message</button>
+                                                    </div>
                                                 </form>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary"
-                                                    data-bs-dismiss="modal">Close</button>
-                                                <button type="button" class="btn btn-primary">Send message</button>
                                             </div>
                                         </div>
                                     </div>
@@ -314,8 +331,8 @@
                             </tbody>
                         </table>
                     </div>
-                    <!-- Formulir Pengmas -->
                 </div>
+                <!-- Formulir Pengmas -->
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="card">
@@ -333,7 +350,7 @@
                                 @endif
                                 <h5 class="card-title">Formulir Pengajuan Pengabdian Masyarakat</h5>
                                 <!-- General Form Elements -->
-                                <form role="form text-left" action="{{ route('pengmas.store') }}" method="post"
+                                <form role="form text-left" action="{{ route('pemas.store') }}" method="post"
                                     enctype="multipart/form-data">
                                     @method('POST')
                                     @csrf
@@ -404,7 +421,6 @@
                     </div>
                 </div>
             </div><!-- End List Pengabdian Masyarakay  -->
-            </div>
         </section>
     </main><!-- End #main -->
     <!-- End Main Content -->
