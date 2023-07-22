@@ -12,6 +12,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FormKeluhController;
 use App\Http\Controllers\FormKomunController;
 use App\Http\Controllers\FormPemasController;
+use App\Models\Landing;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,10 @@ use App\Http\Controllers\FormPemasController;
 
 Route::get('/', [LandingController::class, 'index'])->name('home');
 
+Route::get('detailPemas', [LandingController::class, 'detailPemas'])->name('detailPemas');
+
+Route::get('/detailPemas/{slug}', [LandingController::class, 'detail'])->name('detail');
+
 Route::controller(AuthController::class)->group(function () {
     Route::get('login', 'login')->name('login');
     Route::post('login', 'loginPost')->name('login.post');
@@ -34,10 +39,8 @@ Route::controller(AuthController::class)->group(function () {
     Route::post('register', 'registerPost')->name('register.post');
 });
 
-Route::middleware(['IsUser'])->group(function () {
+Route::middleware(['IsActive'])->group(function () {
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
-    Route::get('detailPemas', [DashboardController::class, 'detailPemas'])->name('detailPemas');
-    Route::get('detailContent', [DashboardController::class, 'detailContent'])->name('detailContent');
 
     Route::get('landing', [DashboardController::class, 'landing'])->name('landing');
     Route::post('landing/store', [LandingController::class, 'store'])->name('landing.store');
@@ -54,7 +57,7 @@ Route::middleware(['IsUser'])->group(function () {
     Route::get('pengkom', [KomunController::class, 'index'])->name('pengkom');
     Route::post('pengkom/store', [FormKomunController::class, 'store'])->name('pengkom.store');
 
-    Route::get('pengmas', [FormPemasController::class, 'index'])->name('pengmas');
+    Route::get('pengmas', [PengmasController::class, 'index'])->name('pengmas');
     Route::post('pengmas/store', [PengmasController::class, 'store'])->name('pengmas.store');
     Route::post('pemas/store', [FormPemasController::class, 'store'])->name('pemas.store');
 
@@ -66,6 +69,6 @@ Route::middleware(['IsUser'])->group(function () {
     Route::get('profile', [DashboardController::class, 'profile'])->name('profile');
 });
 
-Route::middleware(['IsAdmin'])->group(function () {
+Route::middleware(['IsAdmin', 'IsActive'])->group(function () {
     Route::get('komun', [FormKomunController::class, 'index'])->name('komun');
 });

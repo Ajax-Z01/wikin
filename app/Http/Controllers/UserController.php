@@ -81,7 +81,6 @@ class UserController extends Controller
         $user = User::findOrFail($id);
 
         $validator = Validator::make($request->all(), [
-            'username' => 'required|min:5|max:20|alpha_dash',
             'name' => 'required|min:5|max:50|regex:/^[a-zA-Z\s]+$/',
             'mobile' => 'nullable|regex:/^[+0-9\s]+$/|max:20',
             'location' => 'nullable|string|max:255',

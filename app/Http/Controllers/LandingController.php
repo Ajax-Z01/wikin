@@ -5,13 +5,36 @@ namespace App\Http\Controllers;
 use App\Models\Landing;
 use Illuminate\Support\Str;
 use App\Models\Notification;
+use App\Models\Pengmas;
 use Illuminate\Http\Request;
 
 class LandingController extends Controller
 {
     public function index()
     {
-        return view('landingpage.content');
+        $pengmas = Pengmas::orderByDesc('updated_at')->get()->take(3)->map(function ($pemas) {
+            $pemas->updated = $pemas->updated_at->diffForHumans();
+            $pemas->content = substr($pemas->content, 0, 200);
+            return $pemas;
+        });
+        return view('landingpage.content', compact('pengmas'));
+    }
+
+    public function detailPemas()
+    {
+        $pengmas = Pengmas::orderByDesc('updated_at')->get()->map(function ($pemas) {
+            $pemas->updated = $pemas->updated_at->diffForHumans();
+            $pemas->content = substr($pemas->content, 0, 200);
+            return $pemas;
+        });
+        return view('landingpage.detailPemas.detailPemas', compact('pengmas'));
+    }
+
+    public function detail($slug)
+    {
+        $pemas = Pengmas::whereSlug($slug)->first();
+        $pemas->updated = $pemas->updated_at->format('M jS Y');
+        return view('landingpage.detailPemas.detailContent', compact('pemas'));
     }
 
     /**
