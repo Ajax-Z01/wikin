@@ -87,7 +87,7 @@
 
 
         <!-- ======= Recent Blog Posts Section ======= -->
-        <section id="recent-posts" class="recent-posts sections-bg">
+        <section id="pemas" class="recent-posts sections-bg">
             <div class="container" data-aos="fade-up">
 
                 <div class="section-header">
@@ -112,10 +112,7 @@
                             </h2>
 
                             <div class="d-flex align-items-center">
-                                <img src="{{ asset('img/blog/blog-author.jpg') }}" alt=""
-                                    class="img-fluid post-author-img flex-shrink-0">
                                 <div class="post-meta">
-                                    <p class="post-author">Maria Doe</p>
                                     <p class="post-date">
                                         <time datetime="2022-01-01">Jan 1, 2022</time>
                                     </p>
@@ -139,10 +136,7 @@
                             </h2>
 
                             <div class="d-flex align-items-center">
-                                <img src="{{ asset('/img/blog/blog-author-2.jpg') }}" alt=""
-                                    class="img-fluid post-author-img flex-shrink-0">
                                 <div class="post-meta">
-                                    <p class="post-author">Allisa Mayer</p>
                                     <p class="post-date">
                                         <time datetime="2022-01-01">Jun 5, 2022</time>
                                     </p>
@@ -166,10 +160,7 @@
                             </h2>
 
                             <div class="d-flex align-items-center">
-                                <img src="{{ asset('/img/blog/blog-author-3.jpg') }}" alt=""
-                                    class="img-fluid post-author-img flex-shrink-0">
                                 <div class="post-meta">
-                                    <p class="post-author">Mark Dower</p>
                                     <p class="post-date">
                                         <time datetime="2022-01-01">Jun 22, 2022</time>
                                     </p>

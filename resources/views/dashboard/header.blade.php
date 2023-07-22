@@ -38,37 +38,6 @@
                     </li>
                 </ul><!-- End Notification Dropdown Items -->
             </li><!-- End Notification Nav -->
-            <li class="nav-item dropdown">
-                <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
-                    <i class="bi text-light bi-chat-left-text"></i>
-                    <span class="badge bg-primary text-light badge-number">1</span>
-                </a><!-- End Messages Icon -->
-                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
-                    <li class="dropdown-header">
-                        You have a new messages
-                        <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
-                    </li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                    <li class="message-item">
-                        <a href="#">
-                            <img src="assets/img/minato.jpg" alt="" class="rounded-circle">
-                            <div>
-                                <h4>Minato</h4>
-                                <p>Kerjaan hari ini bagaimana?, apakah...</p>
-                                <p>1 hrs. ago</p>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                    <li class="dropdown-footer">
-                        <a href="#">Show all messages</a>
-                    </li>
-                </ul><!-- End Messages Dropdown Items -->
-            </li><!-- End Messages Nav -->
             <li class="nav-item dropdown pe-3">
                 <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
                     <img src="{{ Auth::user()->profile_image }}" alt="Profile" class="rounded-circle">
@@ -87,6 +56,12 @@
                         <a class="dropdown-item d-flex align-items-center" href="{{ route('profile') }}">
                             <i class="bi bi-gear"></i>
                             <span>Pengaturan Akun</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item d-flex align-items-center" href="{{ route('home') }}">
+                            <i class="bi bi-bank"></i>
+                            <span>Halaman Utama</span>
                         </a>
                     </li>
                     <li>

@@ -3,22 +3,22 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>Dashboard</h1>
+            <h1>Kelola Komunitas</h1>
             <nav>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active">Dashboard</li>
+                    <li class="breadcrumb-item">Dashboard</li>
+                    <li class="breadcrumb-item">Menu Kelola</li>
+                    <li class="breadcrumb-item">Profil Komunitas</li>
                 </ol>
             </nav>
         </div><!-- End Page Title -->
 
         <section class="section">
             <div class="row">
-
-                <!-- List Data User -->
+                <!-- List Data Penambahan Komunitas -->
                 <div class="col-12">
                     <div class="card recent-sales overflow-auto">
-
                         <div class="card-body">
                             <h5 class="card-title">Data Komunitas</span></h5>
                             <div class="d-grid gap-1 d-md-flex justify-content-md-end">
@@ -26,12 +26,12 @@
                                         data-bs-toggle="modal" data-bs-target="#pengkom">
                                         <i class="text-light bi bi-plus-square">
                                         </i></button>
-                                    <div class="modal fade" id="pengkom" tabindex="-1"
-                                        aria-labelledby="pengabdianMasLabel" aria-hidden="true">
+                                    <div class="modal fade" id="pengkom" tabindex="-1" aria-labelledby="pengkomLabel"
+                                        aria-hidden="true">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="pengabdianMasLabel">Pengabdian Masyarakat
+                                                    <h5 class="modal-title" id="pengkomLabel">Penambahan Komunitas
                                                     </h5>
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                         aria-label="Close"></button>
@@ -97,7 +97,7 @@
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
-                                                            <h5 class="modal-title" id="pengabdianMasLabel">Edit Komunitas
+                                                            <h5 class="modal-title" id="komunitaslabel">Edit Komunitas
                                                             </h5>
                                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                                 aria-label="Close"></button>
@@ -156,12 +156,12 @@
                                                 <i class="text-light bi bi-info-circle">
                                                 </i></button>
                                             <div class="modal fade" id="pengkom" tabindex="-1"
-                                                aria-labelledby="pengabdianMasLabel" aria-hidden="true">
+                                                aria-labelledby="pengkomLabel" aria-hidden="true">
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
-                                                            <h5 class="modal-title" id="pengabdianMasLabel">Pengabdian
-                                                                Masyarakat</h5>
+                                                            <h5 class="modal-title" id="pengkom">Profil Komunitas
+                                                            </h5>
                                                             <button type="button" class="btn-close"
                                                                 data-bs-dismiss="modal" aria-label="Close"></button>
                                                         </div>
@@ -219,11 +219,11 @@
                                                 <i class="text-light bi bi-info-circle">
                                                 </i></button>
                                             <div class="modal fade" id="pengkom" tabindex="-1"
-                                                aria-labelledby="pengabdianMasLabel" aria-hidden="true">
+                                                aria-labelledby="pengkomLabel" aria-hidden="true">
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
-                                                            <h5 class="modal-title" id="pengabdianMasLabel">Pengabdian
+                                                            <h5 class="modal-title" id="pengkomLabel">Pengabdian
                                                                 Masyarakat</h5>
                                                             <button type="button" class="btn-close"
                                                                 data-bs-dismiss="modal" aria-label="Close"></button>
@@ -282,11 +282,11 @@
                                                 <i class="text-light bi bi-info-circle">
                                                 </i></button>
                                             <div class="modal fade" id="pengkom" tabindex="-1"
-                                                aria-labelledby="pengabdianMasLabel" aria-hidden="true">
+                                                aria-labelledby="pengkomLabel" aria-hidden="true">
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
-                                                            <h5 class="modal-title" id="pengabdianMasLabel">Pengabdian
+                                                            <h5 class="modal-title" id="pengkomLabel">Pengabdian
                                                                 Masyarakat</h5>
                                                             <button type="button" class="btn-close"
                                                                 data-bs-dismiss="modal" aria-label="Close"></button>
