@@ -8,6 +8,7 @@
                 <span>Dashboard</span>
             </a>
         </li><!-- End Dashboard Nav -->
+        @if (Auth::user()->type == 'admin')
         <li class="nav-item">
             <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
                 <i class="bi bi-menu-button-wide"></i><span>Menu Kelola</span><i class="bi bi-chevron-down ms-auto"></i>
@@ -30,7 +31,7 @@
                 </li>
             </ul>
         </li><!-- End Components Nav -->
-
+        @endif
         <li class="nav-item">
             <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
                 <i class="bi bi-journal-text"></i><span>Form Pengajuan</span><i class="bi bi-chevron-down ms-auto"></i>
@@ -42,9 +43,15 @@
                     </a>
                 </li>
                 <li>
+                    @if (Auth::user()->type == 'user')
                     <a href="{{ route('pengkom') }}" class="text-light">
                         <i class="bi text-light bi-circle"></i><span>Komunitas</span>
                     </a>
+                    @elseif (Auth::user()->type == 'admin')
+                    <a href="{{ route('komun') }}" class="text-light">
+                        <i class="bi text-light bi-circle"></i><span>Komunitas</span>
+                    </a>
+                    @endif
                 </li>
             </ul>
         </li><!-- End Forms Pengajuan -->

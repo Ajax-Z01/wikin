@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pengmas;
+use App\Models\FormPemas;
 use Illuminate\Support\Str;
 use App\Models\Notification;
 use Illuminate\Http\Request;
@@ -16,7 +17,37 @@ class PengmasController extends Controller
      */
     public function index()
     {
-        //
+        $formsPerPage = 10;
+        $totalForms = FormPemas::count();
+        $totalPages = ceil($totalForms / $formsPerPage);
+        $currentPage = request()->page ?? 1;
+
+        $query = FormPemas::query()->latest();
+
+        // Filter berdasarkan pencarian judul
+        if (request()->has('search')) {
+            $search = request()->input('search');
+            $query->where('name', 'LIKE', "%$search%")->orWhere('name_pemas', 'LIKE', "%$search%")->orWhere('email', 'LIKE', "%$search%");
+        }
+
+        $formpemas = $query->skip(($currentPage - 1) * $formsPerPage)->take($formsPerPage)->get();
+
+        $formsPerPage2 = 10;
+        $totalForms2 = Pengmas::count();
+        $totalPages2 = ceil($totalForms2 / $formsPerPage2);
+        $currentPage2 = request()->page ?? 1;
+
+        $query = Pengmas::query()->latest();
+
+        // Filter berdasarkan pencarian judul
+        if (request()->has('search')) {
+            $search = request()->input('search');
+            $query->where('name', 'LIKE', "%$search%")->orWhere('location', 'LIKE', "%$search%")->orWhere('description', 'LIKE', "%$search%");
+        }
+
+        $pengmas = $query->skip(($currentPage2 - 1) * $formsPerPage2)->take($formsPerPage2)->get();
+
+        return view('dashboard.sidebar.pengajuan.pengmas', compact('formpemas', 'totalPages', 'currentPage', 'pengmas', 'totalPages2', 'currentPage2'));
     }
 
     /**
