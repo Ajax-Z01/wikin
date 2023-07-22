@@ -20,7 +20,7 @@
         <nav>
             <div class="container">
                 <ol>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="{{ route('home') }}">Home</a></li>
                     <li>Blog</li>
                 </ol>
             </div>
@@ -31,27 +31,30 @@
     <section id="blog" class="blog">
         <div class="container" data-aos="fade-up">
             <div class="row gy-4 posts-list">
-                @foreach($pengmas as $pemas)
-                <div class="col-xl-4 col-md-6">
-                    <article>
-                        <div class="post-img">
-                            <img src="{{ htmlentities($pemas->image) }}" alt="" class="img-fluid">
-                        </div>
-                        <h2 class="title">
-                            <a href="{{ route('detail', $pemas->slug) }}">{{ htmlentities($pemas->name) }}</a>
-                        </h2>
-                        <p>
-                            {!! html_entity_decode($pemas->content) !!}
-                        </p>
-                        <div class="d-flex align-items-center">
-                            <div class="post-meta">
-                                <p class="post-date">
-                                    <time datetime="2022-01-01">{{ htmlentities($pemas->updated) }}</time>
+                @foreach ($pengmas as $pemas)
+                    <div class="col-xl-4 col-md-6">
+                        <article>
+                            <a href="{{ route('detail', $pemas->slug) }}">
+                                <div class="post-img">
+                                    <img src="{{ htmlentities($pemas->image) }}" alt=""
+                                        class="img-fluid mx-auto d-block">
+                                </div>
+                                <h2 class="title">
+                                    {{ htmlentities($pemas->name) }}
+                                </h2>
+                                <p>
+                                    {!! html_entity_decode($pemas->content) !!}
                                 </p>
-                            </div>
-                        </div>
-                    </article>
-                </div><!-- End post list item -->
+                                <div class="d-flex align-items-center">
+                                    <div class="post-meta">
+                                        <p class="post-date">
+                                            <time datetime="2022-01-01">{{ htmlentities($pemas->updated) }}</time>
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+                    </div><!-- End post list item -->
                 @endforeach
             </div><!-- End blog posts list -->
             <div class="blog-pagination">

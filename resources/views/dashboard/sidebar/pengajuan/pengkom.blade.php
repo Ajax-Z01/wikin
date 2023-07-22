@@ -11,33 +11,34 @@
                     <li class="breadcrumb-item ">Komunitas</li>
                 </ol>
             </nav>
+            @if (session('success'))
+                <div class="alert alert-success mt-4" role="alert">
+                    <strong class="font-bold">Success!</strong>
+                    <span class="block sm:inline">{{ session('success') }}</span>
+                </div>
+            @elseif(session('unsuccess'))
+                <div class="alert alert-danger mt-4" role="alert">
+                    <strong class="font-bold">Unsuccess!</strong>
+                    <span class="block sm:inline">{{ session('unsuccess') }}</span>
+                </div>
+            @endif
         </div><!-- End Page Title -->
         <section class="section">
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-body">
-                        @if (session('success'))
-                            <div class="alert alert-success mt-4" role="alert">
-                                <strong class="font-bold">Success!</strong>
-                                <span class="block sm:inline">{{ session('success') }}</span>
-                            </div>
-                        @elseif(session('unsuccess'))
-                            <div class="alert alert-danger mt-4" role="alert">
-                                <strong class="font-bold">Unsuccess!</strong>
-                                <span class="block sm:inline">{{ session('unsuccess') }}</span>
-                            </div>
-                        @endif
                         <h5 class="card-title">Formulir Pengajuan Komunitas</h5>
 
                         <!-- General Form Elements -->
                         <form role="form text-left" action="{{ route('pengkom.store') }}" method="post"
-                        enctype="multipart/form-data">
+                            enctype="multipart/form-data">
                             @method('POST')
                             @csrf
                             <div class="row mb-3">
                                 <label for="name" class="col-sm-3 col-form-label">Nama</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name">
+                                    <input type="text" class="form-control @error('name') is-invalid @enderror"
+                                        id="name" name="name">
                                     @error('name')
                                         <span class="invalid-feedback">{{ htmlentities($message) }}</span>
                                     @enderror
@@ -56,8 +57,8 @@
                             <div class="row mb-3">
                                 <label for="email" class="col-sm-3 col-form-label">Email</label>
                                 <div class="col-sm-8">
-                                    <input type="email" class="form-control @error('email') is-invalid @enderror" id="email"
-                                        name="email">
+                                    <input type="email" class="form-control @error('email') is-invalid @enderror"
+                                        id="email" name="email">
                                     @error('email')
                                         <span class="invalid-feedback">{{ htmlentities($message) }}</span>
                                     @enderror
@@ -97,15 +98,16 @@
                 <h5 class="card-title">Daftar Komunitas</h5>
                 <div class="row">
                     @foreach ($komuns as $komun)
-                    <div class="col-4">
-                        <div class="card">
-                            <img src="{{ htmlentities($komun->image) }}" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">{{ htmlentities($komun->name) }}</h5>
-                                <p class="card-text">{{ htmlentities($komun->description) }}<br>Kontak: {{ htmlentities($komun->contact) }}</p>
-                            </div>
-                        </div><!-- End Card with an image on top -->
-                    </div>
+                        <div class="col-4">
+                            <div class="card">
+                                <img src="{{ htmlentities($komun->image) }}" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ htmlentities($komun->name) }}</h5>
+                                    <p class="card-text">{{ htmlentities($komun->description) }}<br>Kontak:
+                                        {{ htmlentities($komun->contact) }}</p>
+                                </div>
+                            </div><!-- End Card with an image on top -->
+                        </div>
                     @endforeach
                 </div>
             </div>

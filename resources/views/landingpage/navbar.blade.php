@@ -8,7 +8,7 @@
         </a>
         <nav id="navbar" class="navbar">
             <ul>
-                <li><a href="#hero">Utama</a></li>
+                <li><a href="{{ route('home') }}">Utama</a></li>
                 <li><a href="#about">Tentang</a></li>
                 <li><a href="#services">Fitur</a></li>
                 <li><a href="#pemas">Pemas</a></li>

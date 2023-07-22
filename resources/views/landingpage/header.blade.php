@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Impact Bootstrap Template - Index</title>
+    <title>Wikin</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -29,14 +29,6 @@
 
     <!-- Template Main CSS File -->
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
-
-    <!-- =======================================================
-  * Template Name: Impact
-  * Updated: May 30 2023 with Bootstrap v5.3.0
-  * Template URL: https://bootstrapmade.com/impact-bootstrap-business-website-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>

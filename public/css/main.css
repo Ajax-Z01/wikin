@@ -1,10 +1,3 @@
-/**
-* Template Name: Impact
-* Updated: May 30 2023 with Bootstrap v5.3.0
-* Template URL: https://bootstrapmade.com/impact-bootstrap-business-website-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 
 /*--------------------------------------------------------------
 # Set main reusable colors and fonts using CSS variables
@@ -335,7 +328,9 @@ section {
 /* Button Detail Content */
 div>a>button {
   color: #fff;
-  background: #054196;
+  background: var(--color-primary);
+  border: none;
+  border-radius: 5px;
   text-align: center;
   padding: 15px;
   font-weight: 600;

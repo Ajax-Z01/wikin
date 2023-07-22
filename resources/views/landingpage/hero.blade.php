@@ -5,10 +5,10 @@
                 <h2>Selamat Datang di<span> Wikin</span></h2>
                 <p>Platform interaktif penunjang Komunitas Nuklir di Indonesia</p>
                 <div class="d-flex justify-content-center justify-content-lg-start">
-                    @if(auth()->check())
-                    <a href="{{ route('dashboard') }}" class="btn-get-started">Dashboard</a>
+                    @if (auth()->check())
+                        <a href="{{ route('dashboard') }}" class="btn-get-started">Dashboard</a>
                     @else
-                    <a href="{{ route('login') }}" class="btn-get-started">Masuk</a>
+                        <a href="{{ route('login') }}" class="btn-get-started">Masuk</a>
                     @endif
                 </div>
             </div>

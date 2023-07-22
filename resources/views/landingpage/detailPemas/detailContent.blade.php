@@ -30,13 +30,14 @@
         <div class="container col-lg-8" data-aos="fade-up">
             <article class="blog-details">
                 <div class="post-img justify-content-center">
-                    <img src="{{ htmlentities($pemas->image) }}" alt="image" class="img-fluid rounded">
+                    <img src="{{ htmlentities($pemas->image) }}" alt="image"
+                        class="img-fluid mx-auto d-block rounded">
                 </div>
                 <h2 class="title">{{ htmlentities($pemas->name) }}
                 </h2>
                 <div class="content">
                     {!! html_entity_decode($pemas->content) !!}
-                    <div>
+                    <div class="text-center">
                         <a href="{{ route('detailPemas') }}">
                             <button>Kembali ke daftar pemas</button>
                         </a>

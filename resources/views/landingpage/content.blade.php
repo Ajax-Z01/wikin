@@ -98,31 +98,31 @@
 
                 <div class="row gy-4">
                     @foreach ($pengmas as $pemas)
-                    <div class="col-xl-4 col-md-6">
-                        <article>
-                            <div class="post-img">
-                                <img src="{{ htmlentities($pemas->image) }}" alt="image" class="img-fluid">
-                            </div>
-                            <h2 class="title">
-                                <a href="{{ route('detail', $pemas->slug) }}">{{ htmlentities($pemas->name) }}</a>
-                            </h2>
-                            <p>
-                                {!! html_entity_decode($pemas->content) !!}
-                            </p>
-                            <div class="d-flex align-items-center">
-                                <div class="post-meta">
-                                    <p class="post-date">
-                                        <time datetime="2022-01-01">{{ htmlentities($pemas->updated) }}</time>
-                                    </p>
+                        <div class="col-xl-4 col-md-6">
+                            <article>
+                                <div class="post-img">
+                                    <img src="{{ htmlentities($pemas->image) }}" alt="image" class="img-fluid">
                                 </div>
-                            </div>
-                        </article>
-                    </div><!-- End post list item -->
+                                <h2 class="title">
+                                    <a href="{{ route('detail', $pemas->slug) }}">{{ htmlentities($pemas->name) }}</a>
+                                </h2>
+                                <p>
+                                    {!! html_entity_decode($pemas->content) !!}
+                                </p>
+                                <div class="d-flex align-items-center">
+                                    <div class="post-meta">
+                                        <p class="post-date">
+                                            <time datetime="2022-01-01">{{ htmlentities($pemas->updated) }}</time>
+                                        </p>
+                                    </div>
+                                </div>
+                            </article>
+                        </div><!-- End post list item -->
                     @endforeach
                 </div><!-- End recent posts list -->
 
                 <div class="text-center mt-4"><a href="{{ route('detailPemas') }}"><button type="button"
-                            class="btn btn-outline-secondary">Selengkapnya</button></a>
+                            class="text-center">Selengkapnya</button></a>
                 </div>
             </div>
         </section><!-- End Recent Blog Posts Section -->

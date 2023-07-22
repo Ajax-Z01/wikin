@@ -3,13 +3,25 @@
     <!-- Main Content -->
     <main id="main" class="main">
         <div class="pagetitle">
-            <h1>Dashboard</h1>
+            <h1>Pengajuan Komunitas</h1>
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active">Dashboard</li>
+                    <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
+                    <li class="breadcrumb-item">Form Pengajuan</li>
+                    <li class="breadcrumb-item active">Pengajuan Komunitas</li>
                 </ol>
             </nav>
+            @if (session('success'))
+                <div class="alert alert-primary mt-4" role="alert">
+                    <strong class="font-bold">Success!</strong>
+                    <span class="block sm:inline">{{ session('success') }}</span>
+                </div>
+            @elseif(session('unsuccess'))
+                <div class="alert alert-danger mt-4" role="alert">
+                    <strong class="font-bold">Unsuccess!</strong>
+                    <span class="block sm:inline">{{ session('unsuccess') }}</span>
+                </div>
+            @endif
         </div><!-- End Page Title -->
         <section class="section">
             <div class="row">
