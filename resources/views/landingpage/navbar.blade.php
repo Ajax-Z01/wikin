@@ -13,7 +13,30 @@
                 <li><a href="#services">Fitur</a></li>
                 <li><a href="#pemas">Pemas</a></li>
                 <li><a href="#contact">Kontak</a></li>
-            </ul>
+                @auth
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            {{ auth()->user()->name }}
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{{ route('dashboard') }}">My DashBoard</a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li>
+                                <form action="{{ route('logout') }}" method="post">
+                                    @csrf
+                                    <button type="submit" class="dropdown-item">
+                                        Sign Out
+                                    </button>
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            @endauth
         </nav><!-- .navbar -->
 
         <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>

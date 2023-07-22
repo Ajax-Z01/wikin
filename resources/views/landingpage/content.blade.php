@@ -53,7 +53,7 @@
 
                 <div class="row gy-4" data-aos="fade-up" data-aos-delay="100">
 
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col-lg-4 col-md-6">
                         <div class="service-item  position-relative ">
                             <div class="icon justify-content-center">
                                 <i class="bi bi-activity"></i>
@@ -62,7 +62,7 @@
                         </div>
                     </div><!-- End Service Item -->
 
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col-lg-4 col-md-6">
                         <div class="service-item position-relative">
                             <div class="icon">
                                 <i class="bi bi-broadcast"></i>
@@ -71,21 +71,12 @@
                         </div>
                     </div><!-- End Service Item -->
 
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col-lg-4 col-md-6">
                         <div class="service-item position-relative">
                             <div class="icon justify-content-center">
                                 <i class="bi bi-easel"></i>
                             </div>
                             <h3>Konsultasi Kenukliran</h3>
-                        </div>
-                    </div><!-- End Service Item -->
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="service-item position-relative">
-                            <div class="icon justify-content-center">
-                                <i class="bi bi-bounding-box-circles "></i>
-                            </div>
-                            <h3>Jumlah Pengabdian Masyarakat</h3>
                         </div>
                     </div><!-- End Service Item -->
 
@@ -96,7 +87,7 @@
 
 
         <!-- ======= Recent Blog Posts Section ======= -->
-        <section id="recent-posts" class="recent-posts sections-bg">
+        <section id="pemas" class="recent-posts sections-bg">
             <div class="container" data-aos="fade-up">
 
                 <div class="section-header">
@@ -121,10 +112,7 @@
                             </h2>
 
                             <div class="d-flex align-items-center">
-                                <img src="{{ asset('img/blog/blog-author.jpg') }}" alt=""
-                                    class="img-fluid post-author-img flex-shrink-0">
                                 <div class="post-meta">
-                                    <p class="post-author">Maria Doe</p>
                                     <p class="post-date">
                                         <time datetime="2022-01-01">Jan 1, 2022</time>
                                     </p>
@@ -148,10 +136,7 @@
                             </h2>
 
                             <div class="d-flex align-items-center">
-                                <img src="{{ asset('/img/blog/blog-author-2.jpg') }}" alt=""
-                                    class="img-fluid post-author-img flex-shrink-0">
                                 <div class="post-meta">
-                                    <p class="post-author">Allisa Mayer</p>
                                     <p class="post-date">
                                         <time datetime="2022-01-01">Jun 5, 2022</time>
                                     </p>
@@ -175,10 +160,7 @@
                             </h2>
 
                             <div class="d-flex align-items-center">
-                                <img src="{{ asset('/img/blog/blog-author-3.jpg') }}" alt=""
-                                    class="img-fluid post-author-img flex-shrink-0">
                                 <div class="post-meta">
-                                    <p class="post-author">Mark Dower</p>
                                     <p class="post-date">
                                         <time datetime="2022-01-01">Jun 22, 2022</time>
                                     </p>
@@ -215,7 +197,8 @@
                                 <i class="bi bi-geo-alt flex-shrink-0"></i>
                                 <div>
                                     <h4>Location:</h4>
-                                    <p>A108 Adam Street, New York, NY 535022</p>
+                                    <p>Jl. Babarsari Kotak POB 6101/YKKB, Ngentak, Caturtunggal, Kec. Depok, Kabupaten
+                                        Sleman, Daerah Istimewa Yogyakarta 55281</p>
                                 </div>
                             </div><!-- End Info Item -->
 
@@ -223,7 +206,7 @@
                                 <i class="bi bi-envelope flex-shrink-0"></i>
                                 <div>
                                     <h4>Email:</h4>
-                                    <p>info@example.com</p>
+                                    <p>komunitasnuklir@gmail.com</p>
                                 </div>
                             </div><!-- End Info Item -->
 
@@ -231,7 +214,7 @@
                                 <i class="bi bi-phone flex-shrink-0"></i>
                                 <div>
                                     <h4>Call:</h4>
-                                    <p>+1 5589 55488 55</p>
+                                    <p>+62 878-1462-4204</p>
                                 </div>
                             </div><!-- End Info Item -->
 
