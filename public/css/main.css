@@ -329,6 +329,15 @@ section {
   scroll-margin-top: 70px;
 }
 
+/* Button Detail Content */
+div>a>button {
+  color: #fff;
+  background: #054196;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
+}
+
 /*--------------------------------------------------------------
 # Desktop Navigation
 --------------------------------------------------------------*/
