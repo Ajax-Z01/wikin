@@ -31,13 +31,6 @@
     <!-- Template Main CSS File -->
     <link href="{{ asset('/css/style2.css') }}" rel="stylesheet">
 
-    <!-- =======================================================
-  * Template Name: NiceAdmin
-  * Updated: May 30 2023 with Bootstrap v5.3.0
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body class="color-signup">
@@ -102,8 +95,8 @@
 
                                 </div>
                             </div>
-                            <div class="credits">
-                                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                            <div class="copyright">
+                                &copy; Copyright <strong><span>Wikin Dev</span></strong>. All Rights Reserved.
                             </div>
                         </div>
                     </div>

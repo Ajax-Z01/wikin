@@ -1,4 +1,5 @@
 @include('landingpage.header')
+@include('landingpage.navbar')
 
 <main id="main">
     <!-- ======= Breadcrumbs ======= -->

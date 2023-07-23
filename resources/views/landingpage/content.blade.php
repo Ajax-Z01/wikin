@@ -14,7 +14,7 @@
 
                 <div class="row gy-4">
                     <div class="col-lg-6">
-                        <img src="{{ asset('/img/h1.jpg') }}" class="img-fluid rounded-4 mb-4" alt="">
+                        <img src="{{ asset('/img/logo.png') }}" class="img-fluid rounded-4 mb-4" alt="">
                     </div>
                     <div class="col-lg-6">
                         <div class="content ps-0 ps-lg-5">

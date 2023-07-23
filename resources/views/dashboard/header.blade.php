@@ -2,8 +2,8 @@
 <header id="header" class="header fixed-top d-flex align-items-center">
     <div class="d-flex align-items-center justify-content-between">
         <a href="{{ route('dashboard') }}" class="logo d-flex align-items-center">
-            <img src="assets/img/logo.png" alt="">
-            <span class="d-none d-lg-block text-light">WIKIN</span>
+            <img src="{{ asset('img/logo-nobg.webp') }}" alt="">
+            <span class="d-none d-lg-block text-light">Wikin.</span>
         </a>
         <i class="bi bi-list text-light toggle-sidebar-btn"></i>
     </div><!-- End Logo -->

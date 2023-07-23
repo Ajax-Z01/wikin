@@ -39,7 +39,8 @@
                                         </div>
                                         <div class="ps-3">
                                             <h6>{{ htmlentities($totalUsers) }}</h6>
-                                            <span class="text-success small pt-1 fw-bold">+ {{ htmlentities($newUsersCount) }}</span>
+                                            <span class="text-success small pt-1 fw-bold">+
+                                                {{ htmlentities($newUsersCount) }}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -57,7 +58,8 @@
                                         </div>
                                         <div class="ps-3">
                                             <h6>{{ htmlentities($totalPemas) }}</h6>
-                                            <span class="text-success small pt-1 fw-bold">+ {{ htmlentities($newPemasCount) }}</span>
+                                            <span class="text-success small pt-1 fw-bold">+
+                                                {{ htmlentities($newPemasCount) }}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -75,7 +77,8 @@
                                         </div>
                                         <div class="ps-3">
                                             <h6>{{ htmlentities($totalKomun) }}</h6>
-                                            <span class="text-success small pt-1 fw-bold">+ {{ htmlentities($newKomunCount) }}</span>
+                                            <span class="text-success small pt-1 fw-bold">+
+                                                {{ htmlentities($newKomunCount) }}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -93,7 +96,8 @@
                                         </div>
                                         <div class="ps-3">
                                             <h6>{{ htmlentities($totalKeluh) }}</h6>
-                                            <span class="text-success small pt-1 fw-bold">+ {{ htmlentities($newKeluhCount) }}</span>
+                                            <span class="text-success small pt-1 fw-bold">+
+                                                {{ htmlentities($newKeluhCount) }}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -103,29 +107,19 @@
                 </div><!-- End Left side columns -->
                 <div class="col-lg-4">
                     <!-- News & Updates Traffic -->
-                    <div class="card">
-                        <div class="card-body pb-0">
-                            <h5 class="card-title">News &amp; Updates <span>| Today</span></h5>
+                    <div class="card card-update">
+                        <div class="card-body pb-0 mb-0">
+                            <h5 class="card-title text-center"> -Perhatian !-</h5>
                             <div class="news">
-                                <div class="post-item clearfix">
-                                    <img src="{{ asset('/img/news-1.jpg') }}" alt="">
-                                    <h4><a href="#">Info Terkini</a></h4>
-                                    <p>Lorem Ipsum</p>
-                                </div>
-                                <div class="post-item clearfix">
-                                    <img src="{{ asset('/img/news-2.jpg') }}" alt="">
-                                    <h4><a href="#">Info Terbaru</a></h4>
-                                    <p>Lorem Ipsum</p>
-                                </div>
-                                <div class="post-item clearfix">
-                                    <img src="{{ asset('/img/news-3.jpg') }}" alt="">
-                                    <h4><a href="#">Info Terupdate</a></h4>
-                                    <p>Lorem Ipsum</p>
-                                </div>
-                            </div><!-- End sidebar recent posts-->
-                        </div>
-                    </div><!-- End News & Updates -->
-                </div><!-- End Right side columns -->
+                                <p>Akses fitur-fitur lain menggunakan tombol menu di pojok kiri atas. Untuk mengakses
+                                    halaman
+                                    profil dan melakukan sign out gunakan tombol di pojok kanan atas.
+                                <p>
+                            </div>
+                        </div><!-- End sidebar recent posts-->
+                    </div>
+                </div><!-- End News & Updates -->
+            </div><!-- End Right side columns -->
             </div>
         </section>
     </main>

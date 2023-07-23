@@ -56,7 +56,7 @@
                 <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="icon-box">
                         <div class="icon"><i class="bi bi-easel"></i></div>
-                        <h4 class="title"><a href="" class="stretched-link">Konsultasi</a></h4>
+                        <h4 class="title"><a class="stretched-link">Konsultasi</a></h4>
                     </div>
                 </div>
                 <!--End Icon Box -->
@@ -64,7 +64,7 @@
                 <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
                     <div class="icon-box">
                         <div class="icon"><i class="bi bi-geo-alt"></i></div>
-                        <h4 class="title"><a href="" class="stretched-link">Komunitas</a></h4>
+                        <h4 class="title"><a class="stretched-link">Komunitas</a></h4>
                     </div>
                 </div>
                 <!--End Icon Box -->
@@ -72,7 +72,7 @@
                 <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
                     <div class="icon-box">
                         <div class="icon"><i class="bi bi-command"></i></div>
-                        <h4 class="title"><a href="" class="stretched-link">Pengabdian</a></h4>
+                        <h4 class="title"><a class="stretched-link">Pengabdian</a></h4>
                     </div>
                 </div>
                 <!--End Icon Box -->
