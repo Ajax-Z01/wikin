@@ -10,9 +10,6 @@
 
 @yield('content')
 
-<!-- Content -->
-
-<!-- end Content -->
 
 
 <!-- ======= Footer ======= -->

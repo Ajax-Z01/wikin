@@ -9,10 +9,13 @@
             <div class="container position-relative">
                 <div class="row d-flex justify-content-center">
                     <div class="col-lg-6 text-center">
-                        <h2>Blog</h2>
-                        <p>Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas
-                            consequatur ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi
-                            ratione sint. Sit quaerat ipsum dolorem.</p>
+                        <h2>Pengabdian Masyarakat</h2>
+                        <p>Pengabdian Masyarakat Nuklir adalah upaya dari para ahli, peneliti, dan profesional di bidang
+                            nuklir untuk memberikan manfaat positif kepada masyarakat melalui penggunaan teknologi
+                            nuklir. Ini mencakup edukasi, aplikasi kesehatan, pertanian, pengelolaan sumber daya alam,
+                            keberlanjutan energi nuklir, serta peran dalam penanganan darurat nuklir. Tujuannya adalah
+                            meningkatkan pemahaman publik, meningkatkan kualitas hidup, dan memberikan dampak positif
+                            bagi masyarakat secara keseluruhan.</p>
                     </div>
                 </div>
             </div>

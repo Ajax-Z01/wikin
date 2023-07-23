@@ -5,12 +5,12 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>WIKIN</title>
+    <title>Wikin</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="{{ asset('/img/favicon.png') }}" rel="icon">
+    <link href="{{ asset('img/logo-nobg.webp') }}" rel="icon">
     <link href="{{ asset('/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
@@ -31,13 +31,6 @@
     <!-- Template Main CSS File -->
     <link href="{{ asset('css/style2.css') }}" rel="stylesheet">
 
-    <!-- =======================================================
-  * Template Name: NiceAdmin
-  * Updated: May 30 2023 with Bootstrap v5.3.0
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>

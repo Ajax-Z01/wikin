@@ -28,7 +28,7 @@
                             <ul>
                                 <li><i class="bi bi-check-circle-fill"></i> Pengajuan pengabdian masyarakat</li>
                                 <li><i class="bi bi-check-circle-fill"></i> Pengajuan Keluhan Kenukliran</li>
-                                <li><i class="bi bi-check-circle-fill"></i> Join Komunitas Nuklir.</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Join Komunitas</li>
                             </ul>
 
                         </div>
@@ -45,8 +45,7 @@
 
                 <div class="section-header">
                     <h2>Fitur Tersedia</h2>
-                    <p>Aperiam dolorum et et wuia molestias qui eveniet numquam nihil porro incidunt dolores placeat sunt id
-                        nobis omnis tiledo stran delop</p>
+                    <p>Wikin menyedikan beberapa fitur kepada guna menunjang kinerja website</p>
                 </div>
 
                 <div class="row gy-4" data-aos="fade-up" data-aos-delay="100">
@@ -54,7 +53,7 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="service-item  position-relative ">
                             <div class="icon justify-content-center">
-                                <i class="bi bi-activity"></i>
+                                <i class="bi bi-diagram-3"></i>
                             </div>
                             <h3>Pengajuan Komunitas</h3>
                         </div>
@@ -63,7 +62,7 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="service-item position-relative">
                             <div class="icon">
-                                <i class="bi bi-broadcast"></i>
+                                <i class="bi bi-journal-check"></i>
                             </div>
                             <h3>Pengajuan Pemas</h3>
                         </div>
@@ -72,7 +71,7 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="service-item position-relative">
                             <div class="icon justify-content-center">
-                                <i class="bi bi-easel"></i>
+                                <i class="bi bi-envelope-open"></i>
                             </div>
                             <h3>Konsultasi Kenukliran</h3>
                         </div>
@@ -90,8 +89,7 @@
 
                 <div class="section-header">
                     <h2>Pengabdian Masyarakat</h2>
-                    <p>Consequatur libero assumenda est voluptatem est quidem illum et officia imilique qui vel architecto
-                        accusamus fugit aut qui distinctio</p>
+                    <p>Berikut merupakan artikel yang menjelaskan mengenai peran teknologi nuklir dalam kehidupan.</p>
                 </div>
 
                 <div class="row gy-4">
@@ -123,7 +121,14 @@
                             class="text-center">Selengkapnya</button></a>
                 </div>
             </div>
-        </section><!-- End Recent Blog Posts Section -->
+        </section>
+        <!-- End Recent Blog Posts Section -->
+
+        <section id="alur" class="recent-post sections-bg">
+            <div class="container text-center" data-aos="fade-down">
+                <img src="{{ asset('img/alur.png') }}" class="img-fluid" alt="">
+            </div>
+        </section>
 
         <!-- ======= Contact Section ======= -->
         <section id="contact" class="contact">
