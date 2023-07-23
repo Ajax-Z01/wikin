@@ -27,4 +27,9 @@ class FormKomun extends Model
     {
         return $this->morphMany(Notification::class, 'notifiable');
     }
+
+    public function sender()
+    {
+        return $this->belongsTo('App\Models\User');
+    }
 }

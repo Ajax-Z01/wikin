@@ -71,6 +71,8 @@ Route::middleware(['IsActive'])->group(function () {
     Route::get('profile', [UserController::class, 'profile'])->name('profile');
     Route::put('profile/{id}/update', [UserController::class, 'update_profile'])->whereNumber('id')->name('profile.update');
     Route::post('profile/{id}/resetpass', [UserController::class, 'updatepassword'])->whereNumber('id')->name('password.update');
+
+    Route::post('send-message', [MessageController::class, 'sendMessageToUser'])->name('send.message');
 });
 
 Route::middleware(['IsAdmin', 'IsActive'])->group(function () {

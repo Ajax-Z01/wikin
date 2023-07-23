@@ -127,6 +127,7 @@ class KomunController extends Controller
     public function edit(Request $request, $id)
     {
         $request->validate([
+            'user_id' => 'required',
             'name' => 'required',
             'contact' => 'required',
             'description' => 'required',
@@ -134,6 +135,7 @@ class KomunController extends Controller
         ]);
 
         $komun = Komun::find($id);
+        $komun->user_id = $request->input('user_id');
         $komun->name = $request->input('name');
         $komun->contact = $request->input('contact');
         $komun->description = $request->input('description');

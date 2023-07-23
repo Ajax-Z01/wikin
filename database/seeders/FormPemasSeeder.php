@@ -14,6 +14,6 @@ class FormPemasSeeder extends Seeder
      */
     public function run()
     {
-        //
+        \App\Models\FormPemas::factory(10)->create();
     }
 }

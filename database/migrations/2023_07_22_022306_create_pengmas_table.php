@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('pengmas', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id'); // Kolom kunci asing untuk menghubungkan dengan users
             $table->string('name');
             $table->string('slug');
             $table->string('location');
@@ -22,6 +23,9 @@ return new class extends Migration
             $table->longText('content');
             $table->string('image');
             $table->timestamps();
+
+            // Definisi relasi dengan tabel users
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

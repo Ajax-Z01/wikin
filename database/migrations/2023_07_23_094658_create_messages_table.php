@@ -13,10 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('information', function (Blueprint $table) {
+        Schema::create('messages', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_reciever');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->string('subject'); // Add subject field
             $table->text('content');
+            $table->boolean('is_read')->default(false);
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('information');
+        Schema::dropIfExists('messages');
     }
 };
