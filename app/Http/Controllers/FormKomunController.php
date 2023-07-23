@@ -54,6 +54,7 @@ class FormKomunController extends Controller
     public function store(StoreFormKomunRequest $request)
     {
         $request->validate([
+            'user_id' => 'required',
             'name' => 'required',
             'comunity_name' => 'required',
             'email' => 'required',
@@ -62,6 +63,7 @@ class FormKomunController extends Controller
         ]);
 
         $formkomun = new FormKomun();
+        $formkomun->user_id = $request->input('user_id');
         $formkomun->name = $request->input('name');
         $formkomun->comunity_name = $request->input('comunity_name');
         $formkomun->email = $request->input('email');

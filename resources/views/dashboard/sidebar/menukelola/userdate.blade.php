@@ -1,7 +1,6 @@
 @extends('dashboard.layout.main')
 @section('content')
     <main id="main" class="main">
-
         <div class="pagetitle">
             <h1>Dashboard</h1>
             <nav>
@@ -11,20 +10,16 @@
                 </ol>
             </nav>
         </div><!-- End Page Title -->
-
         <section class="section">
             <div class="row">
-
                 <!-- List Data User -->
                 <div class="col-12">
                     <div class="card recent-sales overflow-auto">
-
                         <div class="card-body">
                             <h5 class="card-title">Data User</span></h5>
                             <div class="d-grid gap-1 d-md-flex justify-content-md-end">
                             </div>
                             <table class="table table-borderless datatable">
-
                                 <thead>
                                     <tr>
                                         <th scope="col">No</th>
@@ -42,7 +37,6 @@
                                         <td><button type="button" class="btn btn-info" data-bs-toggle="modal"
                                                 data-bs-target="#exampleModal">
                                                 <i class="bi bi-info-circle">
-
                                                 </i></button>
                                             <div class="modal fade" id="exampleModal" tabindex="-1"
                                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -85,12 +79,9 @@
                                     @endforeach
                                 </tbody>
                             </table>
-
                         </div>
-
                     </div>
                 </div><!-- End List Komunitas  -->
-
             </div>
         </section>
     </main><!-- End #main -->

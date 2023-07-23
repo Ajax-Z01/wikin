@@ -119,6 +119,7 @@ class PengmasController extends Controller
     public function edit(Request $request, $id)
     {
         $request->validate([
+            'user_id' => 'required',
             'name' => 'required',
             'location' => 'required',
             'description' => 'required',
@@ -127,6 +128,7 @@ class PengmasController extends Controller
         ]);
 
         $pemas = Pengmas::find($id);
+        $pemas->user_id = $request->input('user_id');
         $pemas->name = $request->input('name');
         $pemas->location = $request->input('location');
         $pemas->description = $request->input('description');

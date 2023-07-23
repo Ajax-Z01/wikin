@@ -20,7 +20,6 @@ return new class extends Migration
             $table->string('email');
             $table->string('password');
             $table->string('image')->default('/img/default-profile.webp');
-            $table->string('company')->nullable();
             $table->string('job')->nullable();
             $table->string('address')->nullable();
             $table->string('phone')->nullable();
@@ -30,6 +29,7 @@ return new class extends Migration
             $table->string('linkedin_profile')->nullable();
             $table->enum('type', ['admin', 'user'])->default('user');
             $table->enum('status', ['active', 'inactive'])->default('active');
+            $table->rememberToken();
             $table->timestamps();
         });
     }

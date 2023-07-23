@@ -14,6 +14,6 @@ class PengmasSeeder extends Seeder
      */
     public function run()
     {
-        //
+        \App\Models\Pengmas::factory(10)->create();
     }
 }

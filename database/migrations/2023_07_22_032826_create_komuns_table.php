@@ -15,11 +15,15 @@ return new class extends Migration
     {
         Schema::create('komuns', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id'); // Kolom kunci asing untuk menghubungkan dengan users
             $table->string('name');
             $table->string('contact');
             $table->string('description');
             $table->string('image');
             $table->timestamps();
+
+            // Definisi relasi dengan tabel users
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

@@ -68,26 +68,30 @@
                                                                 </div>
                                                                 <div class="modal-body">
                                                                     {{-- Form Modal Pengmas --}}
-                                                                    <form>
+                                                                    <form action="{{ route('send.message') }}" method="post">
+                                                                        @method('POST')
+                                                                        @csrf
                                                                         <div class="mb-3">
-                                                                            <label for="name"
-                                                                                class="col-form-label">Penerima:</label>
-                                                                            <input type="text" class="form-control"
-                                                                                id="name">
+                                                                            <label for="user_id" class="col-form-label">Penerima:</label>
+                                                                            <select class="form-control" id="user_id" name="user_id">
+                                                                                <option value="1">Admin</option>
+                                                                                <option value="2">User</option>
+                                                                            </select>
                                                                         </div>
                                                                         <div class="mb-3">
-                                                                            <label for="message-text"
-                                                                                class="col-form-label">Pesan
-                                                                                Balasan:</label>
-                                                                            <textarea class="form-control" id="message-text"></textarea>
+                                                                            <label for="subject" class="col-form-label">Topik:</label>
+                                                                            <input type="text" class="form-control" id="subject" name="subject">
+                                                                        </div>
+                                                                        <div class="mb-3">
+                                                                            <label for="message-text" class="col-form-label">Pesan Balasan:</label>
+                                                                            <textarea class="form-control" id="message-text" name="content"></textarea>
+                                                                        </div>
+                                                                        <div class="modal-footer">
+                                                                            <button type="button" class="btn btn-secondary"
+                                                                                data-bs-dismiss="modal">Close</button>
+                                                                            <button type="submit" class="btn btn-primary">Kirim Pesan</button>
                                                                         </div>
                                                                     </form>
-                                                                </div>
-                                                                <div class="modal-footer">
-                                                                    <button type="button" class="btn btn-secondary"
-                                                                        data-bs-dismiss="modal">Close</button>
-                                                                    <button type="button" class="btn btn-primary">Send
-                                                                        message</button>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -144,6 +148,7 @@
                                                             method="post" enctype="multipart/form-data">
                                                             @method('POST')
                                                             @csrf
+                                                            <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                                                             <div class="mb-3">
                                                                 <label for="name" class="col-form-label">Nama
                                                                     Kegiatan</label>
@@ -230,6 +235,7 @@
                                                                         method="post" enctype="multipart/form-data">
                                                                         @method('PUT')
                                                                         @csrf
+                                                                        <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                                                                         <div class="mb-3">
                                                                             <label for="name" class="col-form-label">Nama
                                                                                 Kegiatan</label>
@@ -285,23 +291,13 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
-                                @if (session('success'))
-                                    <div class="alert alert-success" role="alert">
-                                        <strong class="font-bold">Success!</strong>
-                                        <span class="block sm:inline">{{ session('success') }}</span>
-                                    </div>
-                                @elseif(session('unsuccess'))
-                                    <div class="alert alert-danger" role="alert">
-                                        <strong class="font-bold">Unsuccess!</strong>
-                                        <span class="block sm:inline">{{ session('unsuccess') }}</span>
-                                    </div>
-                                @endif
                                 <h5 class="card-title">Formulir Pengajuan Pengabdian Masyarakat</h5>
                                 <!-- General Form Elements -->
                                 <form role="form text-left" action="{{ route('pemas.store') }}" method="post"
                                     enctype="multipart/form-data">
                                     @method('POST')
                                     @csrf
+                                    <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                                     <div class="row mb-3">
                                         <label for="name" class="col-sm-3 col-form-label">Nama</label>
                                         <div class="col-sm-8">
