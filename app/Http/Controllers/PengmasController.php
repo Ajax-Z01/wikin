@@ -116,9 +116,37 @@ class PengmasController extends Controller
      * @param  \App\Models\Pengmas  $pengmas
      * @return \Illuminate\Http\Response
      */
-    public function edit(Pengmas $pengmas)
+    public function edit(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'location' => 'required',
+            'description' => 'required',
+            'content' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        $pemas = Pengmas::find($id);
+        $pemas->name = $request->input('name');
+        $pemas->location = $request->input('location');
+        $pemas->description = $request->input('description');
+        $pemas->content = $request->input('content');
+        $pemas->slug = Str::slug($request->name);
+
+        if ($request->hasFile('image')) {
+            $name = Str::slug($request->name) . '.' . $request->image->extension();
+            $request->image->move(public_path('uploads'), $name);
+            $pemas->image = '/uploads/' . $name;
+        }
+
+        $pemas->save();
+
+        $notification = new Notification();
+        $notification->model()->associate($pemas); // Menghubungkan dengan model Pengmas
+        $notification->content = 'Postingan Pengabdian Masyarakat telah diperbarui.';
+        $notification->save();
+
+        return redirect()->route('pengmas')->withSuccess("Postingan Pengabdian Masyarakat berhasil diperbarui.");
     }
 
     /**
