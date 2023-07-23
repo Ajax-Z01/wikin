@@ -104,7 +104,7 @@
                                 <h5 class="card-title">Formulir Keluhan Kenukliran</h5>
 
                                 <!-- General Form Elements -->
-                                <form role="form text-left" action="{{ route('pengkom.store') }}" method="post"
+                                <form role="form text-left" action="{{ route('keluhan.store') }}" method="post"
                                     enctype="multipart/form-data">
                                     @method('POST')
                                     @csrf

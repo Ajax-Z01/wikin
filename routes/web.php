@@ -50,6 +50,7 @@ Route::middleware(['IsActive'])->group(function () {
 
     Route::get('komunitas', [KomunController::class, 'komunitas'])->name('komunitas');
     Route::post('komunitas/store', [KomunController::class, 'store'])->name('komunitas.store');
+    Route::put('komunitas/{id}/update', [KomunController::class, 'edit'])->whereNumber('id')->name('komunitas.update');
 
     Route::get('userdate', [UserController::class, 'index'])->name('userdate');
     Route::delete('userdate/{id}/delete', [UserController::class, 'destroy'])->whereNumber('id')->name('userdate.delete');
@@ -59,6 +60,7 @@ Route::middleware(['IsActive'])->group(function () {
 
     Route::get('pengmas', [PengmasController::class, 'index'])->name('pengmas');
     Route::post('pengmas/store', [PengmasController::class, 'store'])->name('pengmas.store');
+    Route::put('pengmas/{id}/update', [PengmasController::class, 'edit'])->whereNumber('id')->name('pengmas.update');
     Route::post('pemas/store', [FormPemasController::class, 'store'])->name('pemas.store');
 
     Route::get('kontak', [DashboardController::class, 'kontak'])->name('kontak');
@@ -66,7 +68,9 @@ Route::middleware(['IsActive'])->group(function () {
 
     Route::get('informasi', [DashboardController::class, 'informasi'])->name('informasi');
 
-    Route::get('profile', [DashboardController::class, 'profile'])->name('profile');
+    Route::get('profile', [UserController::class, 'profile'])->name('profile');
+    Route::get('profile/{id}/update', [UserController::class, 'update_profile'])->whereNumber('id')->name('profile.update');
+    Route::post('profile/{id}/resetpass', [UserController::class, 'updatepassword'])->whereNumber('id')->name('password.update');
 });
 
 Route::middleware(['IsAdmin', 'IsActive'])->group(function () {
