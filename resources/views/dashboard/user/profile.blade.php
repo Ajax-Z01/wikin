@@ -25,7 +25,7 @@
             <div class="col-xl-4">
                 <div class="card">
                     <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
-                        <img src="{{ Auth::user()->profile_image }}" alt="Profile" class="rounded-circle">
+                        <img src="{{ Auth::user()->image }}" alt="Profile" class="rounded-circle">
                         <h2>{{ Auth::user()->username }}</h2>
                         <h3>{{ Auth::user()->name }}</h3>
                         <div class="social-links mt-2">
@@ -102,15 +102,15 @@
                             </div>
                             <!-- Profile Edit Form -->
                             <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
-                                <form role="form text-left" action="{{ route('profile.update', $user->id) }}" method="put" enctype="multipart/form-data">
+                                <form role="form text-left" action="{{ route('profile.update', $user->id) }}" method="post" enctype="multipart/form-data">
                                     @method('PUT')
                                     @csrf
                                     <div class="row mb-3">
-                                        <label for="profile_image" class="col-md-4 col-lg-3 col-form-label">Profile
+                                        <label for="image" class="col-md-4 col-lg-3 col-form-label">Profile
                                             Image</label>
                                         <div class="col-md-8 col-lg-9">
-                                            <input class="form-control" type="file" name="profile_image" id="profile_image">
-                                            @error('profile_image')
+                                            <input class="form-control" type="file" name="image" id="image" accept="image/*">
+                                            @error('image')
                                                 <span class="invalid-feedback">{{ htmlentities($message) }}</span>
                                             @enderror
                                         </div>
