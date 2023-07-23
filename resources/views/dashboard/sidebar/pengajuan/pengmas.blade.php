@@ -271,17 +271,6 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
-                                @if (session('success'))
-                                    <div class="alert alert-success" role="alert">
-                                        <strong class="font-bold">Success!</strong>
-                                        <span class="block sm:inline">{{ session('success') }}</span>
-                                    </div>
-                                @elseif(session('unsuccess'))
-                                    <div class="alert alert-danger" role="alert">
-                                        <strong class="font-bold">Unsuccess!</strong>
-                                        <span class="block sm:inline">{{ session('unsuccess') }}</span>
-                                    </div>
-                                @endif
                                 <h5 class="card-title">Formulir Pengajuan Pengabdian Masyarakat</h5>
                                 <!-- General Form Elements -->
                                 <form role="form text-left" action="{{ route('pemas.store') }}" method="post"

@@ -8,8 +8,10 @@
 
                 <div class="section-header">
                     <h2>Tentang Kami</h2>
-                    <p>Aperiam dolorum et et wuia molestias qui eveniet numquam nihil porro incidunt dolores placeat sunt id
-                        nobis omnis tiledo stran delop</p>
+                    <p>Wikin bertujuan untuk mendorong pertumbuhan komunitas nuklir yang berdedikasi, berwawasan luas, dan
+                        memiliki kontribusi positif bagi kemajuan teknologi nuklir di Indonesia. Dengan memberikan wadah
+                        interaktif dan informatif, web ini berupaya menciptakan ruang yang aman dan terbuka bagi para
+                        pemangku kepentingan nuklir dalam berbagi pengetahuan dan pengalaman kepada masyarakat umum.</p>
                 </div>
 
                 <div class="row gy-4">
@@ -19,18 +21,14 @@
                     <div class="col-lg-6">
                         <div class="content ps-0 ps-lg-5">
                             <p class="fst-italic">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                                labore et dolore
-                                magna aliqua.
+                                Wikin (Website Interaktif Komunitas Nuklir Indonesia)
+                                Tempat anda menuangkan segala ide dan gagasan tentang kenukliran.
+                                Fitur-fitur yang bisa anda dapatkan :
                             </p>
                             <ul>
-                                <li><i class="bi bi-check-circle-fill"></i> Ullamco laboris nisi ut aliquip ex ea commodo
-                                    consequat.</li>
-                                <li><i class="bi bi-check-circle-fill"></i> Duis aute irure dolor in reprehenderit in
-                                    voluptate velit.</li>
-                                <li><i class="bi bi-check-circle-fill"></i> Ullamco laboris nisi ut aliquip ex ea commodo
-                                    consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda
-                                    mastiro dolore eu fugiat nulla pariatur.</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Pengajuan pengabdian masyarakat</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Pengajuan Keluhan Kenukliran</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Join Komunitas Nuklir.</li>
                             </ul>
 
                         </div>
