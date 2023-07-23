@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Komun;
 use Illuminate\Support\Str;
 use App\Models\Notification;
+use Illuminate\Http\Request;
 use App\Http\Requests\StoreKomunRequest;
 use App\Http\Requests\UpdateKomunRequest;
 
@@ -123,9 +124,34 @@ class KomunController extends Controller
      * @param  \App\Models\Komun  $komun
      * @return \Illuminate\Http\Response
      */
-    public function edit(Komun $komun)
+    public function edit(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'contact' => 'required',
+            'description' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        $komun = Komun::find($id);
+        $komun->name = $request->input('name');
+        $komun->contact = $request->input('contact');
+        $komun->description = $request->input('description');
+
+        if ($request->hasFile('image')) {
+            $name = Str::slug($request->name) . '.' . $request->image->extension();
+            $request->image->move(public_path('uploads'), $name);
+            $komun->image = '/uploads/' . $name;
+        }
+
+        $komun->save();
+
+        $notification = new Notification();
+        $notification->model()->associate($komun); // Menghubungkan dengan model Komun
+        $notification->content = 'Komunitas telah diperbarui!';
+        $notification->save();
+
+        return redirect()->route('komunitas')->withSuccess("Komunitas berhasil diperbarui!");
     }
 
     /**

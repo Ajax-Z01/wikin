@@ -21,6 +21,26 @@
                     <div class="card recent-sales overflow-auto">
                         <div class="card-body">
                             <h5 class="card-title">Data Komunitas</span></h5>
+                            @if (session('success'))
+                                <div class="alert alert-success" role="alert">
+                                    <strong class="font-bold">Success!</strong>
+                                    <span class="block sm:inline">{{ session('success') }}</span>
+                                </div>
+                            @elseif(session('unsuccess'))
+                                <div class="alert alert-danger" role="alert">
+                                    <strong class="font-bold">Unsuccess!</strong>
+                                    <span class="block sm:inline">{{ session('unsuccess') }}</span>
+                                </div>
+                            @endif
+                            @if ($errors->any())
+                                <div class="alert alert-danger"  role="alert">
+                                    <ul class="list-disc pl-5">
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ htmlentities($error) }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
                             <div class="d-grid gap-1 d-md-flex justify-content-md-end">
                                 <td><button type="button" class="bg-danger btn btn-info position-relative"
                                         data-bs-toggle="modal" data-bs-target="#pengkom">
@@ -59,7 +79,7 @@
                                                         <div class="row mb-3">
                                                             <label for="image" class="col-sm-5 col-form-label">Gambar
                                                                 Kegiatan </label>
-                                                            <div class="col-sm-10">
+                                                            <div class="col-sm-12">
                                                                 <input class="form-control" type="file" name="image" id="image">
                                                             </div>
                                                         </div>
@@ -93,10 +113,10 @@
                                         <td>{{ htmlentities($komun->description) }}</td>
                                         <td>{{ htmlentities($komun->contact) }}</td>
                                         <td><button type="button" class="bg-primary btn btn-info position-relative"
-                                                data-bs-toggle="modal" data-bs-target="#pengkoms">
+                                                data-bs-toggle="modal" data-bs-target="#komunitas{{$komun->id}}">
                                                 <i class="text-light bi bi-info-circle">
                                                 </i></button>
-                                            <div class="modal fade" id="pengkoms" tabindex="-1"
+                                            <div class="modal fade" id="komunitas{{$komun->id}}" tabindex="-1"
                                                 aria-labelledby="pengabdianMasLabel" aria-hidden="true">
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
@@ -107,40 +127,34 @@
                                                                 aria-label="Close"></button>
                                                         </div>
                                                         <div class="modal-body">
-                                                            <form>
+                                                            <form role="form" class="text-left" action="{{ route('komunitas.update', $komun->id) }}" method="POST" enctype="multipart/form-data">
+                                                                @method('PUT')
+                                                                @csrf
                                                                 <div class="mb-3">
-                                                                    <label for="recipient-name" class="col-form-label">Nama
-                                                                        Komunitas</label>
-                                                                    <input type="text" class="form-control"
-                                                                        id="recipient-name">
+                                                                    <label for="name" class="col-form-label">Nama Komunitas</label>
+                                                                    <input type="text" class="form-control" id="name" name="name" value="{{ htmlentities($komun->name) }}">
                                                                 </div>
                                                                 <div class="mb-3">
-                                                                    <label for="recipient-name"
-                                                                        class="col-form-label">Narahubung Komunitas</label>
-                                                                    <input type="text" class="form-control"
-                                                                        id="recipient-name">
+                                                                    <label for="contact" class="col-form-label">Narahubung Komunitas</label>
+                                                                    <input type="text" class="form-control" id="contact" name="contact" value="{{ htmlentities($komun->contact) }}">
                                                                 </div>
                                                                 <div class="mb-3">
-                                                                    <label for="message-text"
+                                                                    <label for="description"
                                                                         class="col-form-label">Deskripsi</label>
-                                                                    <textarea class="form-control" id="message-text"></textarea>
+                                                                    <textarea class="form-control" name="description" id="description"></textarea>
                                                                 </div>
                                                                 <div class="row mb-3">
-                                                                    <label for="inputNumber"
-                                                                        class="col-sm-5 col-form-label">Gambar Kegiatan
-                                                                    </label>
-                                                                    <div class="col-sm-10">
-                                                                        <input class="form-control" type="file"
-                                                                            id="imgFile">
+                                                                    <label for="image" class="col-sm-5 col-form-label">Gambar
+                                                                        Kegiatan </label>
+                                                                    <div class="col-sm-12">
+                                                                        <input class="form-control" type="file" name="image" id="image">
                                                                     </div>
                                                                 </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                    <button type="submit" class="btn btn-primary">Update</button>
+                                                                </div>
                                                             </form>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary"
-                                                                data-bs-dismiss="modal">Close</button>
-                                                            <button type="button" class="btn btn-primary">Send
-                                                                message</button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -151,9 +165,7 @@
                                     @endforeach
                                 </tbody>
                             </table>
-
                         </div>
-
                     </div>
                 </div><!-- End List Komunitas  -->
             </div>

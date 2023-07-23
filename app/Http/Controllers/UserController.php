@@ -9,7 +9,10 @@ use App\Models\Notification;
 use Illuminate\Http\Request;
 use App\Mail\AccountApproved;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Password;
+use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
@@ -76,16 +79,26 @@ class UserController extends Controller
         // return view('profile-edit', compact('user'));
     }
 
+    public function profile()
+    {
+        $user = Auth::user();
+        return view('dashboard.user.profile', compact('user'));
+    }
+
     public function update_profile(Request $request, $id)
     {
         $user = User::findOrFail($id);
 
         $validator = Validator::make($request->all(), [
-            'name' => 'required|min:5|max:50|regex:/^[a-zA-Z\s]+$/',
-            'mobile' => 'nullable|regex:/^[+0-9\s]+$/|max:20',
-            'location' => 'nullable|string|max:255',
-            'bio' => 'nullable|string|max:500',
             'profile_image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+            'name' => 'required|min:5|max:50|regex:/^[a-zA-Z\s]+$/',
+            'job' => 'nullable|string|max:255',
+            'address' => 'nullable|string|max:255',
+            'phone' => 'nullable|regex:/^[+0-9\s]+$/|max:20',
+            'twitter_profile' => 'nullable|string|max:255',
+            'facebook_profile' => 'nullable|string|max:255',
+            'instagram_profile' => 'nullable|string|max:255',
+            'linkedin_profile' => 'nullable|string|max:255',
         ]);
 
         if ($validator->fails()) {
@@ -93,7 +106,7 @@ class UserController extends Controller
         }
 
         $user->setAttribute('username', $request->username);
-        $user->fill($request->only(['name', 'mobile', 'location', 'bio']));
+        $user->fill($request->only(['name', 'job', 'address', 'phone', 'twitter_profile', 'facebook_profile', 'instagram_profile', 'linkedin_profile']));
 
         if ($request->hasFile('profile_image') && $request->file('profile_image')->isValid()) {
             $allowedMimes = ['jpeg', 'png', 'jpg'];
@@ -113,5 +126,28 @@ class UserController extends Controller
         $user->save();
 
         return redirect()->route('profile')->withSuccess("Profile updated successfully.");
+    }
+
+    public function updatePassword(Request $request, $id)
+    {
+        $user = User::findOrFail($id);
+
+        // Validate the input fields
+        $request->validate([
+            'current_password' => 'required',
+            'password' => 'required|min:8|confirmed',
+        ]);
+
+        // Check if the current password matches the user's stored password
+        if (!Hash::check($request->current_password, $user->password)) {
+            return redirect()->back()->withErrors(['current_password' => 'The current password is incorrect.']);
+        }
+
+        // Update the user's password
+        $user->password = Hash::make($request->password);
+        $user->save();
+
+        // Redirect back to the profile page with a success message
+        return redirect()->route('profile')->withSuccess("Password updated successfully.");
     }
 }

@@ -70,10 +70,10 @@
                                                                     {{-- Form Modal Pengmas --}}
                                                                     <form>
                                                                         <div class="mb-3">
-                                                                            <label for="recipient-name"
+                                                                            <label for="name"
                                                                                 class="col-form-label">Penerima:</label>
                                                                             <input type="text" class="form-control"
-                                                                                id="recipient-name">
+                                                                                id="name">
                                                                         </div>
                                                                         <div class="mb-3">
                                                                             <label for="message-text"
@@ -104,6 +104,26 @@
                         <div class="card recent-sales overflow-auto">
                             <div class="card-body">
                                 <h5 class="card-title">List Pengabdian Masyarakat</span></h5>
+                                @if (session('success'))
+                                    <div class="alert alert-success" role="alert">
+                                        <strong class="font-bold">Success!</strong>
+                                        <span class="block sm:inline">{{ session('success') }}</span>
+                                    </div>
+                                @elseif(session('unsuccess'))
+                                    <div class="alert alert-danger" role="alert">
+                                        <strong class="font-bold">Unsuccess!</strong>
+                                        <span class="block sm:inline">{{ session('unsuccess') }}</span>
+                                    </div>
+                                @endif
+                                @if ($errors->any())
+                                    <div class="alert alert-danger"  role="alert">
+                                        <ul class="list-disc pl-5">
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ htmlentities($error) }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
                                 <div class="d-grid gap-1 d-md-flex justify-content-md-end">
                                     <td><button type="button" class="bg-danger btn btn-info position-relative"
                                             data-bs-toggle="modal" data-bs-target="#pengmas">
@@ -129,38 +149,22 @@
                                                                     Kegiatan</label>
                                                                 <input type="text" class="form-control" name="name"
                                                                     id="name">
-                                                                @error('name')
-                                                                    <span
-                                                                        class="invalid-feedback">{{ htmlentities($message) }}</span>
-                                                                @enderror
                                                             </div>
                                                             <div class="mb-3">
                                                                 <label for="location"
                                                                     class="col-form-label">Lokasi</label>
                                                                 <input type="text" class="form-control"
                                                                     name="location" id="location">
-                                                                @error('location')
-                                                                    <span
-                                                                        class="invalid-feedback">{{ htmlentities($message) }}</span>
-                                                                @enderror
                                                             </div>
                                                             <div class="mb-3">
                                                                 <label for="description"
                                                                     class="col-form-label">Deskripsi</label>
-                                                                <textarea class="form-control" name="description" id="description"></textarea>
-                                                                @error('description')
-                                                                    <span
-                                                                        class="invalid-feedback">{{ htmlentities($message) }}</span>
-                                                                @enderror
+                                                                <input class="form-control" name="description" id="description">
                                                             </div>
                                                             <div class="mb-3">
                                                                 <label for="contentpemas" class="col-form-label">Isi
                                                                     Kegiatan</label>
                                                                 <textarea class="form-control" id="contentpemas" name="content"></textarea>
-                                                                @error('content')
-                                                                    <span
-                                                                        class="invalid-feedback">{{ htmlentities($message) }}</span>
-                                                                @enderror
                                                             </div>
                                                             <div class="row mb-3">
                                                                 <div class="col-sm-10">
@@ -169,10 +173,6 @@
                                                                         Kegiatan </label>
                                                                     <input class="form-control" type="file"
                                                                         name="image" id="image" accept="image/*">
-                                                                    @error('image')
-                                                                        <span
-                                                                            class="invalid-feedback">{{ htmlentities($message) }}</span>
-                                                                    @enderror
                                                                 </div>
                                                             </div>
                                                             <div class="modal-footer">
@@ -210,10 +210,10 @@
                                                 </td>
                                                 <td><span class="badge bg-success">Terlaksana</span></td>
                                                 <td><button type="button" class="btn btn-info" data-bs-toggle="modal"
-                                                        data-bs-target="#pengabdianMas">
+                                                        data-bs-target="#pengmas{{$pemas->id}}">
                                                         <i class="bi bi-info-circle">
                                                         </i></button>
-                                                    <div class="modal fade" id="pengabdianMas" tabindex="-1"
+                                                    <div class="modal fade" id="pengmas{{$pemas->id}}" tabindex="-1"
                                                         aria-labelledby="pengabdianMasLabel" aria-hidden="true">
                                                         <div class="modal-dialog">
                                                             <div class="modal-content">
@@ -226,34 +226,48 @@
                                                                         aria-label="Close"></button>
                                                                 </div>
                                                                 <div class="modal-body">
-                                                                    <form>
+                                                                    <form role="form text-left" action="{{ route('pengmas.update', $pemas->id) }}"
+                                                                        method="post" enctype="multipart/form-data">
+                                                                        @method('PUT')
+                                                                        @csrf
                                                                         <div class="mb-3">
-                                                                            <label for="recipient-name"
-                                                                                class="col-form-label">Nama
+                                                                            <label for="name" class="col-form-label">Nama
                                                                                 Kegiatan</label>
-                                                                            <input type="text" class="form-control"
-                                                                                id="recipient-name">
+                                                                            <input type="text" class="form-control" name="name"
+                                                                                id="name" value="{{ htmlentities($pemas->name) }}">
                                                                         </div>
                                                                         <div class="mb-3">
-                                                                            <label for="recipient-name"
+                                                                            <label for="location"
                                                                                 class="col-form-label">Lokasi</label>
                                                                             <input type="text" class="form-control"
-                                                                                id="recipient-name">
+                                                                                name="location" id="location" value="{{ htmlentities($pemas->location) }}">
                                                                         </div>
                                                                         <div class="mb-3">
-                                                                            <label for="message-text"
+                                                                            <label for="description"
                                                                                 class="col-form-label">Deskripsi</label>
-                                                                            <textarea class="form-control" id="message-text"></textarea>
+                                                                            <input class="form-control" name="description" id="description" value="{{ htmlentities($pemas->description) }}">
+                                                                        </div>
+                                                                        <div class="mb-3">
+                                                                            <label for="contentpemas" class="col-form-label">Isi
+                                                                                Kegiatan</label>
+                                                                            <textarea class="form-control" id="contentpemas" name="content">{!! html_entity_decode($pemas->content) !!}</textarea>
+                                                                        </div>
+                                                                        <div class="row mb-3">
+                                                                            <div class="col-sm-10">
+                                                                                <label for="image"
+                                                                                    class="col-sm-5 col-form-label">Gambar
+                                                                                    Kegiatan </label>
+                                                                                <input class="form-control" type="file"
+                                                                                    name="image" id="image" accept="image/*">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="modal-footer">
+                                                                            <button type="button" class="btn btn-secondary"
+                                                                                data-bs-dismiss="modal">Close</button>
+                                                                            <button type="submit" class="btn btn-primary">Send
+                                                                                message</button>
                                                                         </div>
                                                                     </form>
-                                                                </div>
-                                                                <div class="modal-footer">
-                                                                    <button type="button" class="btn btn-secondary"
-                                                                        data-bs-dismiss="modal">Close</button>
-                                                                    <button type="button" class="btn btn-danger"
-                                                                        data-bs-dismiss="modal">Hapus</button>
-                                                                    <button type="button" class="btn btn-primary">Send
-                                                                        message</button>
                                                                 </div>
                                                             </div>
                                                         </div>
