@@ -125,8 +125,12 @@
         <!-- End Recent Blog Posts Section -->
 
         <section id="alur" class="recent-post sections-bg">
-            <div class="container text-center" data-aos="fade-down">
-                <img src="{{ asset('img/alur.png') }}" class="img-fluid" alt="">
+            <div class="section-header">
+                <h1>Join Komunitas</h1>
+                <p></p>
+            </div>
+            <div class="container img-alur text-center" data-aos="fade-down">
+                <img src="{{ asset('img/alur.svg') }}" style="max-height: 1200px" class="img-fluid" alt="">
             </div>
         </section>
 
