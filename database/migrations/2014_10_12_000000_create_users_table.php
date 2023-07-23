@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('email');
             $table->string('password');
-            $table->string('profile_image')->default('/img/default-profile.webp');
+            $table->string('image')->default('/img/default-profile.webp');
             $table->string('company')->nullable();
             $table->string('job')->nullable();
             $table->string('address')->nullable();

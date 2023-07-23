@@ -69,7 +69,7 @@ Route::middleware(['IsActive'])->group(function () {
     Route::get('informasi', [DashboardController::class, 'informasi'])->name('informasi');
 
     Route::get('profile', [UserController::class, 'profile'])->name('profile');
-    Route::get('profile/{id}/update', [UserController::class, 'update_profile'])->whereNumber('id')->name('profile.update');
+    Route::put('profile/{id}/update', [UserController::class, 'update_profile'])->whereNumber('id')->name('profile.update');
     Route::post('profile/{id}/resetpass', [UserController::class, 'updatepassword'])->whereNumber('id')->name('password.update');
 });
 

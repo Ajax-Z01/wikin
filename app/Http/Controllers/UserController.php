@@ -90,7 +90,7 @@ class UserController extends Controller
         $user = User::findOrFail($id);
 
         $validator = Validator::make($request->all(), [
-            'profile_image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
             'name' => 'required|min:5|max:50|regex:/^[a-zA-Z\s]+$/',
             'job' => 'nullable|string|max:255',
             'address' => 'nullable|string|max:255',
@@ -108,19 +108,19 @@ class UserController extends Controller
         $user->setAttribute('username', $request->username);
         $user->fill($request->only(['name', 'job', 'address', 'phone', 'twitter_profile', 'facebook_profile', 'instagram_profile', 'linkedin_profile']));
 
-        if ($request->hasFile('profile_image') && $request->file('profile_image')->isValid()) {
+        if ($request->hasFile('image') && $request->file('image')->isValid()) {
             $allowedMimes = ['jpeg', 'png', 'jpg'];
             $validator = Validator::make($request->all(), [
-                'profile_image' => 'image|mimes:' . implode(',', $allowedMimes) . '|max:2048',
+                'image' => 'image|mimes:' . implode(',', $allowedMimes) . '|max:2048',
             ]);
 
             if ($validator->fails()) {
                 return redirect()->back()->withErrors($validator)->withInput();
             }
 
-            $name = Str::slug($request->username) . '.' . $request->profile_image->extension();
-            $request->profile_image->move(public_path('uploads'), $name);
-            $user->setAttribute('profile_image', '/uploads/' . $name);
+            $name = Str::slug($request->username) . '.' . $request->image->extension();
+            $request->image->move(public_path('uploads'), $name);
+            $user->setAttribute('image', '/uploads/' . $name);
         }
 
         $user->save();
