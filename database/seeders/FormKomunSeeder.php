@@ -14,6 +14,6 @@ class FormKomunSeeder extends Seeder
      */
     public function run()
     {
-        //
+        \App\Models\FormKomun::factory(10)->create();
     }
 }

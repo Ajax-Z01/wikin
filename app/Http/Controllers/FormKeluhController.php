@@ -53,6 +53,7 @@ class FormKeluhController extends Controller
     public function store(StoreFormKeluhRequest $request)
     {
         $request->validate([
+            'user_id' => 'required',
             'name' => 'required',
             'nik' => 'required',
             'email' => 'required',
@@ -61,6 +62,7 @@ class FormKeluhController extends Controller
         ]);
 
         $formkeluh = new FormKeluh();
+        $formkeluh->user_id = $request->input('user_id');
         $formkeluh->name = $request->input('name');
         $formkeluh->nik = $request->input('nik');
         $formkeluh->email = $request->input('email');
@@ -74,40 +76,6 @@ class FormKeluhController extends Controller
         $notification->save();
 
         return redirect()->route('keluhan')->with('success', 'Formulir Keluhan berhasil diajukan.');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\FormKeluh  $formKeluh
-     * @return \Illuminate\Http\Response
-     */
-    public function show(FormKeluh $formKeluh)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\FormKeluh  $formKeluh
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(FormKeluh $formKeluh)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\UpdateFormKeluhRequest  $request
-     * @param  \App\Models\FormKeluh  $formKeluh
-     * @return \Illuminate\Http\Response
-     */
-    public function update(UpdateFormKeluhRequest $request, FormKeluh $formKeluh)
-    {
-        //
     }
 
     /**

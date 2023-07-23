@@ -20,4 +20,9 @@ class Komun extends Model
     {
         return $this->morphMany(Notification::class, 'notifiable');
     }
+
+    public function sender()
+    {
+        return $this->belongsTo('App\Models\User');
+    }
 }

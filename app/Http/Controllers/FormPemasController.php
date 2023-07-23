@@ -53,6 +53,7 @@ class FormPemasController extends Controller
     public function store(StoreFormPemasRequest $request)
     {
         $request->validate([
+            'user_id' => 'required',
             'name' => 'required',
             'nik' => 'required',
             'name_pemas' => 'required',
@@ -61,6 +62,7 @@ class FormPemasController extends Controller
         ]);
 
         $formpemas = new FormPemas();
+        $formpemas->user_id = $request->user_id;
         $formpemas->name = $request->name;
         $formpemas->nik = $request->nik;
         $formpemas->name_pemas = $request->name_pemas;

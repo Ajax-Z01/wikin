@@ -15,12 +15,16 @@ return new class extends Migration
     {
         Schema::create('form_keluhs', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id'); // Kolom kunci asing
             $table->string('name');
             $table->string('nik');
             $table->string('email');
             $table->string('location');
             $table->text('description');
             $table->timestamps();
+
+            // Definisi relasi dengan tabel users
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

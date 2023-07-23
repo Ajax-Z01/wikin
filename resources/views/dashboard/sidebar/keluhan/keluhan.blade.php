@@ -108,6 +108,7 @@
                                     enctype="multipart/form-data">
                                     @method('POST')
                                     @csrf
+                                    <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                                     <div class="row mb-3">
                                         <label for="name" class="col-sm-3 col-form-label">Nama</label>
                                         <div class="col-sm-8">

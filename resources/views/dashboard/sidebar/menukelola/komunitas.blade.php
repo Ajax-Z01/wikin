@@ -61,6 +61,7 @@
                                                     enctype="multipart/form-data">
                                                         @method('POST')
                                                         @csrf
+                                                        <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                                                         <div class="mb-3">
                                                             <label for="name" class="col-form-label">Nama
                                                                 Komunitas</label>
@@ -130,6 +131,7 @@
                                                             <form role="form" class="text-left" action="{{ route('komunitas.update', $komun->id) }}" method="POST" enctype="multipart/form-data">
                                                                 @method('PUT')
                                                                 @csrf
+                                                                <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                                                                 <div class="mb-3">
                                                                     <label for="name" class="col-form-label">Nama Komunitas</label>
                                                                     <input type="text" class="form-control" id="name" name="name" value="{{ htmlentities($komun->name) }}">

@@ -14,6 +14,6 @@ class FormKeluhSeeder extends Seeder
      */
     public function run()
     {
-        //
+        \App\Models\FormKeluh::factory(10)->create();
     }
 }
