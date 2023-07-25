@@ -19,7 +19,7 @@ class UserController extends Controller
 {
     public function index()
     {
-        $usersPerPage = 10;
+        $usersPerPage = 1;
         $totalUsers = User::count();
         $totalPages = ceil($totalUsers / $usersPerPage);
         $currentPage = request()->page ?? 1;
@@ -36,7 +36,7 @@ class UserController extends Controller
             });
         }
 
-        $users = $query->skip(($currentPage - 1) * $usersPerPage)->take($usersPerPage)->get();
+        $users = $query->get();
 
         return view('dashboard.sidebar.menukelola.userdate', compact('users',  'currentPage', 'totalPages'));
     }
@@ -48,7 +48,30 @@ class UserController extends Controller
 
     public function update(Request $request, $id)
     {
-        //
+        $rules = [
+            'type' => 'required',
+        ];
+
+        $messages = [
+            'type.required' => 'The type field is required.',
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
+        $user = User::find($id);
+        $user->type = $request->input('type');
+        $user->save();
+
+        $notification = new Notification();
+        $notification->model()->associate($user); // Menghubungkan dengan model Post
+        $notification->content = 'telah diupdate.';
+        $notification->save();
+
+        return redirect()->route('userdate')->withSuccess('Pengguna berhasil diupdate.');
     }
 
 

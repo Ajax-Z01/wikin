@@ -59,9 +59,6 @@ Route::middleware(['IsActive'])->group(function () {
     Route::post('komunitas/store', [KomunController::class, 'store'])->name('komunitas.store');
     Route::put('komunitas/{id}/update', [KomunController::class, 'edit'])->whereNumber('id')->name('komunitas.update');
 
-    Route::get('userdate', [UserController::class, 'index'])->name('userdate');
-    Route::delete('userdate/{id}/delete', [UserController::class, 'destroy'])->whereNumber('id')->name('userdate.delete');
-
     Route::get('pengkom', [KomunController::class, 'index'])->name('pengkom');
     Route::post('pengkom/store', [FormKomunController::class, 'store'])->name('pengkom.store');
 
@@ -89,4 +86,8 @@ Route::middleware(['IsActive'])->group(function () {
 
 Route::middleware(['IsAdmin', 'IsActive'])->group(function () {
     Route::get('komun', [FormKomunController::class, 'index'])->name('komun');
+
+    Route::get('userdate', [UserController::class, 'index'])->name('userdate');
+    Route::put('userdate/{id}/update', [UserController::class, 'update'])->whereNumber('id')->name('userdate.update');
+    Route::delete('userdate/{id}/delete', [UserController::class, 'destroy'])->whereNumber('id')->name('userdate.delete');
 });
