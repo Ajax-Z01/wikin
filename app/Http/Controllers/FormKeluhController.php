@@ -52,14 +52,7 @@ class FormKeluhController extends Controller
      */
     public function store(StoreFormKeluhRequest $request)
     {
-        $request->validate([
-            'user_id' => 'required',
-            'name' => 'required',
-            'nik' => 'required',
-            'email' => 'required',
-            'location' => 'required',
-            'description' => 'required',
-        ]);
+
 
         $formkeluh = new FormKeluh();
         $formkeluh->user_id = $request->input('user_id');

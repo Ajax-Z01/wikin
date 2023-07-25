@@ -24,7 +24,12 @@ class StoreFormKeluhRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'user_id' => 'required',
+            'name' => 'required',
+            'nik' => 'required',
+            'email' => 'required',
+            'location' => 'required',
+            'description' => 'required',
         ];
     }
 }
