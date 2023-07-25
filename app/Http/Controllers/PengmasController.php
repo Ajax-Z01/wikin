@@ -77,6 +77,7 @@ class PengmasController extends Controller
         ]);
 
         $pengmas = new Pengmas();
+        $pengmas->user_id = $request->input('user_id');
         $pengmas->name = $request->input('name');
         $pengmas->location = $request->input('location');
         $pengmas->description = $request->input('description');

@@ -87,6 +87,7 @@ class KomunController extends Controller
         ]);
 
         $komun = new Komun();
+        $komun->user_id = $request->input('user_id');
         $komun->name = $request->input('name');
         $komun->contact = $request->input('contact');
         $komun->description = $request->input('description');

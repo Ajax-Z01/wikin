@@ -33,7 +33,7 @@
                                 </div>
                             @endif
                             @if ($errors->any())
-                                <div class="alert alert-danger"  role="alert">
+                                <div class="alert alert-danger" role="alert">
                                     <ul class="list-disc pl-5">
                                         @foreach ($errors->all() as $error)
                                             <li>{{ htmlentities($error) }}</li>
@@ -57,20 +57,22 @@
                                                         aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <form role="form text-left" action="{{ route('komunitas.store') }}" method="post"
-                                                    enctype="multipart/form-data">
+                                                    <form role="form text-left" action="{{ route('komunitas.store') }}"
+                                                        method="post" enctype="multipart/form-data">
                                                         @method('POST')
                                                         @csrf
                                                         <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                                                         <div class="mb-3">
                                                             <label for="name" class="col-form-label">Nama
                                                                 Komunitas</label>
-                                                            <input type="text" class="form-control"name="name" id="name">
+                                                            <input type="text" class="form-control"name="name"
+                                                                id="name">
                                                         </div>
                                                         <div class="mb-3">
                                                             <label for="contact" class="col-form-label">Narahubung
                                                                 Komunitas</label>
-                                                            <input type="text" class="form-control" name="contact" id="contact">
+                                                            <input type="text" class="form-control" name="contact"
+                                                                id="contact">
                                                         </div>
                                                         <div class="mb-3">
                                                             <label for="description"
@@ -81,13 +83,15 @@
                                                             <label for="image" class="col-sm-5 col-form-label">Gambar
                                                                 Kegiatan </label>
                                                             <div class="col-sm-12">
-                                                                <input class="form-control" type="file" name="image" id="image">
+                                                                <input class="form-control" type="file" name="image"
+                                                                    id="image">
                                                             </div>
                                                         </div>
                                                         <div class="modal-footer">
                                                             <button type="button" class="btn btn-secondary"
-                                                            data-bs-dismiss="modal">Close</button>
-                                                            <button type="submit" class="btn btn-primary">Send message</button>
+                                                                data-bs-dismiss="modal">Close</button>
+                                                            <button type="submit" class="btn btn-primary">Send
+                                                                message</button>
                                                         </div>
                                                     </form>
                                                 </div>
@@ -108,62 +112,76 @@
                                 </thead>
                                 <tbody>
                                     @foreach ($komuns as $komun)
-                                    <tr>
-                                        <th scope="row"><a href="#">{{ $loop->iteration }}</a></th>
-                                        <td>{{ htmlentities($komun->name) }}</td>
-                                        <td>{{ htmlentities($komun->description) }}</td>
-                                        <td>{{ htmlentities($komun->contact) }}</td>
-                                        <td><button type="button" class="bg-primary btn btn-info position-relative"
-                                                data-bs-toggle="modal" data-bs-target="#komunitas{{$komun->id}}">
-                                                <i class="text-light bi bi-info-circle">
-                                                </i></button>
-                                            <div class="modal fade" id="komunitas{{$komun->id}}" tabindex="-1"
-                                                aria-labelledby="pengabdianMasLabel" aria-hidden="true">
-                                                <div class="modal-dialog">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <h5 class="modal-title" id="komunitaslabel">Edit Komunitas
-                                                            </h5>
-                                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                                aria-label="Close"></button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            <form role="form" class="text-left" action="{{ route('komunitas.update', $komun->id) }}" method="POST" enctype="multipart/form-data">
-                                                                @method('PUT')
-                                                                @csrf
-                                                                <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
-                                                                <div class="mb-3">
-                                                                    <label for="name" class="col-form-label">Nama Komunitas</label>
-                                                                    <input type="text" class="form-control" id="name" name="name" value="{{ htmlentities($komun->name) }}">
-                                                                </div>
-                                                                <div class="mb-3">
-                                                                    <label for="contact" class="col-form-label">Narahubung Komunitas</label>
-                                                                    <input type="text" class="form-control" id="contact" name="contact" value="{{ htmlentities($komun->contact) }}">
-                                                                </div>
-                                                                <div class="mb-3">
-                                                                    <label for="description"
-                                                                        class="col-form-label">Deskripsi</label>
-                                                                    <textarea class="form-control" name="description" id="description"></textarea>
-                                                                </div>
-                                                                <div class="row mb-3">
-                                                                    <label for="image" class="col-sm-5 col-form-label">Gambar
-                                                                        Kegiatan </label>
-                                                                    <div class="col-sm-12">
-                                                                        <input class="form-control" type="file" name="image" id="image">
+                                        <tr>
+                                            <th scope="row"><a href="#">{{ $loop->iteration }}</a></th>
+                                            <td>{{ htmlentities($komun->name) }}</td>
+                                            <td>{{ htmlentities($komun->description) }}</td>
+                                            <td>{{ htmlentities($komun->contact) }}</td>
+                                            <td><button type="button" class="bg-primary btn btn-info position-relative"
+                                                    data-bs-toggle="modal" data-bs-target="#komunitas{{ $komun->id }}">
+                                                    <i class="text-light bi bi-info-circle">
+                                                    </i></button>
+                                                <div class="modal fade" id="komunitas{{ $komun->id }}" tabindex="-1"
+                                                    aria-labelledby="pengabdianMasLabel" aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="komunitaslabel">Edit Komunitas
+                                                                </h5>
+                                                                <button type="button" class="btn-close"
+                                                                    data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <form role="form" class="text-left"
+                                                                    action="{{ route('komunitas.update', $komun->id) }}"
+                                                                    method="POST" enctype="multipart/form-data">
+                                                                    @method('PUT')
+                                                                    @csrf
+                                                                    <input type="hidden" name="user_id"
+                                                                        value="{{ Auth::user()->id }}">
+                                                                    <div class="mb-3">
+                                                                        <label for="name" class="col-form-label">Nama
+                                                                            Komunitas</label>
+                                                                        <input type="text" class="form-control"
+                                                                            id="name" name="name"
+                                                                            value="{{ htmlentities($komun->name) }}">
                                                                     </div>
-                                                                </div>
-                                                                <div class="modal-footer">
-                                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                                    <button type="submit" class="btn btn-primary">Update</button>
-                                                                </div>
-                                                            </form>
+                                                                    <div class="mb-3">
+                                                                        <label for="contact"
+                                                                            class="col-form-label">Narahubung
+                                                                            Komunitas</label>
+                                                                        <input type="text" class="form-control"
+                                                                            id="contact" name="contact"
+                                                                            value="{{ htmlentities($komun->contact) }}">
+                                                                    </div>
+                                                                    <div class="mb-3">
+                                                                        <label for="description"
+                                                                            class="col-form-label">Deskripsi</label>
+                                                                        <textarea class="form-control" name="description" id="description"></textarea>
+                                                                    </div>
+                                                                    <div class="row mb-3">
+                                                                        <label for="image"
+                                                                            class="col-sm-5 col-form-label">Gambar
+                                                                            Kegiatan </label>
+                                                                        <div class="col-sm-12">
+                                                                            <input class="form-control" type="file"
+                                                                                name="image" id="image">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-secondary"
+                                                                            data-bs-dismiss="modal">Close</button>
+                                                                        <button type="submit"
+                                                                            class="btn btn-primary">Update</button>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <!-- End Button Info -->
-                                        </td>
-                                    </tr>
+                                                <!-- End Button Info -->
+                                            </td>
+                                        </tr>
                                     @endforeach
                                 </tbody>
                             </table>
