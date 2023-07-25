@@ -83,13 +83,14 @@
         </section><!-- End Our Services Section -->
 
 
-        <!-- ======= Recent Blog Posts Section ======= -->
-        <section id="pemas" class="recent-posts sections-bg">
+        <!-- ======= Recent Pemas Section ======= -->
+        <section id="penelitian" class="recent-posts sections-bg">
             <div class="container" data-aos="fade-up">
 
                 <div class="section-header">
                     <h2>Pengabdian Masyarakat</h2>
-                    <p>Berikut merupakan artikel yang menjelaskan mengenai peran teknologi nuklir dalam kehidupan.</p>
+                    <p>Berikut merupakan artikel pengabdian masyrakat yang menjelaskan mengenai peran teknologi nuklir dalam
+                        kehidupan.</p>
                 </div>
 
                 <div class="row gy-4">
@@ -123,6 +124,47 @@
             </div>
         </section>
         <!-- End Recent Blog Posts Section -->
+        <!-- ======= Recent Blog Posts Section ======= -->
+        <section id="pemas" class="recent-posts sections-bg">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-header">
+                    <h2>Penelitian Kenukliran</h2>
+                    <p>Berikut merupakan artikel penelitian kenukliran yang terlaksana.</p>
+                </div>
+
+                <div class="row gy-4">
+                    @foreach ($penelitians as $penelitian)
+                        <div class="col-xl-4 col-md-6">
+                            <article>
+                                <div class="post-img">
+                                    <img src="{{ htmlentities($penelitian->image) }}" alt="image" class="img-fluid">
+                                </div>
+                                <h2 class="title">
+                                    <a
+                                        href="{{ route('detailpenelitians', $penelitian->slug) }}">{{ htmlentities($penelitian->name_penelitian) }}</a>
+                                </h2>
+                                <p>
+                                    {!! html_entity_decode($penelitian->content) !!}
+                                </p>
+                                <div class="d-flex align-items-center">
+                                    <div class="post-meta">
+                                        <p class="post-date">
+                                            <time datetime="2022-01-01">{{ htmlentities($penelitian->updated) }}</time>
+                                        </p>
+                                    </div>
+                                </div>
+                            </article>
+                        </div><!-- End post list item -->
+                    @endforeach
+                </div><!-- End recent posts list -->
+
+                <div class="text-center mt-4"><a href="{{ route('penelitians') }}"><button type="button"
+                            class="text-center">Selengkapnya</button></a>
+                </div>
+            </div>
+        </section>
+        <!-- End Recent penelitian Section -->
 
         <section id="alur" class="recent-post sections-bg">
             <div class="section-header">

@@ -30,52 +30,69 @@
                                 </thead>
                                 <tbody>
                                     @foreach ($users as $user)
-                                    <tr>
-                                        <th scope="row"><a href="#">{{  $loop->iteration }}</a></th>
-                                        <td>{{ htmlentities($user->username) }}</td>
-                                        <td><a href="#" class="text-primary">{{ htmlentities($user->email) }}</a></td>
-                                        <td><button type="button" class="btn btn-info" data-bs-toggle="modal"
-                                                data-bs-target="#exampleModal">
-                                                <i class="bi bi-info-circle">
-                                                </i></button>
-                                            <div class="modal fade" id="exampleModal" tabindex="-1"
-                                                aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <h5 class="modal-title" id="exampleModalToggleLabel">Detail Akun
-                                                            </h5>
-                                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                                aria-label="Close"></button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            Nama : {{ htmlentities($user->name) }}
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            Username : {{ htmlentities($user->username) }}
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            Email : {{ htmlentities($user->email) }}
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary"
-                                                                data-bs-dismiss="modal">Close</button>
-                                                            <a href="{{ route('userdate.delete', ['id' => $user->id]) }}" onclick="event.preventDefault(); if (confirm('Are you sure you want to delete this user?')) document.getElementById('delete-form-{{ htmlentities($user->id) }}').submit();">
-                                                                <button class="btn btn-danger"
-                                                                data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"
-                                                                data-bs-dismiss="modal">Hapus
-                                                                Akun</button>
-                                                                <form id="delete-form-{{ htmlentities($user->id) }}" action="{{ route('userdate.delete', ['id' => $user->id]) }}" method="POST" style="display: none;">
-                                                                    @csrf
-                                                                    @method('DELETE')
+                                        <tr>
+                                            <th scope="row"><a href="#">{{ $loop->iteration }}</a></th>
+                                            <td>{{ htmlentities($user->username) }}</td>
+                                            <td><a href="#" class="text-primary">{{ htmlentities($user->email) }}</a>
+                                            </td>
+                                            <td><button type="button" class="btn btn-info" data-bs-toggle="modal"
+                                                    data-bs-target="#exampleModal">
+                                                    <i class="bi bi-info-circle">
+                                                    </i></button>
+                                                <div class="modal fade" id="exampleModal" tabindex="-1"
+                                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLabel">Edit Akun
+                                                                </h5>
+                                                                <button type="button" class="btn-close"
+                                                                    data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <form>
+                                                                    <div class="mb-3">
+                                                                        <label for="recipient-name"
+                                                                            class="col-form-label">Nama:</label>
+                                                                        <input type="text" class="form-control"
+                                                                            id="recipient-name">
+                                                                    </div>
+                                                                    <div class="mb-3">
+                                                                        <label for="recipient-name"
+                                                                            class="col-form-label">Username:</label>
+                                                                        <input type="text" class="form-control"
+                                                                            id="recipient-name">
+                                                                    </div>
+                                                                    <div class="mb-3">
+                                                                        <label for="recipient-name"
+                                                                            class="col-form-label">Email:</label>
+                                                                        <input type="text" class="form-control"
+                                                                            id="recipient-name">
+                                                                    </div>
+                                                                    <div class="mb-3">
+                                                                        <label for="recipient-name"
+                                                                            class="col-form-label">Tipe Akun</label>
+                                                                        <select class="form-select form-select-sm"
+                                                                            aria-label=".form-select-sm example">
+                                                                            <option value="1">admin</option>
+                                                                            <option value="2">user</option>
+                                                                        </select>
+                                                                    </div>
                                                                 </form>
-                                                            </a>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-bs-dismiss="modal">Close</button>
+                                                                <button type="button" class="btn btn-danger"
+                                                                    data-bs-dismiss="modal">Hapus</button>
+                                                                <button type="button"
+                                                                    class="btn btn-primary">Update</button>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                            </td>
+                                        </tr>
                                     @endforeach
                                 </tbody>
                             </table>

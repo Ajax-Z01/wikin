@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\FormPenelitian;
 use App\Models\Landing;
 use Illuminate\Support\Str;
 use App\Models\Notification;
@@ -17,7 +18,12 @@ class LandingController extends Controller
             $pemas->content = substr($pemas->content, 0, 200);
             return $pemas;
         });
-        return view('landingpage.content', compact('pengmas'));
+        $penelitians = FormPenelitian::orderByDesc('updated_at')->get()->take(3)->map(function ($penelitian) {
+            $penelitian->updated = $penelitian->updated_at->diffForHumans();
+            $penelitian->content = substr($penelitian->content, 0, 200);
+            return $penelitian;
+        });
+        return view('landingpage.content', compact('pengmas', 'penelitians'));
     }
 
     public function detailPemas()
@@ -36,6 +42,24 @@ class LandingController extends Controller
         $pemas->updated = $pemas->updated_at->format('M jS Y');
         return view('landingpage.detailPemas.detailContent', compact('pemas'));
     }
+    public function penelitians()
+    {
+        $penelitians = FormPenelitian::orderByDesc('updated_at')->get()->map(function ($penelitian) {
+            $penelitian->updated = $penelitian->updated_at->diffForHumans();
+            $penelitian->content = substr($penelitian->content, 0, 200);
+            return $penelitian;
+        });
+        return view('landingpage.penelitian.penelitians', compact('penelitians'));
+    }
+
+    public function detailpenelitians($slug)
+    {
+        $penelitian = FormPenelitian::whereSlug($slug)->first();
+        $penelitian->updated = $penelitian->updated_at->format('M jS Y');
+        return view('landingpage.penelitian.detailpenelitians', compact('penelitian'));
+    }
+
+
 
     /**
      * Store a newly created resource in storage.

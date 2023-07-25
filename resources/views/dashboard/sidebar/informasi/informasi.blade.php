@@ -9,7 +9,7 @@
                     <li class="breadcrumb-item">More Info</li>
                     <li class="breadcrumb-item active">Informasi</li>
                 </ol>
-                
+
             </nav>
         </div><!-- End Page Title -->
 
@@ -20,8 +20,13 @@
                         <div class="card-body">
                             <h5 class="card-title">Informasi Komunitas</h5>
                             <p>Ini Adalah Informasi Terbaru dari Kami.</p>
-                            <h5><b>Judul Pesan</b></h5>
-                            <p>Isi pesan</p>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Subject</h5>
+                                <p class="card-text">Content</p>
+                                <button type="button" class="btn btn-danger">Hapus</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -30,8 +35,13 @@
                         <div class="card-body">
                             <h5 class="card-title">Informasi Konsultasi</h5>
                             <p>Ini Adalah Informasi Terbaru dari Kami.</p>
-                            <h5><b>Judul Pesan</b></h5>
-                            <p>Isi pesan</p>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Subject</h5>
+                                <p class="card-text">Content</p>
+                                <button type="button" class="btn btn-danger">Hapus</button>
+                            </div>
                         </div>
                     </div>
 
@@ -42,8 +52,44 @@
                         <div class="card-body">
                             <h5 class="card-title">Informasi Pengabdian Masyarakat</h5>
                             <p>Ini Adalah Informasi Terbaru dari Kami.</p>
-                            <h5><b>Judul Pesan</b></h5>
-                            <p>Isi pesan</p>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Subject</h5>
+                                <p class="card-text">Content</p>
+                                <button type="button" class="btn btn-danger">Hapus</button>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Subject</h5>
+                                <p class="card-text">Content</p>
+                                <button type="button" class="btn btn-danger">Hapus</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Informasi Contact</h5>
+                            <p>Ini Pesan Contact (Khusus Admin)</p>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Subject</h5>
+                                <p class="card-text">Content</p>
+                                <button type="button" class="btn btn-danger">Hapus</button>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Subject</h5>
+                                <p class="card-text">Content</p>
+                                <button type="button" class="btn btn-danger">Hapus</button>
+                            </div>
                         </div>
                     </div>
                 </div>

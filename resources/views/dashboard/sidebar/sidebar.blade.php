@@ -9,28 +9,29 @@
             </a>
         </li><!-- End Dashboard Nav -->
         @if (Auth::user()->type == 'admin')
-        <li class="nav-item">
-            <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-                <i class="bi bi-menu-button-wide"></i><span>Menu Kelola</span><i class="bi bi-chevron-down ms-auto"></i>
-            </a>
-            <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-                <li>
-                    <a href="{{ route('userdate') }}" class="text-light">
-                        <i class="bi bi-circle"></i><span>User Terdaftar</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ route('landing') }}" class="text-light">
-                        <i class="bi bi-circle"></i><span>Landing Page</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ route('komunitas') }}" class="text-light">
-                        <i class="bi bi-circle"></i><span>Profil Komunitas</span>
-                    </a>
-                </li>
-            </ul>
-        </li><!-- End Components Nav -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-menu-button-wide"></i><span>Menu Kelola</span><i
+                        class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="{{ route('userdate') }}" class="text-light">
+                            <i class="bi bi-circle"></i><span>User Terdaftar</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('landing') }}" class="text-light">
+                            <i class="bi bi-circle"></i><span>Landing Page</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('komunitas') }}" class="text-light">
+                            <i class="bi bi-circle"></i><span>Profil Komunitas</span>
+                        </a>
+                    </li>
+                </ul>
+            </li><!-- End Components Nav -->
         @endif
         <li class="nav-item">
             <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
@@ -43,14 +44,19 @@
                     </a>
                 </li>
                 <li>
+                    <a href="{{ route('penelitian') }}" class="text-light">
+                        <i class="bi text-light bi-circle"></i><span>Penelitian</span>
+                    </a>
+                </li>
+                <li>
                     @if (Auth::user()->type == 'user')
-                    <a href="{{ route('pengkom') }}" class="text-light">
-                        <i class="bi text-light bi-circle"></i><span>Komunitas</span>
-                    </a>
+                        <a href="{{ route('pengkom') }}" class="text-light">
+                            <i class="bi text-light bi-circle"></i><span>Komunitas</span>
+                        </a>
                     @elseif (Auth::user()->type == 'admin')
-                    <a href="{{ route('komun') }}" class="text-light">
-                        <i class="bi text-light bi-circle"></i><span>Komunitas</span>
-                    </a>
+                        <a href="{{ route('komun') }}" class="text-light">
+                            <i class="bi text-light bi-circle"></i><span>Komunitas</span>
+                        </a>
                     @endif
                 </li>
             </ul>

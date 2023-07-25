@@ -12,6 +12,8 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FormKeluhController;
 use App\Http\Controllers\FormKomunController;
 use App\Http\Controllers\FormPemasController;
+use App\Http\Controllers\FormPenelitianController;
+use App\Models\FormPenelitian;
 use App\Models\Landing;
 
 /*
@@ -30,6 +32,11 @@ Route::get('/', [LandingController::class, 'index'])->name('home');
 Route::get('detailPemas', [LandingController::class, 'detailPemas'])->name('detailPemas');
 
 Route::get('/detailPemas/{slug}', [LandingController::class, 'detail'])->name('detail');
+
+Route::get('/penelitians', [LandingController::class, 'penelitians'])->name('penelitians');
+
+Route::get('/detailpenelitians/{slug}', [LandingController::class, 'detailpenelitians'])->name('detailpenelitians');
+
 
 Route::controller(AuthController::class)->group(function () {
     Route::get('login', 'login')->name('login');
@@ -62,6 +69,11 @@ Route::middleware(['IsActive'])->group(function () {
     Route::post('pengmas/store', [PengmasController::class, 'store'])->name('pengmas.store');
     Route::put('pengmas/{id}/update', [PengmasController::class, 'edit'])->whereNumber('id')->name('pengmas.update');
     Route::post('pemas/store', [FormPemasController::class, 'store'])->name('pemas.store');
+
+    Route::get('penelitian', [FormPenelitianController::class, 'index'])->name('penelitian');
+    Route::post('penelitian/store', [FormPenelitianController::class, 'store'])->name('penelitian.store');
+    Route::put('penelitian/{id}/update', [FormPenelitianController::class, 'edit'])->whereNumber('id')->name('penelitian.update');
+
 
     Route::get('kontak', [DashboardController::class, 'kontak'])->name('kontak');
     Route::post('kontak/store', [ContactController::class, 'store'])->name('kontak.store');
