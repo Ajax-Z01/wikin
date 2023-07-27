@@ -1,7 +1,5 @@
 <aside id="sidebar" class="sidebar">
-
     <ul class="sidebar-nav" id="sidebar-nav">
-
         <li class="nav-item">
             <a class="nav-link " href="{{ route('dashboard') }}">
                 <i class="bi bi-grid"></i>
@@ -43,25 +41,26 @@
                         <i class="bi text-light bi-circle"></i><span>Pengabdian Masyarakat</span>
                     </a>
                 </li>
+                @if (Auth::user()->type == 'admin')
                 <li>
                     <a href="{{ route('penelitian') }}" class="text-light">
                         <i class="bi text-light bi-circle"></i><span>Penelitian</span>
                     </a>
                 </li>
+                @endif
                 <li>
-                    @if (Auth::user()->type == 'user')
-                        <a href="{{ route('pengkom') }}" class="text-light">
-                            <i class="bi text-light bi-circle"></i><span>Komunitas</span>
-                        </a>
-                    @elseif (Auth::user()->type == 'admin')
-                        <a href="{{ route('komun') }}" class="text-light">
-                            <i class="bi text-light bi-circle"></i><span>Komunitas</span>
-                        </a>
-                    @endif
+                @if (Auth::user()->type == 'user')
+                    <a href="{{ route('pengkom') }}" class="text-light">
+                        <i class="bi text-light bi-circle"></i><span>Komunitas</span>
+                    </a>
+                @elseif (Auth::user()->type == 'admin')
+                    <a href="{{ route('komun') }}" class="text-light">
+                        <i class="bi text-light bi-circle"></i><span>Komunitas</span>
+                    </a>
+                @endif
                 </li>
             </ul>
         </li><!-- End Forms Pengajuan -->
-
         <li class="nav-item">
             <a class="nav-link collapsed" data-bs-target="#keluhan-nav" data-bs-toggle="collapse" href="#">
                 <i class="bi bi-journal-text"></i><span>Form Keluhan</span><i class="bi bi-chevron-down ms-auto"></i>
@@ -74,32 +73,26 @@
                 </li>
             </ul>
         </li><!-- End Forms Keluhan -->
-
-
         <li class="nav-heading">More Info</li>
-
         <li class="nav-item">
             <a class="nav-link collapsed" href="{{ route('profile') }}">
                 <i class="bi bi-person"></i>
                 <span>Profile</span>
             </a>
         </li><!-- End Profile Page Nav -->
-
         <li class="nav-item">
             <a class="nav-link collapsed" href="{{ route('informasi') }}">
                 <i class="bi bi-question-circle"></i>
                 <span>Informasi</span>
             </a>
         </li><!-- End F.A.Q Page Nav -->
-
+        @if (Auth::user()->type == 'user')
         <li class="nav-item">
             <a class="nav-link collapsed" href="{{ route('kontak') }}">
                 <i class="bi bi-envelope"></i>
                 <span>Contact</span>
             </a>
         </li><!-- End Contact Page Nav -->
-
-
+        @endif
     </ul>
-
 </aside>

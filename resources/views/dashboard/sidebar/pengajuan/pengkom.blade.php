@@ -39,7 +39,7 @@
                                 <label for="name" class="col-sm-3 col-form-label">Nama</label>
                                 <div class="col-sm-8">
                                     <input type="text" class="form-control @error('name') is-invalid @enderror"
-                                        id="name" name="name">
+                                        id="name" name="name" value="{{ Auth::user()->name }}">
                                     @error('name')
                                         <span class="invalid-feedback">{{ htmlentities($message) }}</span>
                                     @enderror
@@ -59,7 +59,7 @@
                                 <label for="email" class="col-sm-3 col-form-label">Email</label>
                                 <div class="col-sm-8">
                                     <input type="email" class="form-control @error('email') is-invalid @enderror"
-                                        id="email" name="email">
+                                        id="email" name="email" value="{{ Auth::user()->email }}">
                                     @error('email')
                                         <span class="invalid-feedback">{{ htmlentities($message) }}</span>
                                     @enderror

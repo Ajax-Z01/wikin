@@ -1,20 +1,21 @@
 <?php
 
+use App\Models\Landing;
 use App\Models\Pengmas;
+use App\Models\FormPenelitian;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\KomunController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\LandingController;
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\PengmasController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FormKeluhController;
 use App\Http\Controllers\FormKomunController;
 use App\Http\Controllers\FormPemasController;
 use App\Http\Controllers\FormPenelitianController;
-use App\Models\FormPenelitian;
-use App\Models\Landing;
 
 /*
 |--------------------------------------------------------------------------
@@ -75,13 +76,12 @@ Route::middleware(['IsActive'])->group(function () {
     Route::get('kontak', [DashboardController::class, 'kontak'])->name('kontak');
     Route::post('kontak/store', [ContactController::class, 'store'])->name('kontak.store');
 
-    Route::get('informasi', [DashboardController::class, 'informasi'])->name('informasi');
-
     Route::get('profile', [UserController::class, 'profile'])->name('profile');
     Route::put('profile/{id}/update', [UserController::class, 'update_profile'])->whereNumber('id')->name('profile.update');
     Route::post('profile/{id}/resetpass', [UserController::class, 'updatepassword'])->whereNumber('id')->name('password.update');
 
-    Route::post('send-message', [MessageController::class, 'sendMessageToUser'])->name('send.message');
+    Route::get('informasi', [MessageController::class, 'index'])->name('informasi');
+    Route::post('send-message/{user_id}', [MessageController::class, 'sendMessageToUser'])->whereNumber('user_id')->name('send.message');
 });
 
 Route::middleware(['IsAdmin', 'IsActive'])->group(function () {

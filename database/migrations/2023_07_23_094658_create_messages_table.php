@@ -16,7 +16,8 @@ return new class extends Migration
         Schema::create('messages', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->string('subject'); // Add subject field
+            $table->string('name');
+            $table->string('subject');
             $table->text('content');
             $table->boolean('is_read')->default(false);
             $table->timestamps();

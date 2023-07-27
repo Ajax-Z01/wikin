@@ -116,24 +116,33 @@
                                                                     <div class="modal-footer">
                                                                         <button type="button" class="btn btn-secondary"
                                                                             data-bs-dismiss="modal">Close</button>
-                                                                        <button type="submit" class="btn btn-danger"
-                                                                            data-bs-dismiss="modal">Hapus</button>
                                                                         <button type="submit"
                                                                             class="btn btn-primary">Update</button>
-                                                                    </div>
+                                                                </form>
+                                                                <a href="{{ route('userdate.delete', ['id' => $user->id]) }}"
+                                                                    onclick="event.preventDefault(); if (confirm('Are you sure you want to delete this user?')) document.getElementById('delete-form-{{ htmlentities($user->id) }}').submit();">
+                                                                    <button type="button" class="btn btn-danger"
+                                                                        data-bs-dismiss="modal">Hapus</button>
+                                                                </a>
+                                                                <form id="delete-form-{{ htmlentities($user->id) }}"
+                                                                    action="{{ route('userdate.delete', ['id' => $user->id]) }}"
+                                                                    method="POST" style="display: none;">
+                                                                    @csrf
+                                                                    @method('DELETE')
                                                                 </form>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
                         </div>
+                        </td>
+                        </tr>
+                        @endforeach
+                        </tbody>
+                        </table>
                     </div>
-                </div><!-- End List Komunitas  -->
+                </div>
+            </div><!-- End List Komunitas  -->
             </div>
         </section>
     </main><!-- End #main -->

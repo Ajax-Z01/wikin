@@ -64,26 +64,30 @@
                                                                         data-bs-dismiss="modal" aria-label="Close"></button>
                                                                 </div>
                                                                 <div class="modal-body">
-                                                                    <form>
+                                                                    <form action="{{ route('send.message', $keluh->user_id) }}" method="post">
+                                                                        @method('POST')
+                                                                        @csrf
+                                                                        <input type="hidden" name="name" value="Keluhan">
                                                                         <div class="mb-3">
-                                                                            <label for="recipient-name"
-                                                                                class="col-form-label">Penerima:</label>
-                                                                            <input type="text" class="form-control"
-                                                                                id="recipient-name">
+                                                                            <label for="user_id" class="col-form-label">Penerima:</label>
+                                                                            <select class="form-control" id="user_id" name="user_id">
+                                                                                <option value="{{ $keluh->user_id }}">{{ $keluh->name }}</option>
+                                                                            </select>
                                                                         </div>
                                                                         <div class="mb-3">
-                                                                            <label for="message-text"
-                                                                                class="col-form-label">Pesan
-                                                                                Balasan:</label>
-                                                                            <textarea class="form-control" id="message-text"></textarea>
+                                                                            <label for="subject" class="col-form-label">Topik:</label>
+                                                                            <input type="text" class="form-control" id="subject" name="subject">
+                                                                        </div>
+                                                                        <div class="mb-3">
+                                                                            <label for="message-text" class="col-form-label">Pesan Balasan:</label>
+                                                                            <textarea class="form-control" id="message-text" name="content"></textarea>
+                                                                        </div>
+                                                                        <div class="modal-footer">
+                                                                            <button type="button" class="btn btn-secondary"
+                                                                                data-bs-dismiss="modal">Close</button>
+                                                                            <button type="submit" class="btn btn-primary">Kirim Pesan</button>
                                                                         </div>
                                                                     </form>
-                                                                </div>
-                                                                <div class="modal-footer">
-                                                                    <button type="button" class="btn btn-secondary"
-                                                                        data-bs-dismiss="modal">Close</button>
-                                                                    <button type="button" class="btn btn-primary">Send
-                                                                        message</button>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -113,7 +117,7 @@
                                         <label for="name" class="col-sm-3 col-form-label">Nama</label>
                                         <div class="col-sm-8">
                                             <input type="text" class="form-control @error('name') is-invalid @enderror"
-                                                id="name" name="name">
+                                                id="name" name="name" value="{{ Auth::user()->name }}">
                                             @error('name')
                                                 <span class="invalid-feedback">{{ htmlentities($message) }}</span>
                                             @enderror
@@ -123,7 +127,7 @@
                                         <label for="nik" class="col-sm-3 col-form-label">NIK</label>
                                         <div class="col-sm-8">
                                             <input type="text" class="form-control @error('nik') is-invalid @enderror"
-                                                name="nik" id="nik">
+                                                name="nik" id="nik" value="{{ Auth::user()->nik }}">
                                             @error('nik')
                                                 <span class="invalid-feedback">{{ htmlentities($message) }}</span>
                                             @enderror
@@ -133,7 +137,7 @@
                                         <label for="email" class="col-sm-3 col-form-label">Email</label>
                                         <div class="col-sm-8">
                                             <input type="email" class="form-control @error('email') is-invalid @enderror"
-                                                name="email" id="email">
+                                                name="email" id="email" value="{{ Auth::user()->email }}">
                                             @error('email')
                                                 <span class="invalid-feedback">{{ htmlentities($message) }}</span>
                                             @enderror
