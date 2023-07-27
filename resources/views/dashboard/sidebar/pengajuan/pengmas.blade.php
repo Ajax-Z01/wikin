@@ -52,10 +52,10 @@
                                                         class="text-primary">{{ htmlentities($pemas->description) }}</a>
                                                 </td>
                                                 <td><button type="button" class="btn btn-info" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal">
+                                                        data-bs-target="#pengmas{{$pemas->id}}">
                                                         <i class="bi bi-cursor">
                                                         </i></button>
-                                                    <div class="modal fade" id="exampleModal" tabindex="-1"
+                                                    <div class="modal fade" id="pengmas{{$pemas->id}}" tabindex="-1"
                                                         aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                         <div class="modal-dialog">
                                                             <div class="modal-content">
@@ -68,19 +68,19 @@
                                                                 </div>
                                                                 <div class="modal-body">
                                                                     {{-- Form Modal Pengmas --}}
-                                                                    <form action="{{ route('send.message') }}" method="post">
+                                                                    <form action="{{ route('send.message', $pemas->user_id) }}" method="post">
                                                                         @method('POST')
                                                                         @csrf
+                                                                        <input type="hidden" name="name" value="Pengabdian Masyarakat">
                                                                         <div class="mb-3">
                                                                             <label for="user_id" class="col-form-label">Penerima:</label>
                                                                             <select class="form-control" id="user_id" name="user_id">
-                                                                                <option value="1">Admin</option>
-                                                                                <option value="2">User</option>
+                                                                                <option value="{{ $pemas->user_id }}">{{ $pemas->name }}</option>
                                                                             </select>
                                                                         </div>
                                                                         <div class="mb-3">
                                                                             <label for="subject" class="col-form-label">Topik:</label>
-                                                                            <input type="text" class="form-control" id="subject" name="subject">
+                                                                            <input type="text" class="form-control" id="subject" name="subject" value="{{ $pemas->name_pemas }} : ">
                                                                         </div>
                                                                         <div class="mb-3">
                                                                             <label for="message-text" class="col-form-label">Pesan Balasan:</label>
@@ -130,10 +130,10 @@
                                 @endif
                                 <div class="d-grid gap-1 d-md-flex justify-content-md-end">
                                     <td><button type="button" class="bg-danger btn btn-info position-relative"
-                                            data-bs-toggle="modal" data-bs-target="#pengmas">
+                                            data-bs-toggle="modal" data-bs-target="#pengmas{{$pemas->id}}">
                                             <i class="text-light bi bi-plus-square">
                                             </i></button>
-                                        <div class="modal fade" id="pengmas" tabindex="-1"
+                                        <div class="modal fade" id="pengmas{{$pemas->id}}" tabindex="-1"
                                             aria-labelledby="pengabdianMasLabel" aria-hidden="true">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
@@ -302,7 +302,7 @@
                                         <label for="name" class="col-sm-3 col-form-label">Nama</label>
                                         <div class="col-sm-8">
                                             <input name="name" id="name" type="text"
-                                                class="form-control @error('name') is-invalid @enderror ">
+                                                class="form-control @error('name') is-invalid @enderror" value="{{ Auth::user()->name }}">
                                             @error('name')
                                                 <span class="invalid-feedback">{{ htmlentities($message) }}</span>
                                             @enderror
@@ -312,7 +312,7 @@
                                         <label for="nik" class="col-sm-3 col-form-label">NIK</label>
                                         <div class="col-sm-8">
                                             <input name="nik" id="nik" type="text"
-                                                class="form-control @error('nik') is-invalid @enderror">
+                                                class="form-control @error('nik') is-invalid @enderror" value="{{ Auth::user()->nik }}">
                                             @error('nik')
                                                 <span class="invalid-feedback">{{ htmlentities($message) }}</span>
                                             @enderror

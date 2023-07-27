@@ -40,9 +40,4 @@ class DashboardController extends Controller
     {
         return view('dashboard.sidebar.kontak.kontak');
     }
-
-    public function informasi()
-    {
-        return view('dashboard.sidebar.informasi.informasi');
-    }
 }
