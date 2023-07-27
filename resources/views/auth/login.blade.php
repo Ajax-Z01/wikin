@@ -72,14 +72,18 @@
                                                 required>
                                             <div class="invalid-feedback">Please enter your password!</div>
                                         </div>
-                                        <div class="col-12">
+                                        <div class="col-12 row mt-2">
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" name="remember"
                                                     value="true" id="remember">
                                                 <label class="form-check-label" for="remember">Remember me</label>
                                             </div>
                                         </div>
+                                        <div class="">
+                                            <p><a href="{{ route('forgot') }}">Forgot password?</a></p>
+                                        </div>
                                         <div class="col-12">
+
                                             <button class="btn btn-primary w-100" type="submit">Login</button>
                                         </div>
                                         <div class="col-12">

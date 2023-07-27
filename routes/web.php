@@ -38,6 +38,15 @@ Route::get('/penelitians', [LandingController::class, 'penelitians'])->name('pen
 
 Route::get('/detailpenelitians/{slug}', [LandingController::class, 'detailpenelitians'])->name('detailpenelitians');
 
+Route::get('forgot', function () {
+    return view('auth.forgotpassword');
+})->name('forgot');
+
+// Link email di gmail menuju ke halaman ini bang
+Route::get('resetpassword', function () {
+    return view('auth.resetpassword');
+})->name('resetpassword');
+
 
 Route::controller(AuthController::class)->group(function () {
     Route::get('login', 'login')->name('login');
