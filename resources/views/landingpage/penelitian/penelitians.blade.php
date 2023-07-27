@@ -32,7 +32,7 @@
                 @foreach ($penelitians as $penelitian)
                     <div class="col-xl-4 col-md-6">
                         <article>
-                            <a href="{{ route('detail', $penelitian->slug) }}">
+                            <a href="{{ route('detailpenelitians', $penelitian->slug) }}">
                                 <div class="post-img">
                                     <img src="{{ htmlentities($penelitian->image) }}" alt=""
                                         class="img-fluid mx-auto d-block">

@@ -18,13 +18,13 @@
                 <!-- <img src="assets/img/h4.png" class="img-fluid rounded-4" alt="" data-aos="zoom-out" data-aos-delay="100"> -->
                 <div id="carouselExampleControlsNoTouching" class="carousel slide" data-aos="zoom-out"
                     data-bs-touch="false" data-bs-interval="false">
-                    <div class="carousel-inner">
+                    <div class="carousel-inner" style="max-height: 350">
                         <div class="carousel-item active">
                             <img src="{{ asset('/img/h4.png') }}" class="d-block w-100 img-fluid rounded-4"
                                 alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img src="{{ asset('img/komunitas.jpeg') }}" class="d-block w-100 img-fluid rounded-4"
+                            <img src="{{ asset('img/ndt.jpeg') }}" class="d-block w-100 img-fluid rounded-4"
                                 alt="...">
                         </div>
                         <div class="carousel-item">
