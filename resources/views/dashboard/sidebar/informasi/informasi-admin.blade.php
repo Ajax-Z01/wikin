@@ -14,42 +14,28 @@
 
         <section class="section">
             <div class="row">
-                @foreach ($messages as $message)
-                <div class="col-lg-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Informasi {{ $message->name }}</h5>
-                            <p>Ini Adalah Informasi Terbaru dari Kami.</p>
-                        </div>
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">{{ $message->subject }}</h5>
-                                <p class="card-text">{{ $message->content }}</p>
-                                <button type="button" class="btn btn-danger">Hapus</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                @endforeach
-                @if (Auth::user()->type == 'admin')
                 <div class="col-lg-6">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Informasi Contact</h5>
                             <p>Ini Pesan Contact (Khusus Admin)</p>
                         </div>
-                        @foreach ($contacts as $contact)
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title">{{ $contact->subject }}</h5>
-                                <p class="card-text">{{ $contact->message }}</p>
+                                <h5 class="card-title">Subject</h5>
+                                <p class="card-text">Content</p>
                                 <button type="button" class="btn btn-danger">Hapus</button>
                             </div>
                         </div>
-                        @endforeach
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Subject</h5>
+                                <p class="card-text">Content</p>
+                                <button type="button" class="btn btn-danger">Hapus</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                @endif
             </div>
         </section>
     </main>

@@ -103,12 +103,16 @@
                                                                     <div class="modal-footer">
                                                                         <button type="button" class="btn btn-secondary"
                                                                             data-bs-dismiss="modal">Close</button>
-                                                                        <button type="button" class="btn btn-danger"
-                                                                            data-bs-dismiss="modal">Hapus</button>
-                                                                        <button type="submit"
-                                                                            class="btn btn-primary">Update</button>
-                                                                    </div>
-                                                                </form>
+                                                                        <button type="submit" class="btn btn-primary">Update</button>
+                                                                    </form>
+                                                                    <a href="{{ route('userdate.delete', ['id' => $user->id]) }}" onclick="event.preventDefault(); if (confirm('Are you sure you want to delete this user?')) document.getElementById('delete-form-{{ htmlentities($user->id) }}').submit();">
+                                                                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Hapus</button>
+                                                                    </a>
+                                                                    <form id="delete-form-{{ htmlentities($user->id) }}" action="{{ route('userdate.delete', ['id' => $user->id]) }}" method="POST" style="display: none;">
+                                                                        @csrf
+                                                                        @method('DELETE')
+                                                                    </form>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
