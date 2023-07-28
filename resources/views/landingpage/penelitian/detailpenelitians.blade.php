@@ -8,8 +8,8 @@
             <div class="container position-relative">
                 <div class="row d-flex justify-content-center">
                     <div class="col-lg-8 text-center">
-                        <h2>Penelitian Kenukliran</h2>
-                        <p>Penelitian Kenukliran adalah...</p>
+                        <h2>Informasi Terkini Kenukliran</h2>
+                        <p>Merupakan kumpulan informasi mengenai pengambangan teknologi nuklir di Indonesia.</p>
                     </div>
                 </div>
             </div>
@@ -18,7 +18,7 @@
             <div class="container">
                 <ol>
                     <li><a href="{{ route('home') }}">Home</a></li>
-                    <li><a href="{{ route('penelitians') }}">Penelitian</a></li>
+                    <li><a href="{{ route('penelitians') }}">Informasi Terkini</a></li>
                     <li>Detail Penelitian</li>
                 </ol>
             </div>
@@ -38,7 +38,7 @@
                     {!! html_entity_decode($penelitian->content) !!}
                     <div class="text-center">
                         <a href="{{ route('penelitians') }}">
-                            <button>Kembali ke daftar penelitian</button>
+                            <button>Kembali ke daftar informasi </button>
                         </a>
                     </div>
                 </div><!-- End post content -->

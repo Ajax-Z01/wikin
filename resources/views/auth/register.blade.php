@@ -52,6 +52,15 @@
                                     <div class="pt-4 pb-2">
                                         <h5 class="card-title text-center pb-0 fs-4">Create an Account</h5>
                                         <p class="text-center small">Enter your personal details to create account</p>
+                                        @if ($errors->any())
+                                            <div class="alert alert-danger" role="alert">
+                                                <ul class="list-disc pl-5">
+                                                    @foreach ($errors->all() as $error)
+                                                        <li>{{ htmlentities($error) }}</li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
+                                        @endif
                                     </div>
                                     <form class="row g-3 needs-validation user" role="form text-left"
                                         action="{{ route('register.post') }}" method="post">

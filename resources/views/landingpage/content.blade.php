@@ -129,8 +129,8 @@
             <div class="container" data-aos="fade-up">
 
                 <div class="section-header">
-                    <h2>Penelitian Kenukliran</h2>
-                    <p>Berikut merupakan artikel penelitian kenukliran yang terlaksana.</p>
+                    <h2>Informasi Terkini Kenukliran</h2>
+                    <p>Berikut merupakan artikel terkini kenukliran yang ada di Indonesia.</p>
                 </div>
 
                 <div class="row gy-4">
@@ -182,8 +182,7 @@
 
                 <div class="section-header">
                     <h2>Kontak</h2>
-                    <p>Nulla dolorum nulla nesciunt rerum facere sed ut inventore quam porro nihil id ratione ea sunt quis
-                        dolorem dolore earum</p>
+                    <p>Sebagai sarana pengembangan kedepannya, saran dapat hubungi kami melalui</p>
                 </div>
 
                 <div class="row gx-lg-0 gy-4">
@@ -194,7 +193,7 @@
                             <div class="info-item d-flex">
                                 <i class="bi bi-geo-alt flex-shrink-0"></i>
                                 <div>
-                                    <h4>Location:</h4>
+                                    <h4>Alamat:</h4>
                                     <p>Jl. Babarsari Kotak POB 6101/YKKB, Ngentak, Caturtunggal, Kec. Depok, Kabupaten
                                         Sleman, Daerah Istimewa Yogyakarta 55281</p>
                                 </div>
@@ -204,15 +203,15 @@
                                 <i class="bi bi-envelope flex-shrink-0"></i>
                                 <div>
                                     <h4>Email:</h4>
-                                    <p>komunitasnuklir@gmail.com</p>
+                                    <p>polteknuklir@brin.go.id</p>
                                 </div>
                             </div><!-- End Info Item -->
 
                             <div class="info-item d-flex">
                                 <i class="bi bi-phone flex-shrink-0"></i>
                                 <div>
-                                    <h4>Call:</h4>
-                                    <p>+62 878-1462-4204</p>
+                                    <h4>Nomor Telpon:</h4>
+                                    <p>(0274)-484085</p>
                                 </div>
                             </div><!-- End Info Item -->
 
@@ -220,7 +219,7 @@
                                 <i class="bi bi-clock flex-shrink-0"></i>
                                 <div>
                                     <h4>Open Hours:</h4>
-                                    <p>Mon-Sat: 11AM - 23PM</p>
+                                    <p>Mon-Fri: 8AM - 16PM</p>
                                 </div>
                             </div><!-- End Info Item -->
                         </div>
@@ -228,7 +227,21 @@
                     </div>
 
                     <div class="col-lg-8">
-                        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                        @if (session('success'))
+                            <div class="alert alert-success" role="alert">
+                                <strong class="font-bold">Success!</strong>
+                                <span class="block sm:inline">{{ session('success') }}</span>
+                            </div>
+                        @elseif(session('unsuccess'))
+                            <div class="alert alert-danger" role="alert">
+                                <strong class="font-bold">Unsuccess!</strong>
+                                <span class="block sm:inline">{{ session('unsuccess') }}</span>
+                            </div>
+                        @endif
+                        <form action="{{ route('kontak.store') }}" method="post" role="form" class="php-email-form"
+                            enctype="multipart/form-data">
+                            @method('POST')
+                            @csrf
                             <div class="row">
                                 <div class="col-md-6 form-group">
                                     <input type="text" name="name" class="form-control" id="name"
@@ -244,7 +257,7 @@
                                     placeholder="Subject" required>
                             </div>
                             <div class="form-group mt-3">
-                                <textarea class="form-control" name="message" rows="7" placeholder="Message" required></textarea>
+                                <textarea class="form-control" name="message" rows="7" id="message" placeholder="Message" required></textarea>
                             </div>
                             <div class="my-3">
                                 <div class="loading">Loading</div>

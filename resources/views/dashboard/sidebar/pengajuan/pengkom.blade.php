@@ -49,7 +49,7 @@
                                 <label for="comunity_name" class="col-sm-3 col-form-label">Nama Komunitas</label>
                                 <div class="col-sm-8">
                                     <input type="text" class="form-control @error('comunity_name') is-invalid @enderror"
-                                        id="comunity_name" name="comunity_name">
+                                        id="comunity_name" name="comunity_name" value="{{ old('comunity_name') }}">
                                     @error('comunity_name')
                                         <span class="invalid-feedback">{{ htmlentities($message) }}</span>
                                     @enderror

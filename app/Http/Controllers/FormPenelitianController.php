@@ -156,8 +156,16 @@ class FormPenelitianController extends Controller
      * @param  \App\Models\FormPenelitian  $formPenelitian
      * @return \Illuminate\Http\Response
      */
-    public function destroy(FormPenelitian $formPenelitian)
+    public function destroy($id)
     {
-        //
+        $penelitians = FormPenelitian::find($id);
+        $penelitians->delete();
+
+        $notification = new Notification();
+        $notification->model()->associate($penelitians); // Menghubungkan dengan model Post
+        $notification->content = 'Content has been deleted.';
+        $notification->save();
+
+        return redirect()->route('penelitian')->withSuccess('Informasi Terkini berhasil dihapus.');
     }
 }

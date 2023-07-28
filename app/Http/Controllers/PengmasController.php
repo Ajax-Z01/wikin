@@ -170,8 +170,16 @@ class PengmasController extends Controller
      * @param  \App\Models\Pengmas  $pengmas
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Pengmas $pengmas)
+    public function destroy($id)
     {
-        //
+        $pengmas = Pengmas::find($id);
+        $pengmas->delete();
+
+        $notification = new Notification();
+        $notification->model()->associate($pengmas); // Menghubungkan dengan model Post
+        $notification->content = 'Content has been deleted.';
+        $notification->save();
+
+        return redirect()->route('pengmas')->withSuccess('Informasi Pengabdian Masyarakat berhasil dihapus.');
     }
 }

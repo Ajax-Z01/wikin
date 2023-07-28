@@ -77,10 +77,6 @@ Route::middleware(['IsActive'])->group(function () {
     Route::put('pengmas/{id}/update', [PengmasController::class, 'edit'])->whereNumber('id')->name('pengmas.update');
     Route::post('pemas/store', [FormPemasController::class, 'store'])->name('pemas.store');
 
-    Route::get('penelitian', [FormPenelitianController::class, 'index'])->name('penelitian');
-    Route::post('penelitian/store', [FormPenelitianController::class, 'store'])->name('penelitian.store');
-    Route::put('penelitian/{id}/update', [FormPenelitianController::class, 'edit'])->whereNumber('id')->name('penelitian.update');
-
 
     Route::get('kontak', [DashboardController::class, 'kontak'])->name('kontak');
     Route::post('kontak/store', [ContactController::class, 'store'])->name('kontak.store');
@@ -99,4 +95,12 @@ Route::middleware(['IsAdmin', 'IsActive'])->group(function () {
     Route::get('userdate', [UserController::class, 'index'])->name('userdate');
     Route::put('userdate/{id}/update', [UserController::class, 'update'])->whereNumber('id')->name('userdate.update');
     Route::delete('userdate/{id}/delete', [UserController::class, 'destroy'])->whereNumber('id')->name('userdate.delete');
+
+    Route::get('penelitian', [FormPenelitianController::class, 'index'])->name('penelitian');
+    Route::post('penelitian/store', [FormPenelitianController::class, 'store'])->name('penelitian.store');
+    Route::put('penelitian/{id}/update', [FormPenelitianController::class, 'edit'])->whereNumber('id')->name('penelitian.update');
+    Route::delete('penelitian/{id}/delete', [FormPenelitianController::class, 'destroy'])->whereNumber('id')->name('penelitian.delete');
+
+    Route::delete('pengmas/{id}/delete', [PengmasController::class, 'destroy'])->whereNumber('id')->name('pengmas.delete');
+    Route::delete('komunitas/{id}/delete', [KomunController::class, 'destroy'])->whereNumber('id')->name('komunitas.delete');
 });

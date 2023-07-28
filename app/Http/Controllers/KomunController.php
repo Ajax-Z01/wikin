@@ -175,8 +175,16 @@ class KomunController extends Controller
      * @param  \App\Models\Komun  $komun
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Komun $komun)
+    public function destroy($id)
     {
-        //
+        $komun = Komun::find($id);
+        $komun->delete();
+
+        $notification = new Notification();
+        $notification->model()->associate($komun); // Menghubungkan dengan model Post
+        $notification->content = 'Komunitas has been deleted.';
+        $notification->save();
+
+        return redirect()->route('komunitas')->withSuccess('Informasi Komunitas berhasil dihapus.');
     }
 }

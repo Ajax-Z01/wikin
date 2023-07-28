@@ -184,25 +184,35 @@
                                                                             <button type="button"
                                                                                 class="btn btn-secondary"
                                                                                 data-bs-dismiss="modal">Close</button>
-                                                                            <button type="button" class="btn btn-danger"
-                                                                                data-bs-dismiss="modal">Hapus Data</button>
                                                                             <button type="submit"
                                                                                 class="btn btn-primary">Tambahkan</button>
-                                                                        </div>
+                                                                    </form>
+                                                                    <a href="{{ route('penelitian.delete', ['id' => $penelitian->id]) }}"
+                                                                        onclick="event.preventDefault(); if (confirm('Are you sure you want to delete this content?')) document.getElementById('delete-form-{{ htmlentities($penelitian->id) }}').submit();">
+                                                                        <button type="button" class="btn btn-danger"
+                                                                            data-bs-dismiss="modal">Hapus</button>
+                                                                    </a>
+                                                                    <form
+                                                                        id="delete-form-{{ htmlentities($penelitian->id) }}"
+                                                                        action="{{ route('penelitian.delete', ['id' => $penelitian->id]) }}"
+                                                                        method="POST" style="display: none;">
+                                                                        @csrf
+                                                                        @method('DELETE')
                                                                     </form>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </td>
-                                            </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
                             </div>
-                        </div>
-                    </div>
-                @endif
+                            </td>
+                            </tr>
+                @endforeach
+                </tbody>
+                </table>
+            </div>
+            </div>
+            </div>
+            @endif
             </div>
         </section>
     </main><!-- End #main -->

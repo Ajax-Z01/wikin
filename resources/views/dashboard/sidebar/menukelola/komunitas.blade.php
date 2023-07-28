@@ -90,8 +90,8 @@
                                                         <div class="modal-footer">
                                                             <button type="button" class="btn btn-secondary"
                                                                 data-bs-dismiss="modal">Close</button>
-                                                            <button type="submit" class="btn btn-primary">Send
-                                                                message</button>
+                                                            <button type="submit"
+                                                                class="btn btn-primary">Tambahkan</button>
                                                         </div>
                                                     </form>
                                                 </div>
@@ -168,13 +168,24 @@
                                                                                 name="image" id="image">
                                                                         </div>
                                                                     </div>
-                                                                    <div class="modal-footer">
-                                                                        <button type="button" class="btn btn-secondary"
-                                                                            data-bs-dismiss="modal">Close</button>
-                                                                        <button type="submit"
-                                                                            class="btn btn-primary">Update</button>
-                                                                    </div>
                                                                 </form>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary"
+                                                                        data-bs-dismiss="modal">Close</button>
+                                                                    <button type="submit"
+                                                                        class="btn btn-primary">Update</button>
+                                                                    <a href="{{ route('penelitian.delete', ['id' => $komun->id]) }}"
+                                                                        onclick="event.preventDefault(); if (confirm('Are you sure you want to delete this content?')) document.getElementById('delete-form-{{ htmlentities($komun->id) }}').submit();">
+                                                                        <button type="button" class="btn btn-danger"
+                                                                            data-bs-dismiss="modal">Hapus</button>
+                                                                    </a>
+                                                                    <form id="delete-form-{{ htmlentities($komun->id) }}"
+                                                                        action="{{ route('komunitas.delete', ['id' => $komun->id]) }}"
+                                                                        method="POST" style="display: none;">
+                                                                        @csrf
+                                                                        @method('DELETE')
+                                                                    </form>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>

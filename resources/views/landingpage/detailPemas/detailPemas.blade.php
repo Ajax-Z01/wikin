@@ -24,7 +24,7 @@
             <div class="container">
                 <ol>
                     <li><a href="{{ route('home') }}">Home</a></li>
-                    <li>Blog</li>
+                    <li>Pengabdian Masyarakat</li>
                 </ol>
             </div>
         </nav>

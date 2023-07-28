@@ -28,7 +28,7 @@
                                 alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img src="{{ asset('/img/h3.jpg') }}" class="d-block w-100 img-fluid rounded-4"
+                            <img src="{{ asset('img/sawah.jpeg') }}" class="d-block w-100 img-fluid rounded-4"
                                 alt="...">
                         </div>
                     </div>
