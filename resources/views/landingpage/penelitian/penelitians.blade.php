@@ -9,8 +9,8 @@
             <div class="container position-relative">
                 <div class="row d-flex justify-content-center">
                     <div class="col-lg-6 text-center">
-                        <h2>Penelitian Kenukliran</h2>
-                        <p>Penelitian Kenukliran adalah...</p>
+                        <h2>Informasi Kenukliran</h2>
+                        <p>Informasi terkini mengenai pengembangan teknologi kenukliran.</p>
                     </div>
                 </div>
             </div>
@@ -19,7 +19,7 @@
             <div class="container">
                 <ol>
                     <li><a href="{{ route('home') }}">Home</a></li>
-                    <li>Penelitian </li>
+                    <li>Informasi terkini </li>
                 </ol>
             </div>
         </nav>
