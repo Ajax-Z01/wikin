@@ -17,12 +17,12 @@ class FormPemasFactory extends Factory
     public function definition()
     {
         return [
-            'user_id' => rand(1, 10),
-            'name' => $this->faker->word,
-            'nik' => $this->faker->word,
-            'name_pemas' => $this->faker->word,
-            'location' => $this->faker->word,
-            'description' => $this->faker->text,
+            // 'user_id' => rand(1, 10),
+            // 'name' => $this->faker->word,
+            // 'nik' => $this->faker->word,
+            // 'name_pemas' => $this->faker->word,
+            // 'location' => $this->faker->word,
+            // 'description' => $this->faker->text,
         ];
     }
 }

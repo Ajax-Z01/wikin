@@ -52,6 +52,12 @@
                                     <div class="pt-4 pb-2">
                                         <h5 class="card-title text-center pb-0 fs-4">Login to Your Account</h5>
                                         <p class="text-center small">Enter your username & password to login</p>
+                                        @if (Session::has('status'))
+                                            <div class="alert alert-success" role="alert">
+                                                <strong class="font-bold">Success!</strong>
+                                                <span class="block sm:inline">{{ session('status') }}</span>
+                                            </div>
+                                        @endif
                                         @if (Session::has('success'))
                                             <div class="alert alert-primary" role="alert">
                                                 <strong class="font-bold">Success!</strong>

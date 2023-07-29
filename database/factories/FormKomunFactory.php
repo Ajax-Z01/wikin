@@ -17,12 +17,12 @@ class FormKomunFactory extends Factory
     public function definition()
     {
         return [
-            'user_id' => rand(1, 10),
-            'name' => $this->faker->word,
-            'comunity_name' => $this->faker->word,
-            'email' => $this->faker->word,
-            'description' => $this->faker->text,
-            'logo_image' => $this->faker->word,
+            // 'user_id' => rand(1, 10),
+            // 'name' => $this->faker->word,
+            // 'comunity_name' => $this->faker->word,
+            // 'email' => $this->faker->word,
+            // 'description' => $this->faker->text,
+            // 'logo_image' => $this->faker->word,
         ];
     }
 }

@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Contact;
 use App\Models\User;
+use App\Models\Contact;
 use App\Models\Message;
+use App\Models\Notification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+
 
 class MessageController extends Controller
 {
@@ -52,5 +54,31 @@ class MessageController extends Controller
         // Optionally, you can send notifications or alerts to the user about the new message
 
         return redirect()->back()->withSuccess("Message sent successfully.");
+    }
+
+    public function destroy($id)
+    {
+        $message = Message::find($id);
+        $message->delete();
+
+        $notification = new Notification();
+        $notification->model()->associate($message); // Menghubungkan dengan model Post
+        $notification->content = 'Content has been deleted.';
+        $notification->save();
+
+        return redirect()->route('informasi')->withSuccess('Informasi berhasil dihapus.');
+    }
+
+    public function destroy2($id)
+    {
+        $message = Contact::find($id);
+        $message->delete();
+
+        $notification = new Notification();
+        $notification->model()->associate($message); // Menghubungkan dengan model Post
+        $notification->content = 'Content has been deleted.';
+        $notification->save();
+
+        return redirect()->route('informasi')->withSuccess('Informasi berhasil dihapus.');
     }
 }

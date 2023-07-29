@@ -2,10 +2,13 @@
 
 use App\Models\Landing;
 use App\Models\Pengmas;
+use Illuminate\Http\Request;
 use App\Models\FormPenelitian;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\forgotpassword;
 use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Password;
 use App\Http\Controllers\KomunController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\LandingController;
@@ -15,7 +18,9 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FormKeluhController;
 use App\Http\Controllers\FormKomunController;
 use App\Http\Controllers\FormPemasController;
+use App\Http\Controllers\forgotpasswordController;
 use App\Http\Controllers\FormPenelitianController;
+use App\Http\Controllers\ResetPasswordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,14 +43,14 @@ Route::get('/penelitians', [LandingController::class, 'penelitians'])->name('pen
 
 Route::get('/detailpenelitians/{slug}', [LandingController::class, 'detailpenelitians'])->name('detailpenelitians');
 
-Route::get('forgot', function () {
-    return view('auth.forgotpassword');
-})->name('forgot');
+Route::post('kontak/store', [ContactController::class, 'store'])->name('kontak.store');
 
-// Link email di gmail menuju ke halaman ini bang
-Route::get('resetpassword', function () {
-    return view('auth.resetpassword');
-})->name('resetpassword');
+Route::get('/forgot', [forgotpasswordController::class, 'index'])->middleware('guest')->name('forgot');
+Route::post('/forgot', [forgotpasswordController::class, 'sendResetLinkEmail'])->middleware('guest')->name('forgot');
+
+// Link email di gmail menuju ke halaman ini
+Route::get('/resetpassword', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
+Route::post('/resetpassword', [ResetPasswordController::class, 'reset'])->name('password.update2');
 
 
 Route::controller(AuthController::class)->group(function () {
@@ -79,7 +84,6 @@ Route::middleware(['IsActive'])->group(function () {
 
 
     Route::get('kontak', [DashboardController::class, 'kontak'])->name('kontak');
-    Route::post('kontak/store', [ContactController::class, 'store'])->name('kontak.store');
 
     Route::get('profile', [UserController::class, 'profile'])->name('profile');
     Route::put('profile/{id}/update', [UserController::class, 'update_profile'])->whereNumber('id')->name('profile.update');
@@ -87,6 +91,9 @@ Route::middleware(['IsActive'])->group(function () {
 
     Route::get('informasi', [MessageController::class, 'index'])->name('informasi');
     Route::post('send-message/{user_id}', [MessageController::class, 'sendMessageToUser'])->whereNumber('user_id')->name('send.message');
+
+    Route::delete('informasi/{id}/delete', [MessageController::class, 'destroy'])->whereNumber('id')->name('informasi.delete');
+    Route::delete('informasi/{id}/delete', [MessageController::class, 'destroy2'])->whereNumber('id')->name('informasi.delete2');
 });
 
 Route::middleware(['IsAdmin', 'IsActive'])->group(function () {

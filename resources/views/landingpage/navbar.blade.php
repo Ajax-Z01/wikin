@@ -7,10 +7,10 @@
         <nav id="navbar" class="navbar">
             <ul>
                 <li><a href="{{ route('home') }}">Utama</a></li>
-                <li><a href="#about">Tentang</a></li>
-                <li><a href="#services">Fitur</a></li>
-                <li><a href="#pemas">Pemas</a></li>
-                <li><a href="#contact">Kontak</a></li>
+                <li><a href="{{ route('home') }}#about">Tentang</a></li>
+                <li><a href="{{ route('home') }}#services">Fitur</a></li>
+                <li><a href="{{ route('home') }}#pemas">Pemas</a></li>
+                <li><a href="{{ route('home') }}#contact">Kontak</a></li>
                 @auth
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"

@@ -17,11 +17,11 @@ class PengmasFactory extends Factory
     public function definition()
     {
         return [
-            'user_id' => $this->faker->randomNumber(),
-            'name' => $this->faker->word,
-            'contact' => $this->faker->word,
-            'description' => $this->faker->text,
-            'image' => $this->faker->word,
+            // 'user_id' => $this->faker->randomNumber(),
+            // 'name' => $this->faker->word,
+            // 'contact' => $this->faker->word,
+            // 'description' => $this->faker->text,
+            // 'image' => $this->faker->word,
         ];
     }
 }

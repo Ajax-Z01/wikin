@@ -8,10 +8,8 @@
 
                 <div class="section-header">
                     <h2>Tentang Kami</h2>
-                    <p>Wikin bertujuan untuk mendorong pertumbuhan komunitas nuklir yang berdedikasi, berwawasan luas, dan
-                        memiliki kontribusi positif bagi kemajuan teknologi nuklir di Indonesia. Dengan memberikan wadah
-                        interaktif dan informatif, web ini berupaya menciptakan ruang yang aman dan terbuka bagi para
-                        pemangku kepentingan nuklir dalam berbagi pengetahuan dan pengalaman kepada masyarakat umum.</p>
+                    <p>Wikin (Website Interaktif Komunitas Nuklir Indonesia)
+                        Tempat anda menuangkan segala ide dan gagasan tentang kenukliran.</p>
                 </div>
 
                 <div class="row gy-4">
@@ -21,8 +19,11 @@
                     <div class="col-lg-6">
                         <div class="content ps-0 ps-lg-5">
                             <p class="fst-italic">
-                                Wikin (Website Interaktif Komunitas Nuklir Indonesia)
-                                Tempat anda menuangkan segala ide dan gagasan tentang kenukliran.
+                                Wikin bertujuan untuk mendorong pertumbuhan komunitas nuklir yang berdedikasi, berwawasan
+                                luas, dan memiliki kontribusi positif bagi kemajuan teknologi nuklir di Indonesia. Dengan
+                                memberikan wadah interaktif dan informatif, web ini berupaya menciptakan ruang yang aman dan
+                                terbuka bagi para pemangku kepentingan nuklir dalam berbagi pengetahuan dan pengalaman
+                                kepada masyarakat umum.
                                 Fitur-fitur yang bisa anda dapatkan :
                             </p>
                             <ul>
@@ -89,7 +90,8 @@
 
                 <div class="section-header">
                     <h2>Pengabdian Masyarakat</h2>
-                    <p>Berikut merupakan artikel pengabdian masyrakat yang menjelaskan mengenai peran teknologi nuklir dalam
+                    <p>Berikut merupakan artikel pengabdian masyarakat yang menjelaskan mengenai peran teknologi nuklir
+                        dalam
                         kehidupan.</p>
                 </div>
 
@@ -227,19 +229,19 @@
                     </div>
 
                     <div class="col-lg-8">
-                        @if (session('success'))
-                            <div class="alert alert-success" role="alert">
-                                <strong class="font-bold">Success!</strong>
-                                <span class="block sm:inline">{{ session('success') }}</span>
-                            </div>
-                        @elseif(session('unsuccess'))
-                            <div class="alert alert-danger" role="alert">
-                                <strong class="font-bold">Unsuccess!</strong>
-                                <span class="block sm:inline">{{ session('unsuccess') }}</span>
-                            </div>
-                        @endif
                         <form action="{{ route('kontak.store') }}" method="post" role="form" class="php-email-form"
                             enctype="multipart/form-data">
+                            @if (session('success'))
+                                <div class="alert alert-success" role="alert">
+                                    <strong class="font-bold">Success!</strong>
+                                    <span class="block sm:inline">{{ session('success') }}</span>
+                                </div>
+                            @elseif(session('unsuccess'))
+                                <div class="alert alert-danger" role="alert">
+                                    <strong class="font-bold">Unsuccess!</strong>
+                                    <span class="block sm:inline">{{ session('unsuccess') }}</span>
+                                </div>
+                            @endif
                             @method('POST')
                             @csrf
                             <div class="row">

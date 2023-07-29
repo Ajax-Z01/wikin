@@ -54,11 +54,26 @@
                                     </div>
                                     <div class="alert alert-primary">Pastikan memilih kata sandi yang mudah diingat!
                                     </div>
+                                    @if ($errors->any())
+                                        <div class="alert alert-danger" role="alert">
+                                            <ul class="list-disc pl-5">
+                                                @foreach ($errors->all() as $error)
+                                                    <li>{{ htmlentities($error) }}</li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    @endif
                                     <form class="row g-3 needs-validation user" role="form text-left"
-                                        action="{{ route('register.post') }}" method="post">
+                                        action="{{ route('password.update2') }}" method="post">
                                         @method('POST')
                                         @csrf
-
+                                        <input type="hidden" name="token" value="{{ $token }}">
+                                        <div class="col-12">
+                                            <label for="email" class="form-label">Email</label>
+                                            <input type="email" name="email" class="form-control" id="email"
+                                                required>
+                                            <div class="invalid-feedback">Please enter your password!</div>
+                                        </div>
                                         <div class="col-12">
                                             <label for="password" class="form-label">New Password</label>
                                             <input type="password" name="password" class="form-control" id="password"
@@ -66,13 +81,14 @@
                                             <div class="invalid-feedback">Please enter your password!</div>
                                         </div>
                                         <div class="col-12">
-                                            <label for="password" class="form-label">Password Confirm</label>
-                                            <input type="password" name="password" class="form-control" id="password"
-                                                required>
+                                            <label for="password_confirmation" class="form-label">Password
+                                                Confirm</label>
+                                            <input type="password" name="password_confirmation" class="form-control"
+                                                id="password_confirmation" required>
                                             <div class="invalid-feedback">Please enter your password!</div>
                                         </div>
                                         <div class="col-12">
-                                            <button class="btn btn-primary w-100" type="submit">Send</button>
+                                            <button class="btn btn-primary w-100" type="submit">Reset Password</button>
                                         </div>
                                     </form>
 

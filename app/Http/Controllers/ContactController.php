@@ -71,7 +71,7 @@ class ContactController extends Controller
         $notification->content = 'Pesan baru telah dikirim.';
         $notification->save();
 
-        return redirect()->route('kontak')->with('success', 'Pesan berhasil dikirim.');
+        return redirect()->back()->with('success', 'Pesan berhasil dikirim.');
     }
 
     /**

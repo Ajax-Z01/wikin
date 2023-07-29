@@ -9,35 +9,6 @@
     </div><!-- End Logo -->
     <nav class="header-nav ms-auto">
         <ul class="d-flex  align-items-center">
-            <li class="nav-item dropdown">
-                <a class="nav-link nav-icon " href="#" data-bs-toggle="dropdown">
-                    <i class="bi text-light bi-bell"></i>
-                    <span class="badge bg-primary text-light badge-number">1</span>
-                </a><!-- End Notification Icon -->
-                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
-                    <li class="dropdown-header">
-                        You have a new notifications
-                        <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
-                    </li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                    <li class="notification-item">
-                        <i class="bi bi-exclamation-circle text-warning"></i>
-                        <div>
-                            <h4>Pengajuan Konsultasi</h4>
-                            <p>Pengadaaan survey didesa A</p>
-                            <p>4 hrs. ago</p>
-                        </div>
-                    </li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                    <li class="dropdown-footer">
-                        <a href="#">Show all notifications</a>
-                    </li>
-                </ul><!-- End Notification Dropdown Items -->
-            </li><!-- End Notification Nav -->
             <li class="nav-item dropdown pe-3">
                 <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
                     <img src="{{ Auth::user()->image }}" alt="Profile" class="rounded-circle">

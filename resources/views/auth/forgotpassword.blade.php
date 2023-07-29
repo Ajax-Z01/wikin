@@ -54,7 +54,7 @@
                                         <p class="text-center small">Enter your email to reset password</p>
                                     </div>
                                     <form class="row g-3 needs-validation user" role="form text-left"
-                                        action="{{ route('register.post') }}" method="post">
+                                        action="{{ route('forgot') }}" method="post">
                                         @method('POST')
                                         @csrf
                                         <div class="col-12">

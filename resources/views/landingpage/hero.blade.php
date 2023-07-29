@@ -15,7 +15,6 @@
 
             <!-- Carousel -->
             <div class="col-lg-6 order-1 order-lg-2">
-                <!-- <img src="assets/img/h4.png" class="img-fluid rounded-4" alt="" data-aos="zoom-out" data-aos-delay="100"> -->
                 <div id="carouselExampleControlsNoTouching" class="carousel slide" data-aos="zoom-out"
                     data-bs-touch="false" data-bs-interval="false">
                     <div class="carousel-inner" style="max-height: 350">
